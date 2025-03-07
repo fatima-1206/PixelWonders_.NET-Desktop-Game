@@ -1,6 +1,6 @@
 ﻿namespace PixelWonders
 {
-    partial class Form1
+    partial class Menu2
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,6 +39,7 @@
             panel3 = new Panel();
             label2 = new Label();
             button4 = new Button();
+            label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -149,6 +150,19 @@
             button4.TabIndex = 3;
             button4.Text = ">Back";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += Button4_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(777, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(22, 24);
+            label3.TabIndex = 4;
+            label3.Text = "X";
+            label3.Click += Label3_Click;
             // 
             // Form1
             // 
@@ -156,6 +170,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(panel3);
@@ -183,5 +198,6 @@
         private Panel panel3;
         private Label label2;
         private Button button4;
+        private Label label3;
     }
 }

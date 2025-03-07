@@ -1,6 +1,6 @@
 ﻿namespace PixelWonders
 {
-    partial class Form2
+    partial class Menu1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu1));
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             button2 = new Button();
@@ -39,6 +39,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button3 = new Button();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
@@ -91,6 +92,7 @@
             button1.TabIndex = 0;
             button1.Text = "       Create art";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += Button1_Click;
             // 
             // panel2
             // 
@@ -153,12 +155,25 @@
             button3.Text = ">Back";
             button3.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(778, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 24);
+            label2.TabIndex = 3;
+            label2.Text = "X";
+            label2.Click += Label2_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -175,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -189,5 +205,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button button3;
+        private Label label2;
     }
 }
