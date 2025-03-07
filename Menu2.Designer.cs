@@ -164,7 +164,7 @@
             label3.Text = "X";
             label3.Click += Label3_Click;
             // 
-            // Form1
+            // Menu2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -176,7 +176,8 @@
             Controls.Add(panel3);
             Controls.Add(label1);
             ForeColor = SystemColors.ControlText;
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Menu2";
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

@@ -16,5 +16,43 @@ namespace PixelWonders
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Menu1 menuPage = new Menu1();
+
+            // Show the Menu1 form
+            menuPage.Show();
+
+            // Close the Signup form
+            this.Hide();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Login loginPage = new Login();
+
+            // Show the Login form
+            loginPage.Show();
+
+            // Close the Signup form (or Hide it)
+            this.Hide();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Login loginPage = new Login();
+
+            // Show the Login form
+            loginPage.Show();
+
+            // Close the Signup form (or Hide it)
+            this.Hide();
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

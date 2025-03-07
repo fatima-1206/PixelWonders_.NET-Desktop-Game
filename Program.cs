@@ -11,9 +11,10 @@ namespace PixelWonders
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Menu1());  // Runs Form2 instead
 
-            Application.Run(new Menu2());
+            Application.Run(new Login());  // Runs Form2 instead
+
+           // Application.Run(new Menu2());
         }
     }
 }
