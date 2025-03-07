@@ -53,7 +53,8 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(168, 136, 181);
-            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Font = new Font("Pixelify Sans Medium", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ActiveCaptionText;
             button3.Location = new Point(126, 811);
             button3.Name = "button3";
             button3.Size = new Size(265, 92);
@@ -65,7 +66,8 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(255, 224, 192);
-            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Font = new Font("Pixelify Sans Medium", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
             button2.Location = new Point(126, 668);
             button2.Name = "button2";
             button2.Size = new Size(265, 92);
@@ -94,7 +96,7 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // Form1
+            // Home
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 217, 231);
@@ -103,7 +105,7 @@
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "Home";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
