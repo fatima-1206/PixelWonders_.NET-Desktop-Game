@@ -45,9 +45,9 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(-1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(491, 1084);
+            panel1.Size = new Size(492, 1086);
             panel1.TabIndex = 0;
             // 
             // button3
