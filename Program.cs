@@ -11,7 +11,11 @@ namespace PixelWonders
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            Application.Run(new Home());
+            //Application.Run(new PaletteForm());  uncomment this and comment the line above to view the palette functionality
+
+            // Application.Run(new Menu2());
         }
     }
 }
