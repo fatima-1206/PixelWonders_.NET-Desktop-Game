@@ -12,14 +12,20 @@ namespace PixelWonders
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
+            Login loginPage = new Login();
 
+            // Show the Login form
+            loginPage.Show();
+
+            // Close 
+            this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

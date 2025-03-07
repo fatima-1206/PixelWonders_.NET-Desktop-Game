@@ -53,7 +53,7 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(168, 136, 181);
-            button3.Font = new Font("Pixelify Sans Medium", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ActiveCaptionText;
             button3.Location = new Point(126, 811);
             button3.Name = "button3";
@@ -61,12 +61,12 @@
             button3.TabIndex = 3;
             button3.Text = "Exit";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += Button3_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(255, 224, 192);
-            button2.Font = new Font("Pixelify Sans Medium", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
             button2.Location = new Point(126, 668);
             button2.Name = "button2";
@@ -74,7 +74,7 @@
             button2.TabIndex = 1;
             button2.Text = "Start";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += Button2_Click;
             // 
             // pictureBox1
             // 
@@ -100,7 +100,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 217, 231);
-            ClientSize = new Size(1600, 900);
+            ClientSize = new Size(1370, 788);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);

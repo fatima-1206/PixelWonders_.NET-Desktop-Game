@@ -12,9 +12,9 @@ namespace PixelWonders
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Login());  // Runs Form2 instead
+            Application.Run(new Home());
 
-           // Application.Run(new Menu2());
+            // Application.Run(new Menu2());
         }
     }
 }
