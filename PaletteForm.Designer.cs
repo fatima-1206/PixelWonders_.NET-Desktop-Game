@@ -32,7 +32,7 @@ namespace PixelWonders
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel2 = new Panel();
-            panel5 = new Panel();
+            addButton = new Panel();
             header = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -53,12 +53,11 @@ namespace PixelWonders
             flowLayoutPanel1.Padding = new Padding(10, 15, 10, 5);
             flowLayoutPanel1.Size = new Size(1137, 439);
             flowLayoutPanel1.TabIndex = 0;
-            //flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(addButton);
             panel2.Controls.Add(header);
             panel2.Controls.Add(pictureBox1);
             panel2.Location = new Point(0, 1);
@@ -66,17 +65,17 @@ namespace PixelWonders
             panel2.Size = new Size(1133, 80);
             panel2.TabIndex = 2;
             // 
-            // panel5
+            // addButton
             // 
-            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel5.BackgroundImageLayout = ImageLayout.Center;
-            panel5.Cursor = Cursors.Hand;
-            panel5.Location = new Point(1020, 3);
-            panel5.Name = "panel5";
-            panel5.Padding = new Padding(15);
-            panel5.Size = new Size(109, 74);
-            panel5.TabIndex = 2;
-            panel5.Tag = "";
+            addButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addButton.BackgroundImageLayout = ImageLayout.Center;
+            addButton.Cursor = Cursors.Hand;
+            addButton.Location = new Point(1020, 3);
+            addButton.Name = "addButton";
+            addButton.Padding = new Padding(15);
+            addButton.Size = new Size(109, 74);
+            addButton.TabIndex = 2;
+            addButton.Tag = "";
             // 
             // header
             // 
@@ -100,15 +99,19 @@ namespace PixelWonders
             label1.TabIndex = 0;
             label1.Text = "Color Palettes";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.ErrorImage = null;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(157, 80);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2025_03_07_at_1_43_31_PM;
             // 
             // panel3
             // 
@@ -131,6 +134,7 @@ namespace PixelWonders
             panel1.Padding = new Padding(5);
             panel1.Size = new Size(1137, 85);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // panel4
             // 
@@ -170,6 +174,6 @@ namespace PixelWonders
         private PictureBox pictureBox1;
         private Panel header;
         private Label label1;
-        private Panel panel5;
+        private Panel addButton;
     }
 }
