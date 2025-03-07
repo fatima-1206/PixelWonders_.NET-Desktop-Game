@@ -12,7 +12,8 @@ namespace PixelWonders
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Home());
+            //Application.Run(new Home());
+            Application.Run(new PaletteForm());
 
             // Application.Run(new Menu2());
         }
