@@ -1,8 +1,8 @@
 namespace PixelWonders
 {
-    public partial class Form1 : Form
+    public partial class Menu2 : Form
     {
-        public Form1()
+        public Menu2()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace PixelWonders
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Form2 newForm = new Form2();  // Create an instance of Form2
+            Menu1 newForm = new Menu1();  // Create an instance of Form2
             newForm.Show();
             this.Close();
         }
