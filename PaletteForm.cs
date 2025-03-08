@@ -123,7 +123,9 @@ namespace PixelWonders
                         Width = colorWidth,
                         Height = colorHeight,
                         BackColor = ColorTranslator.FromHtml(colors[i]),
-                        Left = i * colorWidth
+                        Left = i * colorWidth,
+                        Margin = new Padding(0, 0, 0, 0),
+                        Padding = new Padding(0, 0, 0, 0)
                     };
 
                     panel3.Controls.Add(colorBox);
