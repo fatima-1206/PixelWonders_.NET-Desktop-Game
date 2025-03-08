@@ -5,6 +5,7 @@ namespace PixelWonders
         public Home()
         {
             InitializeComponent();
+            this.FormClosing += Home_FormClosing;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,5 +28,10 @@ namespace PixelWonders
         {
             this.Close();
         }
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
