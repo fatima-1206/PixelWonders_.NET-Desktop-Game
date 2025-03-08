@@ -103,7 +103,7 @@ class DatabaseManager
                 {
                     if (!reader.HasRows) // No user found
                     {
-                        MessageBox.Show("No user found with username: " + username);
+                        //MessageBox.Show("No user found with username: " + username);
                         return false;
                     }
 
@@ -112,7 +112,7 @@ class DatabaseManager
                         string storedPassword = reader["password"] as string ?? string.Empty;
                         storedPassword = storedPassword.Trim();
 
-                        MessageBox.Show("Entered: " + password + "\nStored: " + storedPassword);
+                        //MessageBox.Show("Entered: " + password + "\nStored: " + storedPassword);
 
                         if (password == storedPassword)
                         {

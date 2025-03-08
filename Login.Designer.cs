@@ -42,6 +42,7 @@ namespace PixelWonders
             button3 = new Button();
             label1 = new Label();
             label3 = new Label();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -61,7 +62,7 @@ namespace PixelWonders
             panel1.Location = new Point(301, 70);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(544, 612);
+            panel1.Size = new Size(544, 621);
             panel1.TabIndex = 0;
             // 
             // button1
@@ -92,7 +93,7 @@ namespace PixelWonders
             // 
             // txtPassword
             // 
-            txtPassword.BackColor = Color.FromArgb(168, 136, 181);
+            txtPassword.BackColor = Color.FromArgb(241, 217, 231);
             txtPassword.Location = new Point(151, 322);
             txtPassword.Margin = new Padding(4, 5, 4, 5);
             txtPassword.Name = "txtPassword";
@@ -102,7 +103,7 @@ namespace PixelWonders
             // 
             // txtUsername
             // 
-            txtUsername.BackColor = Color.FromArgb(168, 136, 181);
+            txtUsername.BackColor = Color.FromArgb(241, 217, 231);
             txtUsername.Location = new Point(151, 220);
             txtUsername.Margin = new Padding(4, 5, 4, 5);
             txtUsername.Name = "txtUsername";
@@ -185,12 +186,26 @@ namespace PixelWonders
             label3.Text = "X";
             label3.Click += Label3_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Thistle;
+            button2.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(13, 14);
+            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Name = "button2";
+            button2.Size = new Size(117, 57);
+            button2.TabIndex = 3;
+            button2.Text = ">Back";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(1143, 750);
+            Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -218,5 +233,6 @@ namespace PixelWonders
         private Label label5;
         private Button button1;
         private Label label3;
+        private Button button2;
     }
 }
