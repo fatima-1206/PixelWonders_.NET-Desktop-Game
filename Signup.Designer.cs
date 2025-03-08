@@ -246,6 +246,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "Signup";
             Text = "Signup";
+            Load += Signup_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

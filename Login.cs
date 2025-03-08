@@ -17,6 +17,7 @@ namespace PixelWonders
         {
             InitializeComponent();
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -29,22 +30,15 @@ namespace PixelWonders
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            // Get entered username and password from textboxes
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            string hashedPassword = SecurityHelper.HashPassword(password);
 
-            // Debugging: Print entered values
-            Console.WriteLine("Entered Username: " + username);
-            Console.WriteLine("Entered Password: " + password);
-
-            // Call database function to validate user
-            bool isValidUser = Program.dbManager.ValidateUser(username, password);
+            bool isValidUser = Program.dbManager.ValidateUser(username, hashedPassword);
 
             if (isValidUser)
             {
                 Console.WriteLine("Login Successful!");
-
-                // Proceed to the next form
                 Menu1 menuPage = new Menu1();
                 menuPage.Show();
                 this.Hide();
@@ -55,6 +49,7 @@ namespace PixelWonders
                 MessageBox.Show("Invalid Username or Password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -69,7 +64,20 @@ namespace PixelWonders
 
         private void Label3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Home)
+                {
+                    form.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+
+            // If Home is not open, create a new instance
+            Home homePage = new Home();
+            homePage.Show();
+            this.Hide();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -77,6 +85,22 @@ namespace PixelWonders
 
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Home)
+                {
+                    form.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+
+            // If Home is not open, create a new instance
+            Home homePage = new Home();
+            homePage.Show();
+            this.Hide();
+        }
     }
 }
