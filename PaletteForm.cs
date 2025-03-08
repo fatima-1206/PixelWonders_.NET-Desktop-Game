@@ -180,6 +180,34 @@ namespace PixelWonders
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void PaletteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
