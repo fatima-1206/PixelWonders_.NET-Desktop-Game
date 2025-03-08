@@ -34,8 +34,8 @@ namespace PixelWonders
             panel1 = new Panel();
             button1 = new Button();
             label5 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
             label4 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
@@ -51,8 +51,8 @@ namespace PixelWonders
             panel1.BackColor = Color.FromArgb(239, 182, 200);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtPassword);
+            panel1.Controls.Add(txtUsername);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
@@ -90,23 +90,25 @@ namespace PixelWonders
             label5.TabIndex = 9;
             label5.Text = "Password";
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BackColor = Color.FromArgb(168, 136, 181);
-            textBox2.Location = new Point(151, 322);
-            textBox2.Margin = new Padding(4, 5, 4, 5);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(254, 31);
-            textBox2.TabIndex = 8;
+            txtPassword.BackColor = Color.FromArgb(168, 136, 181);
+            txtPassword.Location = new Point(151, 322);
+            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(254, 31);
+            txtPassword.TabIndex = 8;
+            txtPassword.TextChanged += textBox2_TextChanged;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.BackColor = Color.FromArgb(168, 136, 181);
-            textBox1.Location = new Point(151, 220);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(254, 31);
-            textBox1.TabIndex = 7;
+            txtUsername.BackColor = Color.FromArgb(168, 136, 181);
+            txtUsername.Location = new Point(151, 220);
+            txtUsername.Margin = new Padding(4, 5, 4, 5);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(254, 31);
+            txtUsername.TabIndex = 7;
+            txtUsername.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
@@ -211,8 +213,8 @@ namespace PixelWonders
         private PictureBox pictureBox1;
         private Label label2;
         private Label label4;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtPassword;
+        private TextBox txtUsername;
         private Label label5;
         private Button button1;
         private Label label3;

@@ -8,14 +8,17 @@ using System.IO;
 
 class DatabaseManager
 {
-    private readonly string connectionString;
+    public readonly string connectionString;
 
     public DatabaseManager(string dbFileName)
     {
         string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dbFileName);
         connectionString = $"Data Source={dbPath};Version=3;";
     }
-
+    public string ConnectionString
+    {
+        get { return connectionString; }
+    }
     public void InitializeDatabase()
     {
         using (SQLiteConnection conn = new SQLiteConnection(connectionString))
@@ -84,4 +87,43 @@ class DatabaseManager
             cmd.ExecuteNonQuery();
         }
     }
+
+    public bool ValidateUser(string username, string password)
+    {
+        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT password FROM User WHERE LOWER(username) = LOWER(@username)";
+
+            using (SQLiteCommand cmd = new SQLiteCommand("SELECT password FROM User WHERE username = @username", conn))
+            {
+                cmd.Parameters.AddWithValue("@username", username.Trim()); // Trim username
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    if (!reader.HasRows) // No user found
+                    {
+                        MessageBox.Show("No user found with username: " + username);
+                        return false;
+                    }
+
+                    if (reader.Read()) // User exists
+                    {
+                        string storedPassword = reader["password"] as string ?? string.Empty;
+                        storedPassword = storedPassword.Trim();
+
+                        MessageBox.Show("Entered: " + password + "\nStored: " + storedPassword);
+
+                        if (password == storedPassword)
+                        {
+                            return true; // Login successful
+                        }
+                    }
+                }
+            }
+        }
+        return false; // Login failed
+    }
+
+
 }
