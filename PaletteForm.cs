@@ -19,9 +19,13 @@ namespace PixelWonders
         {
             InitializeComponent();
             LoadPalettes();
+            //label1.VerticalAign
         }
+
+
         private void LoadPalettes()
         {
+            //label1align
             flowLayoutPanel1.Controls.Clear(); // Clear old palettes
 
             foreach (var palette in ColorPalettes.Palettes)
@@ -168,6 +172,39 @@ namespace PixelWonders
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void PaletteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

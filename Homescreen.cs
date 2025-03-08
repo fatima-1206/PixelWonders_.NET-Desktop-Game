@@ -7,6 +7,7 @@ namespace PixelWonders
         public Home()
         {
             InitializeComponent();
+            this.FormClosing += Home_FormClosing;
         }
         private void RoundButton(Button btn)
         {
@@ -46,11 +47,11 @@ namespace PixelWonders
             Application.Exit();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            //Program.dbManager?.Dispose();
+            Application.Exit();
+            Environment.Exit(0);
         }
-
-       
     }
 }
