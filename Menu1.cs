@@ -24,7 +24,7 @@ namespace PixelWonders
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Menu2 newForm = new Menu2();  // Create an instance of Form2
+            PaletteForm newForm = new PaletteForm();  // Create an instance of Form2
             newForm.Show();
 
         }
@@ -32,6 +32,14 @@ namespace PixelWonders
         private void Label2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Menu2 newForm = new Menu2();  // Create an instance of Form2
+            newForm.Show();
+
         }
     }
 }
