@@ -11,7 +11,7 @@ namespace PixelWonders
             ApplicationConfiguration.Initialize();
 
             //  Ensure dbManager is initialized before any form is launched
-            dbManager = new DatabaseManager("C:\\Users\\Asim\\Desktop\\FSE\\test\\PixelWonders\\PixelWonders.db");
+            dbManager = new DatabaseManager("PixelWonders.db");
             dbManager.InitializeDatabase();
 
             Application.Run(new Home()); // or Login Form
