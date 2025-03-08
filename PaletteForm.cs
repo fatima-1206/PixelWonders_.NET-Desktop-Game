@@ -108,7 +108,7 @@ namespace PixelWonders
                 // Clear the previous preview
                 //panel1.Controls.Clear();
                 panel3.Controls.Clear();
-                //panel4.Controls.Clear();
+                panel4.Controls.Clear();
 
 
                 // Calculate width for each color block
@@ -139,8 +139,8 @@ namespace PixelWonders
                     Dock = DockStyle.Bottom,
                     ForeColor = Color.Black,
                     BackColor = Color.Transparent,
-                    Font = new Font("Pixelify Sans", 10, FontStyle.Bold),
-                    Height = panel4.Height / 2
+                    Font = new Font("Pixelify Sans", 12, FontStyle.Bold),
+                    Height = panel4.Height
                 };
                 Label previewHeading = new Label
                 {
@@ -161,37 +161,7 @@ namespace PixelWonders
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void PaletteForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel5_Click(object sender, EventArgs e)
         {
@@ -199,15 +169,6 @@ namespace PixelWonders
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 
