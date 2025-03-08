@@ -30,7 +30,9 @@ namespace PixelWonders
         }
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Program.dbManager?.Dispose();
             Application.Exit();
+            Environment.Exit(0);
         }
 
     }

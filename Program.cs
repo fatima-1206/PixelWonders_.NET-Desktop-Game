@@ -14,7 +14,7 @@ namespace PixelWonders
             dbManager = new DatabaseManager("PixelWonders.db");
             dbManager.InitializeDatabase();
 
-            Application.Run(new Home()); // or Login Form
+            Application.Run(new PaletteForm()); // or Login Form
         }
     }
 }
