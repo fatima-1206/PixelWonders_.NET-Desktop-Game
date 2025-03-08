@@ -59,10 +59,10 @@ namespace PixelWonders
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(301, 70);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(241, 56);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(544, 621);
+            panel1.Size = new Size(435, 497);
             panel1.TabIndex = 0;
             // 
             // button1
@@ -70,10 +70,10 @@ namespace PixelWonders
             button1.BackColor = Color.FromArgb(168, 136, 181);
             button1.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
-            button1.Location = new Point(319, 537);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(255, 430);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(120, 45);
+            button1.Size = new Size(96, 36);
             button1.TabIndex = 10;
             button1.Text = "SignUp";
             button1.UseVisualStyleBackColor = false;
@@ -84,30 +84,29 @@ namespace PixelWonders
             label5.AutoSize = true;
             label5.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(64, 0, 64);
-            label5.Location = new Point(151, 283);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(121, 226);
             label5.Name = "label5";
-            label5.Size = new Size(127, 29);
+            label5.Size = new Size(107, 24);
             label5.TabIndex = 9;
             label5.Text = "Password";
             // 
             // txtPassword
             // 
             txtPassword.BackColor = Color.FromArgb(241, 217, 231);
-            txtPassword.Location = new Point(151, 322);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Location = new Point(121, 258);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(254, 31);
+            txtPassword.Size = new Size(204, 27);
             txtPassword.TabIndex = 8;
             txtPassword.TextChanged += textBox2_TextChanged;
             // 
             // txtUsername
             // 
             txtUsername.BackColor = Color.FromArgb(241, 217, 231);
-            txtUsername.Location = new Point(151, 220);
-            txtUsername.Margin = new Padding(4, 5, 4, 5);
+            txtUsername.Location = new Point(121, 176);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(254, 31);
+            txtUsername.Size = new Size(204, 27);
             txtUsername.TabIndex = 7;
             txtUsername.TextChanged += textBox1_TextChanged;
             // 
@@ -116,10 +115,9 @@ namespace PixelWonders
             label4.AutoSize = true;
             label4.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(64, 0, 64);
-            label4.Location = new Point(151, 182);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(121, 146);
             label4.Name = "label4";
-            label4.Size = new Size(128, 29);
+            label4.Size = new Size(108, 24);
             label4.TabIndex = 6;
             label4.Text = "Username";
             // 
@@ -128,20 +126,19 @@ namespace PixelWonders
             label2.AutoSize = true;
             label2.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(64, 0, 64);
-            label2.Location = new Point(60, 543);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(48, 434);
             label2.Name = "label2";
-            label2.Size = new Size(262, 28);
+            label2.Size = new Size(217, 23);
             label2.TabIndex = 4;
             label2.Text = "Don't have a account?";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(199, 28);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(159, 22);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(159, 87);
+            pictureBox1.Size = new Size(127, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -151,10 +148,10 @@ namespace PixelWonders
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
-            button3.Location = new Point(217, 438);
-            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Location = new Point(174, 350);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(124, 55);
+            button3.Size = new Size(99, 44);
             button3.TabIndex = 3;
             button3.Text = "Login";
             button3.UseVisualStyleBackColor = false;
@@ -165,10 +162,9 @@ namespace PixelWonders
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(64, 0, 64);
-            label1.Location = new Point(217, 28);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(174, 22);
             label1.Name = "label1";
-            label1.Size = new Size(135, 54);
+            label1.Size = new Size(114, 45);
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
@@ -178,10 +174,9 @@ namespace PixelWonders
             label3.BackColor = Color.White;
             label3.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(1111, 2);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(889, 2);
             label3.Name = "label3";
-            label3.Size = new Size(32, 35);
+            label3.Size = new Size(27, 29);
             label3.TabIndex = 1;
             label3.Text = "X";
             label3.Click += Label3_Click;
@@ -190,10 +185,10 @@ namespace PixelWonders
             // 
             button2.BackColor = Color.Thistle;
             button2.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(13, 14);
-            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Location = new Point(10, 11);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(117, 57);
+            button2.Size = new Size(94, 46);
             button2.TabIndex = 3;
             button2.Text = ">Back";
             button2.UseVisualStyleBackColor = false;
@@ -201,15 +196,16 @@ namespace PixelWonders
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(914, 600);
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             Text = "Login";
             Load += Login_Load;

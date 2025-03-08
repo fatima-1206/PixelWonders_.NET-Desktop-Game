@@ -95,11 +95,10 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
-            //pictureBox2.Click += pictureBox2_Click;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(21F, 43F);
+            AutoScaleDimensions = new SizeF(18F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
             ClientSize = new Size(1143, 750);
@@ -107,6 +106,7 @@
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
             Text = "Form1";
             Load += Form1_Load;

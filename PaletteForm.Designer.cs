@@ -146,7 +146,7 @@ namespace PixelWonders
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Location = new Point(30, 22);
+            panel4.Location = new Point(21, 35);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(4);
