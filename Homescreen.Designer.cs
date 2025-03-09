@@ -45,19 +45,19 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(-1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(491, 1084);
+            panel1.Size = new Size(422, 1086);
             panel1.TabIndex = 0;
             // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(168, 136, 181);
-            button3.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(126, 811);
+            button3.Location = new Point(108, 585);
             button3.Name = "button3";
-            button3.Size = new Size(265, 92);
+            button3.Size = new Size(211, 71);
             button3.TabIndex = 3;
             button3.Text = "Exit";
             button3.UseVisualStyleBackColor = false;
@@ -66,11 +66,11 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(255, 224, 192);
-            button2.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Pixelify Sans", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(126, 668);
+            button2.Location = new Point(108, 461);
             button2.Name = "button2";
-            button2.Size = new Size(265, 92);
+            button2.Size = new Size(211, 75);
             button2.TabIndex = 1;
             button2.Text = "Start";
             button2.UseVisualStyleBackColor = false;
@@ -79,9 +79,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(26, 79);
+            pictureBox1.Location = new Point(42, 30);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(408, 243);
+            pictureBox1.Size = new Size(319, 176);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -89,25 +89,26 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(830, 123);
+            pictureBox2.Location = new Point(427, 29);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(869, 829);
+            pictureBox2.Size = new Size(770, 681);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // Home
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(18F, 37F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
-            ClientSize = new Size(1370, 788);
+            ClientSize = new Size(1143, 750);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
             Text = "Form1";
-            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

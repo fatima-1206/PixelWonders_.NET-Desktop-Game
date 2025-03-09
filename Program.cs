@@ -2,20 +2,19 @@ namespace PixelWonders
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        // Make dbManager a static variable so it can be accessed globally
+        public static DatabaseManager dbManager = null!;
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Home());
-            //Application.Run(new PaletteForm());  uncomment this and comment the line above to view the palette functionality
+            //  Ensure dbManager is initialized before any form is launched
+            dbManager = new DatabaseManager("PixelWonders.db");
+            dbManager.InitializeDatabase();
 
-            // Application.Run(new Menu2());
+            Application.Run(new Home()); // or Login Form
         }
     }
 }

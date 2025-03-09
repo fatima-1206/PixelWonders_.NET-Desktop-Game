@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SQLite;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace PixelWonders
 {
     public partial class Login : Form
@@ -17,18 +18,38 @@ namespace PixelWonders
             InitializeComponent();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Menu1 menuPage = new Menu1();
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            string hashedPassword = SecurityHelper.HashPassword(password);
 
-            // Show the Menu1 form
-            menuPage.Show();
+            bool isValidUser = Program.dbManager.ValidateUser(username, hashedPassword);
 
-            // Close 
-            this.Hide();
+            if (isValidUser)
+            {
+                Console.WriteLine("Login Successful!");
+                Menu1 menuPage = new Menu1();
+                menuPage.Show();
+                this.Hide();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Username or Password!");
+                MessageBox.Show("Invalid Username or Password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -43,7 +64,43 @@ namespace PixelWonders
 
         private void Label3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Home)
+                {
+                    form.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+
+            // If Home is not open, create a new instance
+            Home homePage = new Home();
+            homePage.Show();
+            this.Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Home)
+                {
+                    form.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+
+            // If Home is not open, create a new instance
+            Home homePage = new Home();
+            homePage.Show();
+            this.Hide();
         }
     }
 }

@@ -24,14 +24,25 @@ namespace PixelWonders
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Menu1 newForm = new Menu1();  // Create an instance of Form2
-            newForm.Show();
-            this.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Menu1)
+                {
+                    form.Show();
+                    this.Hide();
+                    return;
+                }
+            }
+
+            // If Home is not open, create a new instance
+            Menu1 menu2 = new Menu1();
+            menu2.Show();
+            this.Hide();
         }
 
         private void Label3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
     }
 }

@@ -19,9 +19,13 @@ namespace PixelWonders
         {
             InitializeComponent();
             LoadPalettes();
+            //label1.VerticalAign
         }
+
+
         private void LoadPalettes()
         {
+            //label1align
             flowLayoutPanel1.Controls.Clear(); // Clear old palettes
 
             foreach (var palette in ColorPalettes.Palettes)
@@ -104,7 +108,7 @@ namespace PixelWonders
                 // Clear the previous preview
                 //panel1.Controls.Clear();
                 panel3.Controls.Clear();
-                //panel4.Controls.Clear();
+                panel4.Controls.Clear();
 
 
                 // Calculate width for each color block
@@ -119,7 +123,9 @@ namespace PixelWonders
                         Width = colorWidth,
                         Height = colorHeight,
                         BackColor = ColorTranslator.FromHtml(colors[i]),
-                        Left = i * colorWidth
+                        Left = i * colorWidth,
+                        Margin = new Padding(0, 0, 0, 0),
+                        Padding = new Padding(0, 0, 0, 0)
                     };
 
                     panel3.Controls.Add(colorBox);
@@ -135,8 +141,8 @@ namespace PixelWonders
                     Dock = DockStyle.Bottom,
                     ForeColor = Color.Black,
                     BackColor = Color.Transparent,
-                    Font = new Font("Pixelify Sans", 10, FontStyle.Bold),
-                    Height = panel4.Height / 2
+                    Font = new Font("Pixelify Sans", 12, FontStyle.Bold),
+                    Height = panel4.Height
                 };
                 Label previewHeading = new Label
                 {
@@ -157,20 +163,14 @@ namespace PixelWonders
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+
+        private void panel5_Click(object sender, EventArgs e)
         {
+            this.Close();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
