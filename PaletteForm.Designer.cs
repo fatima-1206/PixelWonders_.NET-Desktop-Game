@@ -95,6 +95,7 @@ namespace PixelWonders
             addButton.Size = new Size(109, 72);
             addButton.TabIndex = 2;
             addButton.Tag = "";
+            addButton.Paint += addButton_Paint;
             // 
             // header
             // 
@@ -167,6 +168,7 @@ namespace PixelWonders
             done.Size = new Size(85, 61);
             done.TabIndex = 3;
             done.Tag = "";
+            done.Click += DonePanel_Click;
             done.Paint += done_Paint;
             // 
             // promptLabel
@@ -194,6 +196,7 @@ namespace PixelWonders
             panel5.Size = new Size(52, 34);
             panel5.TabIndex = 3;
             panel5.Click += panel5_Click;
+            panel5.Paint += panel5_Paint;
             // 
             // PaletteForm
             // 

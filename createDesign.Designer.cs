@@ -28,126 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            pictureBox2 = new PictureBox();
-            addButton = new Panel();
-            header = new Panel();
-            label1 = new Label();
-            panel5 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            header.SuspendLayout();
+            headerContainer = new Panel();
+            pictureBoxLogo = new PictureBox();
+            headerPanel = new Panel();
+            labelDesign = new Label();
+            close = new Panel();
+            gridContainer = new FlowLayoutPanel();
+            palettePanel = new Panel();
+            Eraser = new Panel();
+            Lock = new Panel();
+            Save = new Panel();
+            headerContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            headerPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // panel2
+            // headerContainer
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(addButton);
-            panel2.Controls.Add(header);
-            panel2.Location = new Point(10, 32);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1126, 80);
-            panel2.TabIndex = 3;
+            headerContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            headerContainer.Controls.Add(pictureBoxLogo);
+            headerContainer.Controls.Add(headerPanel);
+            headerContainer.Location = new Point(10, 32);
+            headerContainer.Name = "headerContainer";
+            headerContainer.Size = new Size(1126, 80);
+            headerContainer.TabIndex = 3;
             // 
-            // pictureBox2
+            // pictureBoxLogo
             // 
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = Properties.Resources.logo3;
-            pictureBox2.Location = new Point(2, 6);
-            pictureBox2.Margin = new Padding(2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(126, 72);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            pictureBoxLogo.Cursor = Cursors.Hand;
+            pictureBoxLogo.Image = Properties.Resources.logo3;
+            pictureBoxLogo.Location = new Point(2, 6);
+            pictureBoxLogo.Margin = new Padding(2);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(126, 72);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 0;
+            pictureBoxLogo.TabStop = false;
             // 
-            // addButton
+            // headerPanel
             // 
-            addButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addButton.BackgroundImage = Properties.Resources.add1;
-            addButton.BackgroundImageLayout = ImageLayout.Center;
-            addButton.Cursor = Cursors.Hand;
-            addButton.Location = new Point(1947, 6);
-            addButton.Margin = new Padding(2);
-            addButton.Name = "addButton";
-            addButton.Padding = new Padding(15);
-            addButton.Size = new Size(109, 72);
-            addButton.TabIndex = 2;
-            addButton.Tag = "";
+            headerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            headerPanel.Controls.Add(labelDesign);
+            headerPanel.Location = new Point(132, 6);
+            headerPanel.Margin = new Padding(2);
+            headerPanel.Name = "headerPanel";
+            headerPanel.Size = new Size(1811, 69);
+            headerPanel.TabIndex = 1;
             // 
-            // header
+            // labelDesign
             // 
-            header.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            header.Controls.Add(label1);
-            header.Location = new Point(132, 6);
-            header.Margin = new Padding(2);
-            header.Name = "header";
-            header.Size = new Size(1811, 69);
-            header.TabIndex = 1;
+            labelDesign.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelDesign.AutoEllipsis = true;
+            labelDesign.AutoSize = true;
+            labelDesign.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
+            labelDesign.ForeColor = Color.FromArgb(168, 136, 181);
+            labelDesign.Location = new Point(203, -5);
+            labelDesign.Margin = new Padding(2, 0, 2, 0);
+            labelDesign.Name = "labelDesign";
+            labelDesign.Size = new Size(479, 69);
+            labelDesign.TabIndex = 0;
+            labelDesign.Text = "Create a Design";
+            labelDesign.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // close
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoEllipsis = true;
-            label1.AutoSize = true;
-            label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(168, 136, 181);
-            label1.Location = new Point(203, -5);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(479, 69);
-            label1.TabIndex = 0;
-            label1.Text = "Create a Design";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            close.BackgroundImage = Properties.Resources.cross1;
+            close.BackgroundImageLayout = ImageLayout.None;
+            close.Cursor = Cursors.Hand;
+            close.Location = new Point(1091, 0);
+            close.Margin = new Padding(2);
+            close.Name = "close";
+            close.Size = new Size(52, 34);
+            close.TabIndex = 4;
+            close.Click += close_Click;
+            close.Paint += close_Paint;
             // 
-            // panel5
+            // gridContainer
             // 
-            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel5.BackgroundImage = Properties.Resources.cross1;
-            panel5.BackgroundImageLayout = ImageLayout.None;
-            panel5.Cursor = Cursors.Hand;
-            panel5.Location = new Point(1091, 0);
-            panel5.Margin = new Padding(2);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(52, 34);
-            panel5.TabIndex = 4;
+            gridContainer.BackColor = Color.FromArgb(218, 186, 231);
+            gridContainer.Location = new Point(320, 162);
+            gridContainer.Margin = new Padding(0);
+            gridContainer.Name = "gridContainer";
+            gridContainer.Size = new Size(500, 500);
+            gridContainer.TabIndex = 5;
+            gridContainer.Paint += gridContainer_Paint;
             // 
-            // flowLayoutPanel1
+            // palettePanel
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(218, 186, 231);
-            flowLayoutPanel1.Location = new Point(320, 162);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(500, 500);
-            flowLayoutPanel1.TabIndex = 5;
+            palettePanel.Location = new Point(233, 174);
+            palettePanel.Name = "palettePanel";
+            palettePanel.Size = new Size(49, 469);
+            palettePanel.TabIndex = 6;
+            // 
+            // Eraser
+            // 
+            Eraser.Location = new Point(856, 225);
+            Eraser.Name = "Eraser";
+            Eraser.Size = new Size(186, 66);
+            Eraser.TabIndex = 7;
+            Eraser.Paint += Eraser_Paint;
+            // 
+            // Lock
+            // 
+            Lock.Location = new Point(856, 346);
+            Lock.Name = "Lock";
+            Lock.Size = new Size(186, 66);
+            Lock.TabIndex = 8;
+            // 
+            // Save
+            // 
+            Save.Location = new Point(856, 457);
+            Save.Name = "Save";
+            Save.Size = new Size(186, 66);
+            Save.TabIndex = 9;
             // 
             // CreateDesign
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1143, 750);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(panel5);
-            Controls.Add(panel2);
+            Controls.Add(Save);
+            Controls.Add(Lock);
+            Controls.Add(Eraser);
+            Controls.Add(palettePanel);
+            Controls.Add(gridContainer);
+            Controls.Add(close);
+            Controls.Add(headerContainer);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CreateDesign";
             Text = "CreateDesign";
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            header.ResumeLayout(false);
-            header.PerformLayout();
+            Load += CreateDesign_Load;
+            headerContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            headerPanel.ResumeLayout(false);
+            headerPanel.PerformLayout();
             ResumeLayout(false);
+        }
+
+        private void Panel5_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
 
-        private Panel panel2;
-        private PictureBox pictureBox2;
-        private Panel addButton;
-        private Panel header;
-        private Label label1;
-        private Panel panel5;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel headerContainer;
+        private PictureBox pictureBoxLogo;
+        private Panel headerPanel;
+        private Label labelDesign;
+        private Panel close;
+        private FlowLayoutPanel gridContainer;
+        private Panel palettePanel;
+        private Panel Eraser;
+        private Panel Lock;
+        private Panel Save;
     }
 }

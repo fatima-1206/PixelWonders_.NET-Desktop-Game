@@ -8,12 +8,12 @@ namespace PixelWonders
 {
         public class Grid
         {
-            private List<string> selectedPalette; // Store the selected palette
-            private string selectedPaletteName; // Store the name of the selected palette
+            public List<string> selectedPalette; // Store the selected palette
+            public string selectedPaletteName; // Store the name of the selected palette
 
-            private int width = 16; // Width (in "pixels") of the grid
-            private int height = 16; // Height (in "pixels") of the grid
-            private int[,] pixelGrid; // 2D array to store the color of each "pixel" in the grid
+            public int width = 20; // Width (in "pixels") of the grid
+            public int height = 20; // Height (in "pixels") of the grid
+            public int[,] pixelGrid; // 2D array to store the color of each "pixel" in the grid
 
             public Grid(List<string> palette, string paletteName)
             {

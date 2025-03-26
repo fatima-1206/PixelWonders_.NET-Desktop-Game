@@ -15,6 +15,8 @@ namespace PixelWonders
 
     public partial class PaletteForm : Form
     {
+        string selectedPaletteName;
+
         public PaletteForm()
         {
             InitializeComponent();
@@ -121,6 +123,7 @@ namespace PixelWonders
         {
             if (sender is Panel clickedPanel && clickedPanel.Tag is string paletteName)
             {
+                selectedPaletteName = paletteName;
                 // Get the selected palette colors
                 List<string> colors = ColorPalettes.GetPalette(paletteName);
 
@@ -191,7 +194,25 @@ namespace PixelWonders
 
         }
 
+        private void DonePanel_Click(object sender, EventArgs e)
+        {
+            // send the selected palette name and a list of colors to the grid form
+            CreateDesign designForm = new CreateDesign("Earthy");
+            designForm.Show();
+            this.Close();
+        }
+
         private void done_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addButton_Paint(object sender, PaintEventArgs e)
         {
 
         }
