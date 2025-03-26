@@ -19,9 +19,28 @@ namespace PixelWonders
         {
             InitializeComponent();
             LoadPalettes();
+            DisableDonePanel();
             //label1.VerticalAign
         }
+        private void DisableDonePanel()
 
+        {
+            done.Visible = false;
+            foreach (Control c in done.Controls)
+            {
+                c.Enabled = false; // Disable all child controls
+            }
+        }
+
+        private void EnableDonePanel()
+
+        {
+            done.Visible = true;
+            foreach (Control c in done.Controls)
+            {
+                c.Enabled = true; // Disable all child controls
+            }
+        }
 
         private void LoadPalettes()
         {
@@ -161,6 +180,7 @@ namespace PixelWonders
                 panel4.Controls.Add(nameLabel);
 
             }
+            EnableDonePanel();
         }
 
 
@@ -171,6 +191,10 @@ namespace PixelWonders
 
         }
 
+        private void done_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
