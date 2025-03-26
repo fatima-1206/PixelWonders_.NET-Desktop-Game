@@ -1,6 +1,6 @@
 ﻿namespace PixelWonders
 {
-    partial class createDesign
+    partial class CreateDesign
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,8 @@
             addButton = new Panel();
             header = new Panel();
             label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             panel5 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             header.SuspendLayout();
@@ -48,11 +48,12 @@
             panel2.Controls.Add(header);
             panel2.Location = new Point(10, 32);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1133, 80);
+            panel2.Size = new Size(1126, 80);
             panel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.logo3;
             pictureBox2.Location = new Point(2, 6);
             pictureBox2.Margin = new Padding(2);
@@ -68,7 +69,7 @@
             addButton.BackgroundImage = Properties.Resources.add1;
             addButton.BackgroundImageLayout = ImageLayout.Center;
             addButton.Cursor = Cursors.Hand;
-            addButton.Location = new Point(1954, 6);
+            addButton.Location = new Point(1947, 6);
             addButton.Margin = new Padding(2);
             addButton.Name = "addButton";
             addButton.Padding = new Padding(15);
@@ -83,7 +84,7 @@
             header.Location = new Point(132, 6);
             header.Margin = new Padding(2);
             header.Name = "header";
-            header.Size = new Size(1818, 69);
+            header.Size = new Size(1811, 69);
             header.TabIndex = 1;
             // 
             // label1
@@ -101,14 +102,6 @@
             label1.Text = "Create a Design";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(188, 176, 201);
-            flowLayoutPanel1.Location = new Point(53, 143);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(500, 500);
-            flowLayoutPanel1.TabIndex = 4;
-            // 
             // panel5
             // 
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -119,20 +112,27 @@
             panel5.Margin = new Padding(2);
             panel5.Name = "panel5";
             panel5.Size = new Size(52, 34);
-            panel5.TabIndex = 5;
+            panel5.TabIndex = 4;
             // 
-            // createDesign
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(218, 186, 231);
+            flowLayoutPanel1.Location = new Point(320, 162);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(500, 500);
+            flowLayoutPanel1.TabIndex = 5;
+            // 
+            // CreateDesign
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1143, 750);
-            Controls.Add(panel5);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(panel5);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "createDesign";
-            Text = "createDesign";
-            Load += createDesign_Load;
+            Name = "CreateDesign";
+            Text = "CreateDesign";
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             header.ResumeLayout(false);
@@ -147,7 +147,7 @@
         private Panel addButton;
         private Panel header;
         private Label label1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel5;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PixelWonders
 {
-    public partial class createDesign : Form
+    public partial class CreateDesign : Form
     {
-        public createDesign()
+        public CreateDesign()
         {
             InitializeComponent();
-        }
-
-        private void createDesign_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
