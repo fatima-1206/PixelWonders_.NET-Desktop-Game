@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateDesign));
             headerContainer = new Panel();
-            pictureBoxLogo = new PictureBox();
-            headerPanel = new Panel();
             label1 = new Label();
+            pictureBoxLogo = new PictureBox();
             close = new Panel();
             gridContainer = new FlowLayoutPanel();
             palettePanel = new Panel();
@@ -41,7 +40,6 @@
             LockButton = new PictureBox();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
-            headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)eraserButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)saveButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LockButton).BeginInit();
@@ -50,12 +48,24 @@
             // headerContainer
             // 
             headerContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            headerContainer.BorderStyle = BorderStyle.FixedSingle;
+            headerContainer.Controls.Add(label1);
             headerContainer.Controls.Add(pictureBoxLogo);
-            headerContainer.Controls.Add(headerPanel);
             headerContainer.Location = new Point(10, 32);
             headerContainer.Name = "headerContainer";
             headerContainer.Size = new Size(1126, 80);
             headerContainer.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(168, 136, 181);
+            label1.Location = new Point(310, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(479, 69);
+            label1.TabIndex = 0;
+            label1.Text = "Create a Design";
             // 
             // pictureBoxLogo
             // 
@@ -68,27 +78,6 @@
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
-            // 
-            // headerPanel
-            // 
-            headerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            headerPanel.Controls.Add(label1);
-            headerPanel.Location = new Point(132, 6);
-            headerPanel.Margin = new Padding(2);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1811, 69);
-            headerPanel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(168, 136, 181);
-            label1.Location = new Point(203, -5);
-            label1.Name = "label1";
-            label1.Size = new Size(479, 69);
-            label1.TabIndex = 0;
-            label1.Text = "Create a Design";
             // 
             // close
             // 
@@ -185,9 +174,8 @@
             Text = "CreateDesign";
             Load += CreateDesign_Load;
             headerContainer.ResumeLayout(false);
+            headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)eraserButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)saveButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)LockButton).EndInit();
@@ -203,7 +191,6 @@
 
         private Panel headerContainer;
         private PictureBox pictureBoxLogo;
-        private Panel headerPanel;
         private Panel close;
         private FlowLayoutPanel gridContainer;
         private Panel palettePanel;
