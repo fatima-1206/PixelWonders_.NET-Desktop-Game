@@ -150,6 +150,7 @@
             saveButton.SizeMode = PictureBoxSizeMode.Zoom;
             saveButton.TabIndex = 9;
             saveButton.TabStop = false;
+            saveButton.Click += saveButton_Click;
             // 
             // LockButton
             // 

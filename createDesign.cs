@@ -17,10 +17,10 @@ namespace PixelWonders
         Grid grid;
         int selectedColor = -1;
         bool eraserSelected = false;
-        public CreateDesign(string paletteName = "")
+        public CreateDesign(string paletteName = "Earthy")
         {
             InitializeComponent();
-            LoadPage("Earthy");
+            LoadPage(paletteName);
             loadPalette();
         }
 
@@ -63,7 +63,8 @@ namespace PixelWonders
         }
 
 
-        private void loadPalette() {
+        private void loadPalette()
+        {
 
             int cWidth = palettePanel.Width;
             int cHeight = palettePanel.Height / grid.selectedPalette.Count;
@@ -106,14 +107,15 @@ namespace PixelWonders
         {
             PictureBox pb = (PictureBox)sender;
             if (selectedColor == -1) return;
-            if (eraserSelected) { 
+            if (eraserSelected)
+            {
                 grid.UpdatePixel(row, col, -1);
                 pb.BackColor = ColorTranslator.FromHtml("#f0f0f0");
                 grid.printGrid();
                 return;
             }
             grid.UpdatePixel(row, col, selectedColor);
-          
+
             pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
             grid.printGrid();
         }
@@ -125,11 +127,13 @@ namespace PixelWonders
 
         private void close_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void close_Click(object sender, EventArgs e)
         {
+            PaletteForm paletteForm = Application.OpenForms["paletteForm"] as PaletteForm;
+            paletteForm.Show();
+
             this.Close();
 
         }
@@ -141,6 +145,9 @@ namespace PixelWonders
         private void Eraser_Click(object sender, EventArgs e)
         {
             eraserSelected = !eraserSelected;
+            if (eraserSelected)
+                eraserButton.BackColor = Color.FromArgb(222, 183, 219);
+            else eraserButton.BackColor = Color.FromArgb(241, 217, 231);
         }
         private void palettePanel_Paint(object sender, PaintEventArgs e)
         {
@@ -148,6 +155,11 @@ namespace PixelWonders
         }
 
         private void lockPic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
         {
 
         }

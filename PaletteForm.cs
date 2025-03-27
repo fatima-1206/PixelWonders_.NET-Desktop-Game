@@ -15,7 +15,9 @@ namespace PixelWonders
 
     public partial class PaletteForm : Form
     {
-        string selectedPaletteName;
+        public CreateDesign designForm;
+
+        public string selectedPaletteName;
 
         public PaletteForm()
         {
@@ -190,6 +192,11 @@ namespace PixelWonders
 
         private void panel5_Click(object sender, EventArgs e)
         {
+            // look for the hidden menu1 form
+            Menu1 menuPage = Application.OpenForms["menuPage"] as Menu1;
+            if(menuPage != null)
+                menuPage.Show();
+
             this.Close();
 
         }
@@ -197,9 +204,11 @@ namespace PixelWonders
         private void DonePanel_Click(object sender, EventArgs e)
         {
             // send the selected palette name and a list of colors to the grid form
-            CreateDesign designForm = new CreateDesign("Earthy");
+            if (designForm == null)
+                designForm = new CreateDesign(selectedPaletteName);
+            //CreateDesign designForm = new CreateDesign();
             designForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void done_Paint(object sender, PaintEventArgs e)
