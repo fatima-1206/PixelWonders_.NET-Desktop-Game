@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PixelWonders.Palette;
 
 namespace PixelWonders
 {
@@ -15,6 +16,7 @@ namespace PixelWonders
         public Menu1()
         {
             InitializeComponent();
+            this.Name = "menuPage";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -24,8 +26,10 @@ namespace PixelWonders
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            PaletteForm newForm = new PaletteForm();  // Create an instance of Form2
-            newForm.Show();
+            PaletteForm paletteForm = new PaletteForm();  
+            paletteForm.Show();
+
+            this.Hide();
 
 
         }

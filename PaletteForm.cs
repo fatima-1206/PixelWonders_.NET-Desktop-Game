@@ -15,13 +15,36 @@ namespace PixelWonders
 
     public partial class PaletteForm : Form
     {
+        public CreateDesign designForm;
+
+        public string selectedPaletteName;
+
         public PaletteForm()
         {
             InitializeComponent();
             LoadPalettes();
+            DisableDonePanel();
             //label1.VerticalAign
         }
+        private void DisableDonePanel()
 
+        {
+            done.Visible = false;
+            foreach (Control c in done.Controls)
+            {
+                c.Enabled = false; // Disable all child controls
+            }
+        }
+
+        private void EnableDonePanel()
+
+        {
+            done.Visible = true;
+            foreach (Control c in done.Controls)
+            {
+                c.Enabled = true; // Disable all child controls
+            }
+        }
 
         private void LoadPalettes()
         {
@@ -102,6 +125,7 @@ namespace PixelWonders
         {
             if (sender is Panel clickedPanel && clickedPanel.Tag is string paletteName)
             {
+                selectedPaletteName = paletteName;
                 // Get the selected palette colors
                 List<string> colors = ColorPalettes.GetPalette(paletteName);
 
@@ -161,16 +185,51 @@ namespace PixelWonders
                 panel4.Controls.Add(nameLabel);
 
             }
+            EnableDonePanel();
         }
 
 
 
         private void panel5_Click(object sender, EventArgs e)
         {
+            // look for the hidden menu1 form
+            Menu1 menuPage = Application.OpenForms["menuPage"] as Menu1;
+            if(menuPage != null)
+                menuPage.Show();
+
             this.Close();
 
         }
 
+        private void DonePanel_Click(object sender, EventArgs e)
+        {
+            // send the selected palette name and a list of colors to the grid form
+            if (designForm == null)
+                designForm = new CreateDesign(selectedPaletteName);
+            //CreateDesign designForm = new CreateDesign();
+            designForm.Show();
+            this.Hide();
+        }
+
+        private void done_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addButton_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

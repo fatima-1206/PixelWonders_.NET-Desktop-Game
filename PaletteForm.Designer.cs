@@ -40,6 +40,7 @@ namespace PixelWonders
             panel3 = new Panel();
             panel1 = new Panel();
             panel4 = new Panel();
+            done = new Panel();
             promptLabel = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel5 = new Panel();
@@ -58,6 +59,7 @@ namespace PixelWonders
             flowLayoutPanel1.Padding = new Padding(8, 12, 8, 4);
             flowLayoutPanel1.Size = new Size(1143, 493);
             flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel2
             // 
@@ -94,6 +96,7 @@ namespace PixelWonders
             addButton.Size = new Size(109, 72);
             addButton.TabIndex = 2;
             addButton.Tag = "";
+            addButton.Paint += addButton_Paint;
             // 
             // header
             // 
@@ -122,12 +125,12 @@ namespace PixelWonders
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.AutoSize = true;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(188, 25);
+            panel3.Location = new Point(211, 25);
             panel3.Name = "panel3";
-            panel3.Size = new Size(943, 29);
+            panel3.Size = new Size(788, 29);
             panel3.TabIndex = 0;
             // 
             // panel1
@@ -146,12 +149,28 @@ namespace PixelWonders
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Location = new Point(21, 35);
+            panel4.Location = new Point(36, 35);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(4);
-            panel4.Size = new Size(153, 32);
+            panel4.Size = new Size(157, 32);
             panel4.TabIndex = 1;
+            // 
+            // done
+            // 
+            done.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            done.BackgroundImage = Properties.Resources.play__2_;
+            done.BackgroundImageLayout = ImageLayout.Center;
+            done.Cursor = Cursors.Hand;
+            done.Location = new Point(1031, 665);
+            done.Margin = new Padding(2);
+            done.Name = "done";
+            done.Padding = new Padding(15);
+            done.Size = new Size(85, 61);
+            done.TabIndex = 3;
+            done.Tag = "";
+            done.Click += DonePanel_Click;
+            done.Paint += done_Paint;
             // 
             // promptLabel
             // 
@@ -178,6 +197,7 @@ namespace PixelWonders
             panel5.Size = new Size(52, 34);
             panel5.TabIndex = 3;
             panel5.Click += panel5_Click;
+            panel5.Paint += panel5_Paint;
             // 
             // PaletteForm
             // 
@@ -186,6 +206,7 @@ namespace PixelWonders
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1143, 750);
+            Controls.Add(done);
             Controls.Add(panel5);
             Controls.Add(promptLabel);
             Controls.Add(panel1);
@@ -219,5 +240,6 @@ namespace PixelWonders
         private PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel5;
+        private Panel done;
     }
 }

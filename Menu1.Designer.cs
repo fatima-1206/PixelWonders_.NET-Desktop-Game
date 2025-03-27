@@ -32,7 +32,7 @@
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             button2 = new Button();
-            button1 = new Button();
+            createArt = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
@@ -53,7 +53,7 @@
             panel1.BackColor = Color.Thistle;
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(createArt);
             panel1.Location = new Point(0, 226);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
@@ -85,19 +85,19 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button1
+            // createArt
             // 
-            button1.BackColor = Color.FromArgb(239, 182, 200);
-            button1.Font = new Font("Pixelify Sans", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(64, 0, 64);
-            button1.Location = new Point(125, 18);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(157, 62);
-            button1.TabIndex = 0;
-            button1.Text = "       Create art";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += Button1_Click;
+            createArt.BackColor = Color.FromArgb(239, 182, 200);
+            createArt.Font = new Font("Pixelify Sans", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createArt.ForeColor = Color.FromArgb(64, 0, 64);
+            createArt.Location = new Point(125, 18);
+            createArt.Margin = new Padding(3, 4, 3, 4);
+            createArt.Name = "createArt";
+            createArt.Size = new Size(157, 62);
+            createArt.TabIndex = 0;
+            createArt.Text = "       Create art";
+            createArt.UseVisualStyleBackColor = false;
+            createArt.Click += Button1_Click;
             // 
             // panel2
             // 
@@ -211,7 +211,7 @@
         private Panel panel2;
         private Panel panel3;
         private Button button2;
-        private Button button1;
+        private Button createArt;
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
