@@ -30,7 +30,9 @@ namespace PixelWonders
                     }
                 }
             }
-
+        public int GetPixelColor(int row, int col) { 
+            return pixelGrid[row, col];
+        }
             public void printGrid()
             {
                 for (int i = 0; i < this.width; i++)

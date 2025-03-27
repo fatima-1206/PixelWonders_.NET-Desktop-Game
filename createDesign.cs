@@ -21,6 +21,7 @@ namespace PixelWonders
         public CreateDesign(string paletteName = "Earthy")
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             LoadPage(paletteName);
             loadPalette();
         }
@@ -111,13 +112,18 @@ namespace PixelWonders
             if (hoverLock) {
                 PictureBox pb = (PictureBox)sender;
                 if (selectedColor == -1) return;
-                if (eraserSelected)
+                int currentPixelColor = grid.GetPixelColor(row, col);
+                if (eraserSelected && currentPixelColor!=-1)
                 {
                     grid.UpdatePixel(row, col, -1);
                     pb.BackColor = ColorTranslator.FromHtml("#f0f0f0");
                     grid.printGrid();
                     return;
                 }
+                if (eraserSelected) return;
+
+                if (currentPixelColor == selectedColor) return; // Skip if same color
+                
                 grid.UpdatePixel(row, col, selectedColor);
 
                 pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
