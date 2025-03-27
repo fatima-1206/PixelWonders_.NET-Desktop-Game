@@ -165,6 +165,7 @@
             LockButton.SizeMode = PictureBoxSizeMode.Zoom;
             LockButton.TabIndex = 10;
             LockButton.TabStop = false;
+            LockButton.Click += LockButton_Click;
             // 
             // CreateDesign
             // 

@@ -17,6 +17,7 @@ namespace PixelWonders
         Grid grid;
         int selectedColor = -1;
         bool eraserSelected = false;
+        bool hoverLock = false;
         public CreateDesign(string paletteName = "Earthy")
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace PixelWonders
                     int col = j;
 
                     pb.Click += (sender, e) => PixelClicked(sender, row, col);
+                    pb.MouseHover += (sender, e) => PixelHover(sender, row, col);
 
                     gridContainer.Controls.Add(pb);
 
@@ -102,6 +104,26 @@ namespace PixelWonders
             selectedColor = index;
             loadPalette();
 
+        }
+        private void PixelHover(object sender, int row, int col)
+        {
+            if (selectedColor == -1) return;
+            if (hoverLock) {
+                PictureBox pb = (PictureBox)sender;
+                if (selectedColor == -1) return;
+                if (eraserSelected)
+                {
+                    grid.UpdatePixel(row, col, -1);
+                    pb.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                    grid.printGrid();
+                    return;
+                }
+                grid.UpdatePixel(row, col, selectedColor);
+
+                pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
+                grid.printGrid();
+            }
+                
         }
         private void PixelClicked(object sender, int row, int col)
         {
@@ -162,6 +184,21 @@ namespace PixelWonders
         private void saveButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LockButton_Click(object sender, EventArgs e)
+        {
+            hoverLock = !hoverLock;
+            if (hoverLock)
+            {
+                LockButton.Image = Properties.Resources.locked;
+                LockButton.BackColor = Color.FromArgb(222, 183, 219);
+            }
+            else
+            {
+                LockButton.Image = Properties.Resources.unlocked;
+                LockButton.BackColor = Color.FromArgb(241, 217, 231);
+            }
         }
     }
 }
