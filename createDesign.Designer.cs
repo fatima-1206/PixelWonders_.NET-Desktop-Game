@@ -115,7 +115,6 @@
             // 
             // palettePanel
             // 
-            palettePanel.BackColor = Color.FromArgb(241, 217, 231);
             palettePanel.Location = new Point(233, 174);
             palettePanel.Name = "palettePanel";
             palettePanel.Size = new Size(49, 469);
@@ -125,6 +124,7 @@
             // eraserButton
             // 
             eraserButton.BackColor = Color.FromArgb(241, 217, 231);
+            eraserButton.BorderStyle = BorderStyle.FixedSingle;
             eraserButton.Cursor = Cursors.Hand;
             eraserButton.ErrorImage = Properties.Resources.error;
             eraserButton.Image = Properties.Resources.eraser_1_;
@@ -135,10 +135,12 @@
             eraserButton.SizeMode = PictureBoxSizeMode.Zoom;
             eraserButton.TabIndex = 8;
             eraserButton.TabStop = false;
+            eraserButton.Click += Eraser_Click;
             // 
             // saveButton
             // 
             saveButton.BackColor = Color.FromArgb(241, 217, 231);
+            saveButton.BorderStyle = BorderStyle.FixedSingle;
             saveButton.Cursor = Cursors.Hand;
             saveButton.ErrorImage = Properties.Resources.error;
             saveButton.Image = Properties.Resources.diskette1;
@@ -152,6 +154,7 @@
             // LockButton
             // 
             LockButton.BackColor = Color.FromArgb(241, 217, 231);
+            LockButton.BorderStyle = BorderStyle.FixedSingle;
             LockButton.Cursor = Cursors.Hand;
             LockButton.ErrorImage = Properties.Resources.error;
             LockButton.Image = Properties.Resources.unlocked;

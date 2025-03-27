@@ -16,10 +16,12 @@ namespace PixelWonders
     {
         Grid grid;
         int selectedColor = -1;
+        bool eraserSelected = false;
         public CreateDesign(string paletteName = "")
         {
             InitializeComponent();
             LoadPage("Earthy");
+            loadPalette();
         }
 
         private void LoadPage(string paletteName)
@@ -58,6 +60,11 @@ namespace PixelWonders
             //return;
 
 
+        }
+
+
+        private void loadPalette() {
+
             int cWidth = palettePanel.Width;
             int cHeight = palettePanel.Height / grid.selectedPalette.Count;
             // load the colors into the palettePanel
@@ -74,23 +81,39 @@ namespace PixelWonders
                 colorPanel.Padding = new Padding(0, 0, 0, 0);
                 colorPanel.Location = new Point(0, colornum * cHeight);
                 colorPanel.BackColor = ColorTranslator.FromHtml(color);
+                if (colorIndex == selectedColor)
+                {
+                    colorPanel.Width += 10;
+
+                }
+
                 palettePanel.Controls.Add(colorPanel);
+
+
 
                 colorPanel.Click += (sender, e) => ColorClicked(sender, colorIndex);
                 colornum++;
 
             }
         }
-
         private void ColorClicked(object sender, int index)
         {
             selectedColor = index;
+            loadPalette();
+
         }
         private void PixelClicked(object sender, int row, int col)
         {
-            if (selectedColor == -1) return;
-            grid.UpdatePixel(row, col, selectedColor);
             PictureBox pb = (PictureBox)sender;
+            if (selectedColor == -1) return;
+            if (eraserSelected) { 
+                grid.UpdatePixel(row, col, -1);
+                pb.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                grid.printGrid();
+                return;
+            }
+            grid.UpdatePixel(row, col, selectedColor);
+          
             pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
             grid.printGrid();
         }
@@ -117,7 +140,7 @@ namespace PixelWonders
 
         private void Eraser_Click(object sender, EventArgs e)
         {
-
+            eraserSelected = !eraserSelected;
         }
         private void palettePanel_Paint(object sender, PaintEventArgs e)
         {
