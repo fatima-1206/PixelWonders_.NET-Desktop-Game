@@ -59,6 +59,7 @@ namespace PixelWonders
             flowLayoutPanel1.Padding = new Padding(8, 12, 8, 4);
             flowLayoutPanel1.Size = new Size(1143, 493);
             flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel2
             // 

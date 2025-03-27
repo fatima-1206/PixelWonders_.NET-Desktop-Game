@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateDesign));
             headerContainer = new Panel();
             pictureBoxLogo = new PictureBox();
             headerPanel = new Panel();
-            labelDesign = new Label();
+            label1 = new Label();
             close = new Panel();
             gridContainer = new FlowLayoutPanel();
             palettePanel = new Panel();
-            Eraser = new Panel();
-            Lock = new Panel();
-            Save = new Panel();
+            eraserButton = new PictureBox();
+            saveButton = new PictureBox();
+            LockButton = new PictureBox();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)eraserButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)saveButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LockButton).BeginInit();
             SuspendLayout();
             // 
             // headerContainer
@@ -68,27 +72,23 @@
             // headerPanel
             // 
             headerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            headerPanel.Controls.Add(labelDesign);
+            headerPanel.Controls.Add(label1);
             headerPanel.Location = new Point(132, 6);
             headerPanel.Margin = new Padding(2);
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1811, 69);
             headerPanel.TabIndex = 1;
             // 
-            // labelDesign
+            // label1
             // 
-            labelDesign.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            labelDesign.AutoEllipsis = true;
-            labelDesign.AutoSize = true;
-            labelDesign.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
-            labelDesign.ForeColor = Color.FromArgb(168, 136, 181);
-            labelDesign.Location = new Point(203, -5);
-            labelDesign.Margin = new Padding(2, 0, 2, 0);
-            labelDesign.Name = "labelDesign";
-            labelDesign.Size = new Size(479, 69);
-            labelDesign.TabIndex = 0;
-            labelDesign.Text = "Create a Design";
-            labelDesign.TextAlign = ContentAlignment.MiddleCenter;
+            label1.AutoSize = true;
+            label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(168, 136, 181);
+            label1.Location = new Point(203, -5);
+            label1.Name = "label1";
+            label1.Size = new Size(479, 69);
+            label1.TabIndex = 0;
+            label1.Text = "Create a Design";
             // 
             // close
             // 
@@ -106,56 +106,76 @@
             // 
             // gridContainer
             // 
-            gridContainer.BackColor = Color.FromArgb(218, 186, 231);
+            gridContainer.BackColor = Color.FromArgb(83, 54, 89);
             gridContainer.Location = new Point(320, 162);
             gridContainer.Margin = new Padding(0);
             gridContainer.Name = "gridContainer";
             gridContainer.Size = new Size(500, 500);
             gridContainer.TabIndex = 5;
-            gridContainer.Paint += gridContainer_Paint;
             // 
             // palettePanel
             // 
+            palettePanel.BackColor = Color.FromArgb(241, 217, 231);
             palettePanel.Location = new Point(233, 174);
             palettePanel.Name = "palettePanel";
             palettePanel.Size = new Size(49, 469);
             palettePanel.TabIndex = 6;
+            palettePanel.Paint += palettePanel_Paint;
             // 
-            // Eraser
+            // eraserButton
             // 
-            Eraser.Location = new Point(856, 225);
-            Eraser.Name = "Eraser";
-            Eraser.Size = new Size(186, 66);
-            Eraser.TabIndex = 7;
-            Eraser.Paint += Eraser_Paint;
+            eraserButton.BackColor = Color.FromArgb(241, 217, 231);
+            eraserButton.Cursor = Cursors.Hand;
+            eraserButton.ErrorImage = Properties.Resources.error;
+            eraserButton.Image = Properties.Resources.eraser_1_;
+            eraserButton.Location = new Point(884, 223);
+            eraserButton.Name = "eraserButton";
+            eraserButton.Padding = new Padding(5);
+            eraserButton.Size = new Size(125, 62);
+            eraserButton.SizeMode = PictureBoxSizeMode.Zoom;
+            eraserButton.TabIndex = 8;
+            eraserButton.TabStop = false;
             // 
-            // Lock
+            // saveButton
             // 
-            Lock.Location = new Point(856, 346);
-            Lock.Name = "Lock";
-            Lock.Size = new Size(186, 66);
-            Lock.TabIndex = 8;
+            saveButton.BackColor = Color.FromArgb(241, 217, 231);
+            saveButton.Cursor = Cursors.Hand;
+            saveButton.ErrorImage = Properties.Resources.error;
+            saveButton.Image = Properties.Resources.diskette1;
+            saveButton.Location = new Point(884, 468);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(125, 62);
+            saveButton.SizeMode = PictureBoxSizeMode.Zoom;
+            saveButton.TabIndex = 9;
+            saveButton.TabStop = false;
             // 
-            // Save
+            // LockButton
             // 
-            Save.Location = new Point(856, 457);
-            Save.Name = "Save";
-            Save.Size = new Size(186, 66);
-            Save.TabIndex = 9;
+            LockButton.BackColor = Color.FromArgb(241, 217, 231);
+            LockButton.Cursor = Cursors.Hand;
+            LockButton.ErrorImage = Properties.Resources.error;
+            LockButton.Image = Properties.Resources.unlocked;
+            LockButton.Location = new Point(884, 344);
+            LockButton.Name = "LockButton";
+            LockButton.Size = new Size(125, 62);
+            LockButton.SizeMode = PictureBoxSizeMode.Zoom;
+            LockButton.TabIndex = 10;
+            LockButton.TabStop = false;
             // 
             // CreateDesign
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1143, 750);
-            Controls.Add(Save);
-            Controls.Add(Lock);
-            Controls.Add(Eraser);
+            Controls.Add(LockButton);
+            Controls.Add(saveButton);
+            Controls.Add(eraserButton);
             Controls.Add(palettePanel);
             Controls.Add(gridContainer);
             Controls.Add(close);
             Controls.Add(headerContainer);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CreateDesign";
             Text = "CreateDesign";
             Load += CreateDesign_Load;
@@ -163,6 +183,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)eraserButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)saveButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LockButton).EndInit();
             ResumeLayout(false);
         }
 
@@ -176,12 +199,17 @@
         private Panel headerContainer;
         private PictureBox pictureBoxLogo;
         private Panel headerPanel;
-        private Label labelDesign;
         private Panel close;
         private FlowLayoutPanel gridContainer;
         private Panel palettePanel;
-        private Panel Eraser;
         private Panel Lock;
         private Panel Save;
+        private Label label1;
+        private PictureBox eraserButton;
+        private PictureBox saveButton;
+        private PictureBox LockButton;
+        //private PictureBox eraserPic;
+        //private PictureBox lockPic;
+        //private PictureBox savePicBox;
     }
 }

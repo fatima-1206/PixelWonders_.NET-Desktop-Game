@@ -29,7 +29,7 @@ namespace PixelWonders
 
             grid = new Grid(ColorPalettes.GetPalette(paletteName), paletteName);
             // create the grid view
-            int pixelHeight =( (int)Math.Floor((double)gridContainer.Height - (grid.height)) / grid.height);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (grid.height)) / grid.height);
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (grid.width)) / grid.width);
 
 
@@ -41,13 +41,13 @@ namespace PixelWonders
                     pb.Width = pixelWidth;
                     pb.Height = pixelHeight;
                     pb.Padding = new Padding(0, 0, 0, 0);
-                    pb.Margin = new Padding(1,1,0,0);
-                    pb.Location = new Point(i * pb.Width , j * pb.Height);
+                    pb.Margin = new Padding(1, 1, 0, 0);
+                    pb.Location = new Point(i * pb.Width, j * pb.Height);
                     pb.BackColor = ColorTranslator.FromHtml("#F0f0f0");
 
                     int row = i;
                     int col = j;
-                  
+
                     pb.Click += (sender, e) => PixelClicked(sender, row, col);
 
                     gridContainer.Controls.Add(pb);
@@ -92,7 +92,7 @@ namespace PixelWonders
             grid.UpdatePixel(row, col, selectedColor);
             PictureBox pb = (PictureBox)sender;
             pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
-            
+            grid.printGrid();
         }
 
         private void CreateDesign_Load(object sender, EventArgs e)
@@ -110,13 +110,21 @@ namespace PixelWonders
             this.Close();
 
         }
-
-        private void gridContainer_Paint(object sender, PaintEventArgs e)
+        private void Eraser_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void Eraser_Paint(object sender, PaintEventArgs e)
+        private void Eraser_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void palettePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lockPic_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,6 +31,18 @@ namespace PixelWonders
                 }
             }
 
+            public void printGrid()
+            {
+                for (int i = 0; i < this.width; i++)
+                {
+                    for (int j = 0; j < this.height; j++)
+                    {
+                        Console.Write(this.pixelGrid[i, j]);
+                        Console.Write(' ');    
+                    }
+                    Console.Write('\n');
+                }
+            }
             // Update a pixel with a color index
             public void UpdatePixel(int row, int col, int color)
             {
