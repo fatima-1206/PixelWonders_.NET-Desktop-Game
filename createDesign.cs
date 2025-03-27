@@ -29,8 +29,8 @@ namespace PixelWonders
 
             grid = new Grid(ColorPalettes.GetPalette(paletteName), paletteName);
             // create the grid view
-            int pixelHeight = (int)Math.Floor((double)gridContainer.Height / grid.height);
-            int pixelWidth = (int)Math.Floor((double)gridContainer.Width / grid.width);
+            int pixelHeight =( (int)Math.Floor((double)gridContainer.Height - (grid.height)) / grid.height);
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (grid.width)) / grid.width);
 
 
             for (int i = 0; i < grid.width; i++)
@@ -40,10 +40,14 @@ namespace PixelWonders
                     PictureBox pb = new PictureBox();
                     pb.Width = pixelWidth;
                     pb.Height = pixelHeight;
+                    pb.Padding = new Padding(0, 0, 0, 0);
+                    pb.Margin = new Padding(1,1,0,0);
                     pb.Location = new Point(i * pb.Width , j * pb.Height);
                     pb.BackColor = ColorTranslator.FromHtml("#F0f0f0");
+
                     int row = i;
                     int col = j;
+                  
                     pb.Click += (sender, e) => PixelClicked(sender, row, col);
 
                     gridContainer.Controls.Add(pb);
@@ -66,6 +70,8 @@ namespace PixelWonders
                 int colorIndex = colornum;
                 colorPanel.Width = cWidth;
                 colorPanel.Height = cHeight;
+                colorPanel.Margin = new Padding(0, 0, 0, 0);
+                colorPanel.Padding = new Padding(0, 0, 0, 0);
                 colorPanel.Location = new Point(0, colornum * cHeight);
                 colorPanel.BackColor = ColorTranslator.FromHtml(color);
                 palettePanel.Controls.Add(colorPanel);
