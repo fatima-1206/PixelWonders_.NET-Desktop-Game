@@ -11,10 +11,7 @@ using System.Data.SQLite;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace PixelWonders
 {
-    public static class UserSession
-    {
-        public static string CurrentUsername { get; set; }
-    }
+   
 
     public partial class Login : Form
     {
@@ -115,5 +112,9 @@ namespace PixelWonders
         {
             return txtUsername.Text.Trim();
             }
+    }
+    public static class UserSession
+    {
+        public static string CurrentUsername { get; set; }
     }
 }

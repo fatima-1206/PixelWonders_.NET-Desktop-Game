@@ -163,9 +163,10 @@
             label2.Location = new Point(149, 108);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(74, 29);
+            label2.Size = new Size(128, 29);
             label2.TabIndex = 5;
-            label2.Text = "Name";
+            label2.Text = "Username";
+            label2.Click += label2_Click;
             // 
             // textBox3
             // 
