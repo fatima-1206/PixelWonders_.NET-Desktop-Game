@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 using static PixelWonders.Palette;
 
 namespace PixelWonders
@@ -194,48 +195,59 @@ namespace PixelWonders
             // Assuming you have a design name and username available
            
            
-            Login u = new Login();
+           
             // Step 1: Retrieve design name from the TextBox
             string designName = designN.Text; 
             string username = UserSession.CurrentUsername; 
             string paletteName = grid.selectedPaletteName;
 
-            // Step 2: Validate design name
-            if (string.IsNullOrEmpty(designName))
+            // Validate input
+            if (string.IsNullOrWhiteSpace(designName))
             {
-                MessageBox.Show("Design name cannot be empty. Please enter a valid design name.");
-                return;  
+                MessageBox.Show("Please enter a design name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("User not logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 1. Serialize grid as flat list of color indices
+            List<int> serializedGrid = new List<int>();
+            for (int row = 0; row < grid.height; row++)
+            {
+                for (int col = 0; col < grid.width; col++)
+                {
+                    int colorIndex = grid.GetPixelColor(row, col);
+                    serializedGrid.Add(colorIndex); // could be -1 if no color
+                }
+            }
+
+            // 2. Convert to JSON string
+            string jsonMatrix = JsonSerializer.Serialize(serializedGrid);
+
+            // 3. Get palette ID from palette name
+            int paletteId = Program.dbManager.GetPaletteIdFromName(paletteName);
+            if (paletteId == -1)
+            {
+                MessageBox.Show("Invalid palette selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4. Insert into PixelGrid table
+            bool success = Program.dbManager.SavePixelGrid(designName, jsonMatrix, paletteId, username);
+
+            if (success)
+            {
+                MessageBox.Show("Design saved successfully!");
             }
             else
             {
-                // Step 3: Create design in database
-
-                Program.dbManager.CreateDesign(designName, username, paletteName, grid.width, grid.height);
-
-                // Step 2: Gather all pixels from the grid and convert them to hex color codes
-                List<(int x, int y, string hexCode)> pixels = new List<(int x, int y, string hexCode)>();
-                for (int row = 0; row < grid.height; row++)
-                {
-                    for (int col = 0; col < grid.width; col++)
-                    {
-                        int colorIndex = grid.GetPixelColor(row, col);
-                        if (colorIndex != -1)  // -1 means no color (empty pixel)
-                        {
-                            string hexCode = grid.selectedPalette[colorIndex];  // Get the hex code from the selected palette
-                            pixels.Add((col, row, hexCode));
-                        }
-                    }
-                }
-
-                // Step 3: Add pixels to the database for this design
-                int designId = Program.dbManager.GetDesignIdFromDatabase(designName);  // You should query the DB to get the DesignId
-                Program.dbManager.AddPixelsToDesign(designId, pixels);
-
-                MessageBox.Show("Design saved successfully!");
+                MessageBox.Show("Failed to save design.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
-
 
 
         private void LockButton_Click(object sender, EventArgs e)

@@ -60,33 +60,19 @@ class DatabaseManager
                     );", "PaletteColor table");
             }
 
-            if (!TableExists(conn, "Design"))
-            {
-                ExecuteQuery(conn, @"
-                    CREATE TABLE Design (
-                        DesignId INTEGER PRIMARY KEY AUTOINCREMENT,
-                        Name TEXT NOT NULL,
-                        UserId INTEGER NOT NULL,
-                        PaletteId INTEGER NOT NULL,
-                        GridWidth INTEGER NOT NULL,
-                        GridHeight INTEGER NOT NULL,
-                        CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-                        FOREIGN KEY (UserId) REFERENCES User(username),
-                        FOREIGN KEY (PaletteId) REFERENCES Palette(PaletteId)
-                    );", "Design table");
-            }
 
-            if (!TableExists(conn, "Pixel"))
+            if (!TableExists(conn, "PixelGrid"))
             {
                 ExecuteQuery(conn, @"
-                    CREATE TABLE Pixel (
-                        PixelId INTEGER PRIMARY KEY AUTOINCREMENT,
-                        DesignId INTEGER NOT NULL,
-                        X INTEGER NOT NULL,
-                        Y INTEGER NOT NULL,
-                        HexCode TEXT NOT NULL,
-                        FOREIGN KEY (DesignId) REFERENCES Design(DesignId)
-                    );", "Pixel table");
+                CREATE TABLE PixelGrid (
+                    G_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    G_name TEXT NOT NULL,
+                    G_matrix TEXT NOT NULL, -- JSON string
+                    palette_ID INTEGER NOT NULL,
+                    username TEXT NOT NULL,
+                    FOREIGN KEY (palette_ID) REFERENCES Palette(PaletteId),
+                    FOREIGN KEY (username) REFERENCES User(username)
+                );", "PixelGrid table");
             }
 
 
@@ -181,65 +167,59 @@ class DatabaseManager
         }
     }
 
-    // Method to create a design
-    public void CreateDesign(string designName, string username, string paletteName, int gridWidth, int gridHeight)
+    public bool SavePixelGrid(string designName, string jsonMatrix, int paletteId, string username)
     {
         using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
         {
             conn.Open();
 
-            // Get userId for the username
-            string userQuery = "SELECT username FROM User WHERE username = @username";
-            using (SQLiteCommand userCmd = new SQLiteCommand(userQuery, conn))
-            {
-                userCmd.Parameters.AddWithValue("@username", username);
-                var userId = userCmd.ExecuteScalar();
+            string query = "INSERT INTO PixelGrid (G_name, G_matrix, palette_ID, username) " +
+                           "VALUES (@G_name, @G_matrix, @palette_ID, @username)";
 
-                // Get paletteId for the paletteName
-                string paletteQuery = "SELECT PaletteId FROM Palette WHERE Name = @paletteName";
-                using (SQLiteCommand paletteCmd = new SQLiteCommand(paletteQuery, conn))
-                {
-                    paletteCmd.Parameters.AddWithValue("@paletteName", paletteName);
-                    var paletteId = paletteCmd.ExecuteScalar();
-
-                    // Insert the design into the Design table
-                    string designQuery = "INSERT INTO Design (Name, UserId, PaletteId, GridWidth, GridHeight) VALUES (@Name, @UserId, @PaletteId, @GridWidth, @GridHeight)";
-                    using (SQLiteCommand designCmd = new SQLiteCommand(designQuery, conn))
-                    {
-                        designCmd.Parameters.AddWithValue("@Name", designName);
-                        designCmd.Parameters.AddWithValue("@UserId", userId);
-                        designCmd.Parameters.AddWithValue("@PaletteId", paletteId);
-                        designCmd.Parameters.AddWithValue("@GridWidth", gridWidth);
-                        designCmd.Parameters.AddWithValue("@GridHeight", gridHeight);
-                        designCmd.ExecuteNonQuery();
-                    }
-                }
-            }
-            conn.Close();
-        }
-    }
-    public int GetDesignIdFromDatabase(string designName)
-    {
-        int designId = -1;
-
-        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
-        {
-            conn.Open();
-            string query = "SELECT DesignId FROM Design WHERE Name = @designName";
             using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@designName", designName);
+                cmd.Parameters.AddWithValue("@G_name", designName);
+                cmd.Parameters.AddWithValue("@G_matrix", jsonMatrix);
+                cmd.Parameters.AddWithValue("@palette_ID", paletteId);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error saving grid: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+    }
+
+    public int GetPaletteIdFromName(string paletteName)
+    {
+        int paletteId = -1;
+
+        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT PaletteId FROM Palette WHERE Name = @paletteName";
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@paletteName", paletteName);
                 var result = cmd.ExecuteScalar();
                 if (result != null)
                 {
-                    designId = Convert.ToInt32(result);
+                    paletteId = Convert.ToInt32(result);
                 }
             }
             conn.Close();
         }
 
-        return designId;
+        return paletteId;
     }
+
 
     // Method to add pixels to a design
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)
