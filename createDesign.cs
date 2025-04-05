@@ -109,11 +109,12 @@ namespace PixelWonders
         private void PixelHover(object sender, int row, int col)
         {
             if (selectedColor == -1) return;
-            if (hoverLock) {
+            if (hoverLock)
+            {
                 PictureBox pb = (PictureBox)sender;
                 if (selectedColor == -1) return;
                 int currentPixelColor = grid.GetPixelColor(row, col);
-                if (eraserSelected && currentPixelColor!=-1)
+                if (eraserSelected && currentPixelColor != -1)
                 {
                     grid.UpdatePixel(row, col, -1);
                     pb.BackColor = ColorTranslator.FromHtml("#f0f0f0");
@@ -123,13 +124,13 @@ namespace PixelWonders
                 if (eraserSelected) return;
 
                 if (currentPixelColor == selectedColor) return; // Skip if same color
-                
+
                 grid.UpdatePixel(row, col, selectedColor);
 
                 pb.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
                 grid.printGrid();
             }
-                
+
         }
         private void PixelClicked(object sender, int row, int col)
         {
@@ -190,8 +191,52 @@ namespace PixelWonders
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // Assuming you have a design name and username available
+           
+           
+            Login u = new Login();
+            // Step 1: Retrieve design name from the TextBox
+            string designName = designN.Text; 
+            string username = UserSession.CurrentUsername; 
+            string paletteName = grid.selectedPaletteName;
 
+            // Step 2: Validate design name
+            if (string.IsNullOrEmpty(designName))
+            {
+                MessageBox.Show("Design name cannot be empty. Please enter a valid design name.");
+                return;  
+            }
+            else
+            {
+                // Step 3: Create design in database
+
+                Program.dbManager.CreateDesign(designName, username, paletteName, grid.width, grid.height);
+
+                // Step 2: Gather all pixels from the grid and convert them to hex color codes
+                List<(int x, int y, string hexCode)> pixels = new List<(int x, int y, string hexCode)>();
+                for (int row = 0; row < grid.height; row++)
+                {
+                    for (int col = 0; col < grid.width; col++)
+                    {
+                        int colorIndex = grid.GetPixelColor(row, col);
+                        if (colorIndex != -1)  // -1 means no color (empty pixel)
+                        {
+                            string hexCode = grid.selectedPalette[colorIndex];  // Get the hex code from the selected palette
+                            pixels.Add((col, row, hexCode));
+                        }
+                    }
+                }
+
+                // Step 3: Add pixels to the database for this design
+                int designId = Program.dbManager.GetDesignIdFromDatabase(designName);  // You should query the DB to get the DesignId
+                Program.dbManager.AddPixelsToDesign(designId, pixels);
+
+                MessageBox.Show("Design saved successfully!");
+            }
+           
         }
+
+
 
         private void LockButton_Click(object sender, EventArgs e)
         {
@@ -206,6 +251,21 @@ namespace PixelWonders
                 LockButton.Image = Properties.Resources.unlocked;
                 LockButton.BackColor = Color.FromArgb(241, 217, 231);
             }
+        }
+
+        private void gridContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

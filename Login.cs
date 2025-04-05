@@ -11,8 +11,14 @@ using System.Data.SQLite;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace PixelWonders
 {
+    public static class UserSession
+    {
+        public static string CurrentUsername { get; set; }
+    }
+
     public partial class Login : Form
     {
+        
         public Login()
         {
             InitializeComponent();
@@ -31,6 +37,7 @@ namespace PixelWonders
         private void Button3_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
+            
             string password = txtPassword.Text.Trim();
             string hashedPassword = SecurityHelper.HashPassword(password);
 
@@ -39,6 +46,7 @@ namespace PixelWonders
             if (isValidUser)
             {
                 Console.WriteLine("Login Successful!");
+                UserSession.CurrentUsername = username;
                 Menu1 menuPage = new Menu1();
                 menuPage.Show();
                 this.Hide();
@@ -102,5 +110,10 @@ namespace PixelWonders
             homePage.Show();
             this.Hide();
         }
+
+        public string getUser()
+        {
+            return txtUsername.Text.Trim();
+            }
     }
 }

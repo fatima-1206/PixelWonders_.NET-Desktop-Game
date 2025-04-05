@@ -194,7 +194,7 @@ namespace PixelWonders
         {
             // look for the hidden menu1 form
             Menu1 menuPage = Application.OpenForms["menuPage"] as Menu1;
-            if(menuPage != null)
+            if (menuPage != null)
                 menuPage.Show();
 
             this.Close();
@@ -227,6 +227,11 @@ namespace PixelWonders
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

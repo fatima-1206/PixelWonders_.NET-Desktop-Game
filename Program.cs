@@ -13,6 +13,7 @@ namespace PixelWonders
             //  Ensure dbManager is initialized before any form is launched
             dbManager = new DatabaseManager("PixelWonders.db");
             dbManager.InitializeDatabase();
+            dbManager.AddPredefinedPalettesToDatabase();
 
             Application.Run(new Home()); // or Login Form
         }

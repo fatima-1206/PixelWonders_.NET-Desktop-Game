@@ -97,7 +97,7 @@ namespace PixelWonders
             {
                 foreach (KeyValuePair<string, List<string>> palette in Palettes)
                 {
-                    Console.WriteLine(palette.Key + " palette:");
+                    Console.WriteLine(palette.Key + " palette:");   
                     foreach (string color in palette.Value)
                     {
                         Console.WriteLine(color);
