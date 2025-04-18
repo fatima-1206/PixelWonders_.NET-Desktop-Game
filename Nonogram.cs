@@ -16,5 +16,16 @@ namespace PixelWonders
         {
             InitializeComponent();
         }
+
+        private void close_Click(object sender, EventArgs e)
+        { 
+            PaletteForm paletteForm = Application.OpenForms["paletteForm"] as PaletteForm;
+            if (paletteForm != null)
+                paletteForm.Show();
+
+            this.Close();
+        }
+
+
     }
 }

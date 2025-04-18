@@ -35,10 +35,18 @@
             gridContainer = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             livesPanel = new Panel();
-            panel1 = new Panel();
-            panel2 = new Panel();
+            heart = new Panel();
+            crossOptionContainer = new Panel();
+            crossOption = new Panel();
+            fillOptionContainer = new Panel();
+            fillOption = new Panel();
+            pictureBox1 = new PictureBox();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            livesPanel.SuspendLayout();
+            crossOptionContainer.SuspendLayout();
+            fillOptionContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // close
@@ -51,27 +59,29 @@
             close.Location = new Point(1091, 0);
             close.Margin = new Padding(2);
             close.Name = "close";
-            close.Size = new Size(52, 34);
+            close.Size = new Size(52, 32);
             close.TabIndex = 6;
+            close.Click += close_Click;
             // 
             // headerContainer
             // 
             headerContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            headerContainer.BackColor = Color.FromArgb(168, 136, 181);
             headerContainer.BorderStyle = BorderStyle.FixedSingle;
             headerContainer.Controls.Add(label1);
             headerContainer.Controls.Add(pictureBoxLogo);
-            headerContainer.Location = new Point(10, 32);
+            headerContainer.Location = new Point(-3, 32);
             headerContainer.Name = "headerContainer";
-            headerContainer.Size = new Size(1128, 80);
+            headerContainer.Size = new Size(1146, 80);
             headerContainer.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(241, 217, 231);
+            label1.BackColor = Color.FromArgb(168, 136, 181);
             label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(83, 54, 89);
-            label1.Location = new Point(389, 10);
+            label1.Location = new Point(400, 6);
             label1.Name = "label1";
             label1.Size = new Size(310, 69);
             label1.TabIndex = 0;
@@ -79,12 +89,13 @@
             // 
             // pictureBoxLogo
             // 
+            pictureBoxLogo.BackColor = Color.White;
             pictureBoxLogo.Cursor = Cursors.Hand;
             pictureBoxLogo.Image = Properties.Resources.logo3;
-            pictureBoxLogo.Location = new Point(2, 6);
+            pictureBoxLogo.Location = new Point(2, -1);
             pictureBoxLogo.Margin = new Padding(2);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(126, 72);
+            pictureBoxLogo.Size = new Size(126, 81);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -109,24 +120,68 @@
             // 
             // livesPanel
             // 
-            livesPanel.Location = new Point(765, 209);
+            livesPanel.BorderStyle = BorderStyle.FixedSingle;
+            livesPanel.Controls.Add(heart);
+            livesPanel.Location = new Point(765, 196);
             livesPanel.Name = "livesPanel";
-            livesPanel.Size = new Size(274, 47);
+            livesPanel.Padding = new Padding(5, 3, 5, 3);
+            livesPanel.Size = new Size(274, 64);
             livesPanel.TabIndex = 9;
             // 
-            // panel1
+            // heart
             // 
-            panel1.Location = new Point(765, 314);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(109, 74);
-            panel1.TabIndex = 10;
+            heart.BackgroundImage = Properties.Resources.heart_1_;
+            heart.BackgroundImageLayout = ImageLayout.Zoom;
+            heart.Location = new Point(3, 5);
+            heart.Name = "heart";
+            heart.Size = new Size(57, 52);
+            heart.TabIndex = 1;
             // 
-            // panel2
+            // crossOptionContainer
             // 
-            panel2.Location = new Point(930, 314);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(109, 74);
-            panel2.TabIndex = 11;
+            crossOptionContainer.BorderStyle = BorderStyle.FixedSingle;
+            crossOptionContainer.Controls.Add(crossOption);
+            crossOptionContainer.Location = new Point(930, 314);
+            crossOptionContainer.Name = "crossOptionContainer";
+            crossOptionContainer.Size = new Size(109, 81);
+            crossOptionContainer.TabIndex = 11;
+            // 
+            // crossOption
+            // 
+            crossOption.BackgroundImage = Properties.Resources.close;
+            crossOption.BackgroundImageLayout = ImageLayout.Zoom;
+            crossOption.Location = new Point(26, 15);
+            crossOption.Name = "crossOption";
+            crossOption.Size = new Size(57, 52);
+            crossOption.TabIndex = 0;
+            // 
+            // fillOptionContainer
+            // 
+            fillOptionContainer.BorderStyle = BorderStyle.FixedSingle;
+            fillOptionContainer.Controls.Add(fillOption);
+            fillOptionContainer.Location = new Point(774, 314);
+            fillOptionContainer.Name = "fillOptionContainer";
+            fillOptionContainer.Size = new Size(109, 81);
+            fillOptionContainer.TabIndex = 12;
+            // 
+            // fillOption
+            // 
+            fillOption.BackColor = Color.FromArgb(83, 54, 89);
+            fillOption.BackgroundImageLayout = ImageLayout.Zoom;
+            fillOption.Location = new Point(26, 15);
+            fillOption.Name = "fillOption";
+            fillOption.Size = new Size(57, 52);
+            fillOption.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.white_with_ball_8fps4;
+            pictureBox1.Location = new Point(954, 128);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(85, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // Nonogram
             // 
@@ -134,8 +189,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
             ClientSize = new Size(1143, 750);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(fillOptionContainer);
+            Controls.Add(crossOptionContainer);
             Controls.Add(livesPanel);
             Controls.Add(close);
             Controls.Add(headerContainer);
@@ -147,6 +203,10 @@
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            livesPanel.ResumeLayout(false);
+            crossOptionContainer.ResumeLayout(false);
+            fillOptionContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -159,7 +219,11 @@
         private FlowLayoutPanel gridContainer;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel livesPanel;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel crossOptionContainer;
+        private Panel crossOption;
+        private Panel fillOptionContainer;
+        private Panel fillOption;
+        private Panel heart;
+        private PictureBox pictureBox1;
     }
 }
