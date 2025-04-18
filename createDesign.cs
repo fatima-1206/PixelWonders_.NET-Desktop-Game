@@ -193,12 +193,12 @@ namespace PixelWonders
         private void saveButton_Click(object sender, EventArgs e)
         {
             // Assuming you have a design name and username available
-           
-           
-           
+
+
+
             // Step 1: Retrieve design name from the TextBox
-            string designName = designN.Text; 
-            string username = UserSession.CurrentUsername; 
+            string designName = designN.Text;
+            string username = UserSession.CurrentUsername;
             string paletteName = grid.selectedPaletteName;
 
             // Validate input
@@ -276,6 +276,11 @@ namespace PixelWonders
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headerContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }
