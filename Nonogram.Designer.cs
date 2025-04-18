@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             close = new Panel();
             headerContainer = new Panel();
             label1 = new Label();
@@ -35,18 +36,19 @@
             gridContainer = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             livesPanel = new Panel();
-            heart = new Panel();
             crossOptionContainer = new Panel();
             crossOption = new Panel();
             fillOptionContainer = new Panel();
             fillOption = new Panel();
-            pictureBox1 = new PictureBox();
+            animalPanel = new PictureBox();
+            imageChangeTimer = new System.Windows.Forms.Timer(components);
+            platform = new Panel();
+            walkTimer = new System.Windows.Forms.Timer(components);
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
-            livesPanel.SuspendLayout();
             crossOptionContainer.SuspendLayout();
             fillOptionContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)animalPanel).BeginInit();
             SuspendLayout();
             // 
             // close
@@ -121,21 +123,11 @@
             // livesPanel
             // 
             livesPanel.BorderStyle = BorderStyle.FixedSingle;
-            livesPanel.Controls.Add(heart);
-            livesPanel.Location = new Point(765, 196);
+            livesPanel.Location = new Point(765, 206);
             livesPanel.Name = "livesPanel";
             livesPanel.Padding = new Padding(5, 3, 5, 3);
-            livesPanel.Size = new Size(274, 64);
+            livesPanel.Size = new Size(274, 46);
             livesPanel.TabIndex = 9;
-            // 
-            // heart
-            // 
-            heart.BackgroundImage = Properties.Resources.heart_1_;
-            heart.BackgroundImageLayout = ImageLayout.Zoom;
-            heart.Location = new Point(3, 5);
-            heart.Name = "heart";
-            heart.Size = new Size(57, 52);
-            heart.TabIndex = 1;
             // 
             // crossOptionContainer
             // 
@@ -173,15 +165,38 @@
             fillOption.Size = new Size(57, 52);
             fillOption.TabIndex = 0;
             // 
-            // pictureBox1
+            // animalPanel
             // 
-            pictureBox1.Image = Properties.Resources.white_with_ball_8fps4;
-            pictureBox1.Location = new Point(954, 128);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(85, 62);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
+            animalPanel.Image = Properties.Resources.white_with_ball_8fps4;
+            animalPanel.Location = new Point(765, 562);
+            animalPanel.Name = "animalPanel";
+            animalPanel.Size = new Size(60, 60);
+            animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
+            animalPanel.TabIndex = 13;
+            animalPanel.TabStop = false;
+            animalPanel.Click += animalPanel_Click;
+            animalPanel.MouseHover += animalPanel_MouseHover;
+            // 
+            // imageChangeTimer
+            // 
+            imageChangeTimer.Enabled = true;
+            imageChangeTimer.Interval = 10000;
+            imageChangeTimer.Tick += imageChangeTimer_Tick;
+            // 
+            // platform
+            // 
+            platform.BorderStyle = BorderStyle.FixedSingle;
+            platform.Location = new Point(765, 621);
+            platform.Margin = new Padding(0);
+            platform.Name = "platform";
+            platform.Size = new Size(274, 1);
+            platform.TabIndex = 14;
+            // 
+            // walkTimer
+            // 
+            walkTimer.Enabled = true;
+            walkTimer.Interval = 150;
+            walkTimer.Tick += timer1_Tick;
             // 
             // Nonogram
             // 
@@ -189,7 +204,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
             ClientSize = new Size(1143, 750);
-            Controls.Add(pictureBox1);
+            Controls.Add(platform);
+            Controls.Add(animalPanel);
             Controls.Add(fillOptionContainer);
             Controls.Add(crossOptionContainer);
             Controls.Add(livesPanel);
@@ -203,11 +219,15 @@
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
-            livesPanel.ResumeLayout(false);
             crossOptionContainer.ResumeLayout(false);
             fillOptionContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)animalPanel).EndInit();
             ResumeLayout(false);
+        }
+
+        private void AnimalPanel_MouseHover(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -223,7 +243,9 @@
         private Panel crossOption;
         private Panel fillOptionContainer;
         private Panel fillOption;
-        private Panel heart;
-        private PictureBox pictureBox1;
+        private PictureBox animalPanel;
+        private System.Windows.Forms.Timer imageChangeTimer;
+        private Panel platform;
+        private System.Windows.Forms.Timer walkTimer;
     }
 }
