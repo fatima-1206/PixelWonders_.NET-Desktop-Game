@@ -73,9 +73,9 @@ namespace PixelWonders
             // 
             eyePicBox.BackColor = Color.FromArgb(241, 217, 231);
             eyePicBox.Image = Properties.Resources.closeEye;
-            eyePicBox.Location = new Point(287, 257);
+            eyePicBox.Location = new Point(287, 258);
             eyePicBox.Name = "eyePicBox";
-            eyePicBox.Size = new Size(38, 26);
+            eyePicBox.Size = new Size(38, 20);
             eyePicBox.SizeMode = PictureBoxSizeMode.Zoom;
             eyePicBox.TabIndex = 14;
             eyePicBox.TabStop = false;
@@ -109,10 +109,12 @@ namespace PixelWonders
             // passwordTextBox
             // 
             passwordTextBox.BackColor = Color.FromArgb(241, 217, 231);
+            passwordTextBox.BorderStyle = BorderStyle.None;
             passwordTextBox.Location = new Point(121, 258);
             passwordTextBox.Margin = new Padding(3, 4, 3, 4);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(204, 27);
+            passwordTextBox.ShortcutsEnabled = false;
+            passwordTextBox.Size = new Size(204, 20);
             passwordTextBox.TabIndex = 8;
             passwordTextBox.UseSystemPasswordChar = true;
             passwordTextBox.TextChanged += textBox2_TextChanged;
@@ -120,10 +122,11 @@ namespace PixelWonders
             // txtUsername
             // 
             txtUsername.BackColor = Color.FromArgb(241, 217, 231);
+            txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Location = new Point(121, 176);
             txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(204, 27);
+            txtUsername.Size = new Size(204, 20);
             txtUsername.TabIndex = 7;
             txtUsername.TextChanged += textBox1_TextChanged;
             // 

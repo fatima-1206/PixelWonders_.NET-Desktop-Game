@@ -77,7 +77,7 @@
             eyePicBox.Image = Properties.Resources.closeEye;
             eyePicBox.Location = new Point(270, 312);
             eyePicBox.Name = "eyePicBox";
-            eyePicBox.Size = new Size(39, 25);
+            eyePicBox.Size = new Size(39, 20);
             eyePicBox.SizeMode = PictureBoxSizeMode.Zoom;
             eyePicBox.TabIndex = 13;
             eyePicBox.TabStop = false;
@@ -97,10 +97,11 @@
             // 
             // textBox4
             // 
+            textBox4.BorderStyle = BorderStyle.None;
             textBox4.Location = new Point(119, 250);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(190, 27);
+            textBox4.Size = new Size(190, 20);
             textBox4.TabIndex = 11;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
@@ -181,29 +182,33 @@
             // passwordTextBox
             // 
             passwordTextBox.BackColor = SystemColors.Window;
+            passwordTextBox.BorderStyle = BorderStyle.None;
             passwordTextBox.Location = new Point(119, 312);
             passwordTextBox.Margin = new Padding(3, 4, 3, 4);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(190, 27);
+            passwordTextBox.ShortcutsEnabled = false;
+            passwordTextBox.Size = new Size(190, 20);
             passwordTextBox.TabIndex = 3;
             passwordTextBox.UseSystemPasswordChar = true;
             passwordTextBox.TextChanged += textBox3_TextChanged;
             // 
             // textBox2
             // 
+            textBox2.BorderStyle = BorderStyle.None;
             textBox2.Location = new Point(119, 180);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(190, 27);
+            textBox2.Size = new Size(190, 20);
             textBox2.TabIndex = 2;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox1
             // 
+            textBox1.BorderStyle = BorderStyle.None;
             textBox1.Location = new Point(119, 116);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 27);
+            textBox1.Size = new Size(190, 20);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
