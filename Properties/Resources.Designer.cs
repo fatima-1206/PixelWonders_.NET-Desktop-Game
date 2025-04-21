@@ -743,6 +743,16 @@ namespace PixelWonders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closeEye {
+            get {
+                object obj = ResourceManager.GetObject("closeEye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cross {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
@@ -1436,6 +1446,16 @@ namespace PixelWonders.Properties {
         internal static System.Drawing.Bitmap magical_with_ball_8fps {
             get {
                 object obj = ResourceManager.GetObject("magical_with_ball_8fps", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opneEye {
+            get {
+                object obj = ResourceManager.GetObject("opneEye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

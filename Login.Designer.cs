@@ -32,9 +32,10 @@ namespace PixelWonders
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            eyePicBox = new PictureBox();
             button1 = new Button();
             label5 = new Label();
-            txtPassword = new TextBox();
+            passwordTextBox = new TextBox();
             txtUsername = new TextBox();
             label4 = new Label();
             label2 = new Label();
@@ -44,15 +45,17 @@ namespace PixelWonders
             label3 = new Label();
             button2 = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)eyePicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(239, 182, 200);
+            panel1.Controls.Add(eyePicBox);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtPassword);
+            panel1.Controls.Add(passwordTextBox);
             panel1.Controls.Add(txtUsername);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
@@ -64,13 +67,26 @@ namespace PixelWonders
             panel1.Name = "panel1";
             panel1.Size = new Size(435, 497);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            // 
+            // eyePicBox
+            // 
+            eyePicBox.BackColor = Color.FromArgb(241, 217, 231);
+            eyePicBox.Image = Properties.Resources.closeEye;
+            eyePicBox.Location = new Point(287, 257);
+            eyePicBox.Name = "eyePicBox";
+            eyePicBox.Size = new Size(38, 26);
+            eyePicBox.SizeMode = PictureBoxSizeMode.Zoom;
+            eyePicBox.TabIndex = 14;
+            eyePicBox.TabStop = false;
+            eyePicBox.Click += eyePicBox_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(168, 136, 181);
             button1.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
-            button1.Location = new Point(255, 430);
+            button1.Location = new Point(287, 428);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(96, 36);
@@ -90,15 +106,16 @@ namespace PixelWonders
             label5.TabIndex = 9;
             label5.Text = "Password";
             // 
-            // txtPassword
+            // passwordTextBox
             // 
-            txtPassword.BackColor = Color.FromArgb(241, 217, 231);
-            txtPassword.Location = new Point(121, 258);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(204, 27);
-            txtPassword.TabIndex = 8;
-            txtPassword.TextChanged += textBox2_TextChanged;
+            passwordTextBox.BackColor = Color.FromArgb(241, 217, 231);
+            passwordTextBox.Location = new Point(121, 258);
+            passwordTextBox.Margin = new Padding(3, 4, 3, 4);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(204, 27);
+            passwordTextBox.TabIndex = 8;
+            passwordTextBox.UseSystemPasswordChar = true;
+            passwordTextBox.TextChanged += textBox2_TextChanged;
             // 
             // txtUsername
             // 
@@ -211,6 +228,7 @@ namespace PixelWonders
             Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)eyePicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -224,11 +242,12 @@ namespace PixelWonders
         private PictureBox pictureBox1;
         private Label label2;
         private Label label4;
-        private TextBox txtPassword;
+        private TextBox passwordTextBox;
         private TextBox txtUsername;
         private Label label5;
         private Button button1;
         private Label label3;
         private Button button2;
+        private PictureBox eyePicBox;
     }
 }
