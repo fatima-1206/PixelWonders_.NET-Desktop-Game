@@ -113,7 +113,7 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = SystemColors.ControlLight;
+            flowLayoutPanel1.BackColor = Color.FromArgb(231, 207, 221);
             flowLayoutPanel1.Location = new Point(113, 141);
             flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";

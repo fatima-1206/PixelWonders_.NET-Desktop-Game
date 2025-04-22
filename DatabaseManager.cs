@@ -33,7 +33,7 @@ class DatabaseManager
             {
                 ExecuteQuery(conn, @"
                     CREATE TABLE User (
-                        username TEXT PRIMARY KEY, 
+                        username TEXT PRIMARY KEY CHECK(length(username) <= 30), 
                         f_name TEXT NOT NULL, 
                         l_name TEXT NOT NULL, 
                         password TEXT NOT NULL
