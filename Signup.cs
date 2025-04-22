@@ -32,7 +32,7 @@ namespace PixelWonders
         private void Button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim();
-            string password = textBox3.Text.Trim();
+            string password = passwordTextBox.Text.Trim();
             string firstName = textBox2.Text.Trim();
             string lastName = textBox4.Text.Trim();
 
@@ -178,6 +178,17 @@ namespace PixelWonders
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
+            if (passwordTextBox.UseSystemPasswordChar)
+            {
+                eyePicBox.Image = Properties.Resources.closeEye;
+            }
+            else eyePicBox.Image = Properties.Resources.opneEye;
 
         }
     }
