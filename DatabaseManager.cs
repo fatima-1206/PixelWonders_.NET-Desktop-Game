@@ -27,15 +27,19 @@ class DatabaseManager
         {
             conn.Open();
             ExecuteQuery(conn, "PRAGMA foreign_keys = ON;", "Foreign key support");
+      
 
             // Create tables only if they don’t exist
             if (!TableExists(conn, "User"))
             {
                 ExecuteQuery(conn, @"
                     CREATE TABLE User (
-                        username TEXT PRIMARY KEY CHECK(length(username) <= 30), 
-                        f_name TEXT NOT NULL, 
-                        l_name TEXT NOT NULL, 
+                        username TEXT PRIMARY KEY 
+                            CHECK(length(username) <= 30 AND username GLOB '[A-Za-z0-9]*'), 
+                        f_name TEXT NOT NULL
+                            CHECK(length(f_name) <= 50 AND f_name GLOB '[A-Za-z]*'),
+                        l_name TEXT NOT NULL
+                              CHECK(length(l_name) <= 50 AND l_name GLOB '[A-Za-z]*'), 
                         password TEXT NOT NULL
                     );", "User table");
             }
