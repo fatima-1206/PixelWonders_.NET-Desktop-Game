@@ -32,16 +32,16 @@ namespace PixelWonders
             int spacing = 10;
             int heartWidth = 45; // size used in pictureBox.Size 
 
-            livesPanel.Padding = new Padding(spacing, 3, 3, 3); 
-            
+            livesPanel.Padding = new Padding(spacing, 3, 3, 3);
+
             for (int i = 0; i < numberOfLives; i++)
             {
-                
+
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Margin = new Padding(0); // remove margin
                 pictureBox.Image = Resources.heart_1_;
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Size = new Size(heartWidth+2, heartWidth); // square image
+                pictureBox.Size = new Size(heartWidth + 2, heartWidth); // square image
                 pictureBox.Location = new Point(i * (heartWidth + spacing), 0);
                 pictureBox.BackColor = Color.Transparent; // optional: keep if needed
 
@@ -81,9 +81,10 @@ namespace PixelWonders
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (WalkAnimations.Contains(animalPanel.Image)) {
-                
-                int begin = 765+15;
+            if (WalkAnimations.Contains(animalPanel.Image))
+            {
+
+                int begin = 765 + 15;
                 int end = begin + 274 - 70;
 
                 int step = 3;
@@ -100,6 +101,11 @@ namespace PixelWonders
                 animalPanel.Location = new Point(animalPanel.Location.X + (step * direction), animalPanel.Location.Y);
 
             }
+        }
+
+        private void headerContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
