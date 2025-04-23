@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using System.IO;
 using static PixelWonders.Palette;
 using PixelWonders;
+using System.Text.Json;
 
 class DatabaseManager
 {
@@ -26,7 +27,8 @@ class DatabaseManager
         using (SQLiteConnection conn = new SQLiteConnection(connectionString))
         {
             conn.Open();
-            ExecuteQuery(conn, "PRAGMA foreign_keys = ON;", "Foreign key support");
+            ExecuteQuery(conn, "PRAGMA journal_mode=WAL;", "Enable WAL mode");
+            ;
 
             // Create tables only if they don’t exist
             if (!TableExists(conn, "User"))
@@ -163,7 +165,7 @@ class DatabaseManager
                     }
                 }
             }
-            conn.Close();
+            
         }
     }
 
@@ -190,10 +192,13 @@ class DatabaseManager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error saving grid: " + ex.Message);
+                    System.Windows.Forms.MessageBox.Show("❌ Error saving design:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     return false;
                 }
+              
             }
+            
         }
     }
 
@@ -214,7 +219,7 @@ class DatabaseManager
                     paletteId = Convert.ToInt32(result);
                 }
             }
-            conn.Close();
+            
         }
 
         return paletteId;
@@ -291,11 +296,112 @@ class DatabaseManager
                 }
             }
 
-            conn.Close();
+           
         }
     }
+    public int GetPaletteIdForDesign(int designId)
+    {
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT palette_ID FROM PixelGrid WHERE G_ID = @id";
+            using (var cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@id", designId);
+                var result = cmd.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : -1;
+            }
+           
+        }
+        
+    }
+    public List<string> GetPaletteHexColors(int paletteId)
+    {
+        var colors = new List<string>();
 
+        using var conn = new SQLiteConnection(ConnectionString);
+        conn.Open();
 
+        string query = "SELECT HexCode FROM PaletteColor WHERE PaletteId = @id ORDER BY ColorId ASC";
+        using var cmd = new SQLiteCommand(query, conn);
+        cmd.Parameters.AddWithValue("@id", paletteId);
 
+        using var reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            colors.Add(reader.GetString(0));
+        }
+        conn.Close();
+        return colors;
+    }
+
+    public void PrintAllDesigns()
+    {
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT G_ID, G_name FROM PixelGrid";
+
+            using (var cmd = new SQLiteCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string name = reader.GetString(1);
+                    MessageBox.Show($"ID: {id}, Name: {name}", "Design Found");
+                }
+            }
+           
+        }
+    }
+    public int[,] LoadGridAsIntMatrix(int designId, int width, int height)
+    {
+        using var conn = new SQLiteConnection(ConnectionString);
+        conn.Open();
+
+        string query = "SELECT G_matrix FROM PixelGrid WHERE G_ID = @designId";
+        using var cmd = new SQLiteCommand(query, conn);
+        cmd.Parameters.AddWithValue("@designId", designId);
+
+        using var reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+            string json = reader.GetString(0);
+            int[] flat = JsonSerializer.Deserialize<int[]>(json);
+            //if (flat.Length != width * height)
+            //{
+            //    throw new Exception("⚠️ Grid size mismatch!");
+            //}
+
+            int[,] matrix = new int[height, width];
+            for (int i = 0; i < height; i++)
+                for (int j = 0; j < width; j++)
+                    matrix[i, j] = flat[i * width + j];
+            conn.Close();
+            return matrix;
+        }
+        conn.Close();
+        return null;
+    }
+
+    public string[,] MapGridToHexColors(int[,] indexGrid, List<string> paletteColors)
+    {
+        int rows = indexGrid.GetLength(0);
+        int cols = indexGrid.GetLength(1);
+        string[,] hexGrid = new string[rows, cols];
+
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+            {
+                int index = indexGrid[i, j];
+                if (index >= 0 && index < paletteColors.Count)
+                    hexGrid[i, j] = paletteColors[index];
+                else
+                    hexGrid[i, j] = "#FFFFFF"; // fallback color for -1 or invalid
+            }
+
+        return hexGrid;
+    }
 }
 

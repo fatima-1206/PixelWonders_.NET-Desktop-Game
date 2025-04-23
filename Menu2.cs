@@ -42,7 +42,14 @@ namespace PixelWonders
 
         private void Label3_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            jigsaw puzzle = new jigsaw();
+            puzzle.Show();
+            this.Hide();
         }
     }
 }
