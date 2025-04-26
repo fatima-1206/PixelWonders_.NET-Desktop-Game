@@ -19,7 +19,10 @@ namespace PixelWonders
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            Nonogram nonogram = new Nonogram();
+            nonogram.Show();
+            this.Hide();
+            
         }
 
         private void Button4_Click(object sender, EventArgs e)

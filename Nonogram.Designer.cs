@@ -33,8 +33,6 @@
             headerContainer = new Panel();
             label1 = new Label();
             pictureBoxLogo = new PictureBox();
-            gridContainer = new FlowLayoutPanel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             livesPanel = new Panel();
             crossOptionContainer = new Panel();
             crossOption = new Panel();
@@ -44,6 +42,10 @@
             imageChangeTimer = new System.Windows.Forms.Timer(components);
             platform = new Panel();
             walkTimer = new System.Windows.Forms.Timer(components);
+            rowCluesPanel = new FlowLayoutPanel();
+            colCluesPanel = new FlowLayoutPanel();
+            gridContainer = new FlowLayoutPanel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             crossOptionContainer.SuspendLayout();
@@ -64,6 +66,7 @@
             close.Size = new Size(52, 32);
             close.TabIndex = 6;
             close.Click += close_Click;
+            close.Paint += close_Paint;
             // 
             // headerContainer
             // 
@@ -88,6 +91,7 @@
             label1.Size = new Size(310, 69);
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
+            label1.Click += label1_Click;
             // 
             // pictureBoxLogo
             // 
@@ -101,24 +105,6 @@
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
-            // 
-            // gridContainer
-            // 
-            gridContainer.BackColor = Color.FromArgb(83, 54, 89);
-            gridContainer.Location = new Point(156, 183);
-            gridContainer.Margin = new Padding(0);
-            gridContainer.Name = "gridContainer";
-            gridContainer.Size = new Size(475, 475);
-            gridContainer.TabIndex = 7;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(231, 207, 221);
-            flowLayoutPanel1.Location = new Point(113, 141);
-            flowLayoutPanel1.Margin = new Padding(0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(575, 575);
-            flowLayoutPanel1.TabIndex = 8;
             // 
             // livesPanel
             // 
@@ -158,9 +144,9 @@
             // 
             // fillOption
             // 
-            fillOption.BackColor = Color.FromArgb(83, 54, 89);
+            fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
-            fillOption.Location = new Point(26, 15);
+            fillOption.Location = new Point(24, 15);
             fillOption.Name = "fillOption";
             fillOption.Size = new Size(57, 52);
             fillOption.TabIndex = 0;
@@ -198,12 +184,53 @@
             walkTimer.Interval = 150;
             walkTimer.Tick += timer1_Tick;
             // 
+            // rowCluesPanel
+            // 
+            rowCluesPanel.BackColor = Color.FromArgb(231, 207, 221);
+            rowCluesPanel.Location = new Point(117, 215);
+            rowCluesPanel.Margin = new Padding(0);
+            rowCluesPanel.Name = "rowCluesPanel";
+            rowCluesPanel.Size = new Size(75, 475);
+            rowCluesPanel.TabIndex = 15;
+            // 
+            // colCluesPanel
+            // 
+            colCluesPanel.BackColor = Color.FromArgb(231, 207, 221);
+            colCluesPanel.Location = new Point(192, 141);
+            colCluesPanel.Margin = new Padding(0);
+            colCluesPanel.Name = "colCluesPanel";
+            colCluesPanel.Size = new Size(475, 75);
+            colCluesPanel.TabIndex = 16;
+            // 
+            // gridContainer
+            // 
+            gridContainer.BackColor = Color.FromArgb(83, 54, 89);
+            gridContainer.Location = new Point(192, 215);
+            gridContainer.Margin = new Padding(0);
+            gridContainer.Name = "gridContainer";
+            gridContainer.Size = new Size(475, 475);
+            gridContainer.TabIndex = 7;
+            gridContainer.Paint += gridContainer_Paint;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(231, 207, 221);
+            flowLayoutPanel1.Location = new Point(117, 141);
+            flowLayoutPanel1.Margin = new Padding(0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(75, 75);
+            flowLayoutPanel1.TabIndex = 17;
+            // 
             // Nonogram
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
             ClientSize = new Size(1143, 750);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(gridContainer);
+            Controls.Add(colCluesPanel);
+            Controls.Add(rowCluesPanel);
             Controls.Add(platform);
             Controls.Add(animalPanel);
             Controls.Add(fillOptionContainer);
@@ -211,8 +238,6 @@
             Controls.Add(livesPanel);
             Controls.Add(close);
             Controls.Add(headerContainer);
-            Controls.Add(gridContainer);
-            Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Nonogram";
             Text = "Nonogram";
@@ -236,8 +261,6 @@
         private Panel headerContainer;
         private Label label1;
         private PictureBox pictureBoxLogo;
-        private FlowLayoutPanel gridContainer;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel livesPanel;
         private Panel crossOptionContainer;
         private Panel crossOption;
@@ -247,5 +270,9 @@
         private System.Windows.Forms.Timer imageChangeTimer;
         private Panel platform;
         private System.Windows.Forms.Timer walkTimer;
+        private FlowLayoutPanel rowCluesPanel;
+        private FlowLayoutPanel colCluesPanel;
+        private FlowLayoutPanel gridContainer;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

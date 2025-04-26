@@ -355,6 +355,29 @@ class DatabaseManager
            
         }
     }
+    public List<int> GetAllGridIds()
+    {
+        List<int> gridIds = new List<int>();
+
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT G_ID FROM PixelGrid";
+
+            using (var cmd = new SQLiteCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    gridIds.Add(id);
+                }
+            }
+        }
+
+        return gridIds;
+    }
+
     public int[,] LoadGridAsIntMatrix(int designId, int width, int height)
     {
         using var conn = new SQLiteConnection(ConnectionString);
@@ -371,7 +394,7 @@ class DatabaseManager
             int[] flat = JsonSerializer.Deserialize<int[]>(json);
             //if (flat.Length != width * height)
             //{
-            //    throw new Exception("⚠️ Grid size mismatch!");
+            //    throw new Exception("Grid size mismatch!");
             //}
 
             int[,] matrix = new int[height, width];
