@@ -185,24 +185,29 @@ namespace PixelWonders
                         solvedRows[i] = 0;
                 }
                 // if the row just got solved, update the row panels 
-                solvedRow(i);
+                if (solvedRows[i] == 1)
+                    solvedRow(i);
             }
+            System.Diagnostics.Debug.WriteLine("solved rows:");
+
             printMatrix(solvedRows);
             // now columns
             for(int i = 0; i < gridWidth; i++)
             {
                 // skip this row if it is in solvedRows
-                if (solvedRows[i] == 1) continue;
-                solvedRows[i] = 1;
+                if (solvedCols[i] == 1) continue;
+                solvedCols[i] = 1;
                 for (int j = 0; j < gridHeight; j++)
                 {
-                    if (userPlays[i, j] == -1 || userPlays[i, j] == 2) continue;
-                    if (userPlays[i, j] != 1 && croppedGrid[i, j] == 1)
-                        solvedRows[i] = 0;
+                    if (userPlays[j, i] == -1 || userPlays[j, i] == 2) continue;
+                    if (userPlays[j, i] != 1 && croppedGrid[j, i] == 1)
+                        solvedCols[i] = 0;
                 }
                 // if the row just got solved, update the row panels 
-                solvedColumn(i);
+                if (solvedCols[i] == 1)
+                    solvedColumn(i);
             }
+            System.Diagnostics.Debug.WriteLine("solved cols:");
             printMatrix(solvedCols);
 
         }
@@ -222,11 +227,12 @@ namespace PixelWonders
                             pb.BackColor = Color.FromArgb(242, 225, 234);
                         else
                         {
-                            pb.BackColor = Color.FromArgb(212, 177, 222);
-                            if (pb.BackgroundImage == null)
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                            if (pb.BackgroundImage == null && croppedGrid[point.X, point.Y] == 0)
                             {
                                 userPlays[point.X, point.Y] = 2; // crossed
                                 pb.BackgroundImage = crossOption.BackgroundImage;
+                                pb.BackgroundImageLayout = ImageLayout.Zoom;
                             }
                         }
                     }
@@ -246,7 +252,18 @@ namespace PixelWonders
                 {
                     if (point.X == row)
                     {
-                        pb.BackColor = Color.FromArgb(242, 225, 234);
+                        if (croppedGrid[point.X, point.Y] == 1)
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                        else
+                        {
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                            if (pb.BackgroundImage == null && croppedGrid[point.X, point.Y] == 0)
+                            {
+                                userPlays[point.X, point.Y] = 2; // crossed
+                                pb.BackgroundImage = crossOption.BackgroundImage;
+                                pb.BackgroundImageLayout = ImageLayout.Zoom;
+                            }
+                        }
                     }
                 }
             }
