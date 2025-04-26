@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing.Drawing2D;
 namespace PixelWonders
 {
 
@@ -46,7 +47,7 @@ namespace PixelWonders
                 UserSession.CurrentUsername = username;
                 Menu1 menuPage = new Menu1();
                 menuPage.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
@@ -64,7 +65,7 @@ namespace PixelWonders
             signupPage.Show();
 
             // Close or Hide the Login form
-            this.Hide();
+            this.Close();
         }
 
         private void Label3_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace PixelWonders
                 if (form is Home)
                 {
                     form.Show();
-                    this.Hide();
+                    this.Close();
                     return;
                 }
             }
@@ -82,7 +83,7 @@ namespace PixelWonders
             // If Home is not open, create a new instance
             Home homePage = new Home();
             homePage.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace PixelWonders
                 if (form is Home)
                 {
                     form.Show();
-                    this.Hide();
+                    this.Close();
                     return;
                 }
             }
@@ -105,7 +106,7 @@ namespace PixelWonders
             // If Home is not open, create a new instance
             Home homePage = new Home();
             homePage.Show();
-            this.Hide();
+            this.Close();
         }
 
         public string getUser()
@@ -124,6 +125,11 @@ namespace PixelWonders
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

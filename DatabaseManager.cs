@@ -27,17 +27,25 @@ class DatabaseManager
         using (SQLiteConnection conn = new SQLiteConnection(connectionString))
         {
             conn.Open();
+
+      
+
             ExecuteQuery(conn, "PRAGMA journal_mode=WAL;", "Enable WAL mode");
             ;
+
+
 
             // Create tables only if they don’t exist
             if (!TableExists(conn, "User"))
             {
                 ExecuteQuery(conn, @"
                     CREATE TABLE User (
-                        username TEXT PRIMARY KEY CHECK(length(username) <= 30), 
-                        f_name TEXT NOT NULL, 
-                        l_name TEXT NOT NULL, 
+                        username TEXT PRIMARY KEY 
+                            CHECK(length(username) <= 30 AND username GLOB '[A-Za-z0-9]*'), 
+                        f_name TEXT NOT NULL
+                            CHECK(length(f_name) <= 50 AND f_name GLOB '[A-Za-z]*'),
+                        l_name TEXT NOT NULL
+                              CHECK(length(l_name) <= 50 AND l_name GLOB '[A-Za-z]*'), 
                         password TEXT NOT NULL
                     );", "User table");
             }
@@ -355,6 +363,31 @@ class DatabaseManager
            
         }
     }
+
+    public List<int> GetAllGridIds()
+    {
+        List<int> gridIds = new List<int>();
+
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT G_ID FROM PixelGrid";
+
+            using (var cmd = new SQLiteCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    gridIds.Add(id);
+                }
+            }
+        }
+
+        return gridIds;
+    }
+
+
     public int[,] LoadGridAsIntMatrix(int designId, int width, int height)
     {
         using var conn = new SQLiteConnection(ConnectionString);
@@ -371,7 +404,9 @@ class DatabaseManager
             int[] flat = JsonSerializer.Deserialize<int[]>(json);
             //if (flat.Length != width * height)
             //{
+
             //    throw new Exception("⚠️ Grid size mismatch!");
+
             //}
 
             int[,] matrix = new int[height, width];

@@ -23,6 +23,7 @@ namespace PixelWonders
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             Login loginPage = new Login();
 
             // Show the Login form
