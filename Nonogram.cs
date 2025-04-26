@@ -405,6 +405,7 @@ namespace PixelWonders
                 clueLabel.Text = (clues.Count > 0) ? string.Join("\n", clues) : "0"; // vertical text
                 clueLabel.Font = new Font(label1.Font.FontFamily, 10, FontStyle.Bold);
                 clueLabel.Location = new Point(col * pixelWidth + 1, 0);
+
                 if (solvedCols[col] == 1)
                     clueLabel.BackColor = glow;
                 colCluesPanel.Controls.Add(clueLabel);
@@ -614,6 +615,11 @@ namespace PixelWonders
         }
 
         private void fillOptionContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Nonogram_Load(object sender, EventArgs e)
         {
 
         }

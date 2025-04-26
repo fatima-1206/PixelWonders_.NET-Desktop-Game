@@ -90,6 +90,7 @@
             button2.BackColor = Color.FromArgb(168, 136, 181);
             button2.Font = new Font("Pixelify Sans", 12F);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
+
             button2.Location = new Point(151, 166);
             button2.Margin = new Padding(3, 5, 3, 5);
             button2.Name = "button2";
@@ -104,6 +105,7 @@
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 12F);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
+
             button3.Location = new Point(26, 275);
             button3.Margin = new Padding(3, 5, 3, 5);
             button3.Name = "button3";
@@ -118,6 +120,7 @@
             button1.BackColor = Color.FromArgb(168, 136, 181);
             button1.Font = new Font("Pixelify Sans", 12F);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
+
             button1.Location = new Point(12, 80);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
