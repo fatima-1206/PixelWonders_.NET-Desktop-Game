@@ -139,7 +139,7 @@ namespace PixelWonders
 
             //int startX = 190;
             //int startY = 10 + 20 * 30 + 20; // below the grid
-            int gridBottom = gridContainer.Bottom; // Get the bottom position of the grid
+            int gridBottom = panel2.Bottom; // Get the bottom position of the grid
 
             // Define a space between the grid and the palette (adjust as needed)
             int spaceBelowGrid = 40; // Space between grid and palette buttons
@@ -148,13 +148,13 @@ namespace PixelWonders
             int startY = gridBottom + spaceBelowGrid;
 
             // Starting X position for palette buttons (centered or customized)
-            int startX = 162;
-            Font pixelFont2 = new Font("Pixelify Sans", 90, FontStyle.Bold);
+            int startX = 145;
+            Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
             {
                 Button paletteButton = new Button();
                 paletteButton.Size = new Size(40, 40);
-                paletteButton.Location = new Point(startX + i * 35, startY);
+                paletteButton.Location = new Point(startX + i * 40, startY);
                 paletteButton.BackColor = ColorTranslator.FromHtml(paletteColors[i]);
 
                 paletteButton.Text = (i + 1).ToString(); //  Place the number on the button
