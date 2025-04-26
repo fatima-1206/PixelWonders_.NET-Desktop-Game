@@ -88,7 +88,7 @@ namespace PixelWonders
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (divisor)) / divisor);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (divisor)) / divisor);
             //gridContainer.BackColor = Color.FromArgb(241, 217, 231); 
-            
+
             for (int row = 0; row < gridHeight; row++)
             {
                 for (int col = 0; col < gridWidth; col++)
@@ -297,7 +297,7 @@ namespace PixelWonders
         public void populateLives()
         {
             int spacing = 10;
-            int heartWidth = 45; // size used in pictureBox.Size 
+            int heartWidth = livesPanel.Height - 3; // size used in pictureBox.Size 
 
             livesPanel.Padding = new Padding(spacing, 3, 3, 3);
 
@@ -346,8 +346,12 @@ namespace PixelWonders
         }
         private void imageChangeTimer_Tick(object sender, EventArgs e)
         {
+
             if (animalPanel.Visible == false)
+            {
                 animalPanel.Show();
+                imageChangeTimer.Interval = 10000;
+            }
             int index = _random.Next(animalPics.Count);
             animalPanel.Image = animalPics[index];
         }
@@ -357,20 +361,27 @@ namespace PixelWonders
             if (WalkAnimations.Contains(animalPanel.Image))
             {
 
-                int begin = 765 + 15;
-                int end = begin + 274 - 70;
+                int begin = platform.Location.X + animalPanel.Width / 2;
+                int end = begin + platform.Width - animalPanel.Width;
 
                 int step = 3;
 
-                if (animalPanel.Location.X == end)
+                if (animalPanel.Location.X >= end)
                 {
                     direction = -1;
+                    Image img = animalPanel.Image;
+                    img.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    animalPanel.Image = img;
                 }
-                else if (animalPanel.Location.X == begin)
+                else if (animalPanel.Location.X <= begin)
                 {
                     direction = 1;
+                    Image img = animalPanel.Image;
+                    img.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    animalPanel.Image = img;
                 }
                 else { }
+               
                 animalPanel.Location = new Point(animalPanel.Location.X + (step * direction), animalPanel.Location.Y);
 
             }
@@ -386,6 +397,11 @@ namespace PixelWonders
         }
 
         private void Nonogram_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void livesPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

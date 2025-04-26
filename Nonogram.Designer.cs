@@ -58,7 +58,7 @@
             close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             close.BackColor = Color.FromArgb(222, 183, 219);
             close.BackgroundImage = Properties.Resources.cross_removebg_preview;
-            close.BackgroundImageLayout = ImageLayout.None;
+            close.BackgroundImageLayout = ImageLayout.Zoom;
             close.Cursor = Cursors.Hand;
             close.Location = new Point(1100, 0);
             close.Margin = new Padding(2);
@@ -117,6 +117,7 @@
             livesPanel.Padding = new Padding(4, 2, 4, 2);
             livesPanel.Size = new Size(220, 37);
             livesPanel.TabIndex = 9;
+            livesPanel.Paint += livesPanel_Paint;
             // 
             // crossOptionContainer
             // 
@@ -152,19 +153,19 @@
             // 
             fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
-            fillOption.Location = new Point(22, 16);
+            fillOption.Location = new Point(22, 14);
             fillOption.Margin = new Padding(2, 3, 2, 3);
             fillOption.Name = "fillOption";
-            fillOption.Size = new Size(46, 42);
+            fillOption.Size = new Size(40, 40);
             fillOption.TabIndex = 0;
             // 
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.white_with_ball_8fps4;
-            animalPanel.Location = new Point(755, 615);
+            animalPanel.Location = new Point(755, 602);
             animalPanel.Margin = new Padding(2);
             animalPanel.Name = "animalPanel";
-            animalPanel.Size = new Size(47, 48);
+            animalPanel.Size = new Size(70, 61);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
             animalPanel.TabIndex = 13;
             animalPanel.TabStop = false;
@@ -174,7 +175,7 @@
             // imageChangeTimer
             // 
             imageChangeTimer.Enabled = true;
-            imageChangeTimer.Interval = 10000;
+            imageChangeTimer.Interval = 1;
             imageChangeTimer.Tick += imageChangeTimer_Tick;
             // 
             // platform
