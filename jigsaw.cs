@@ -57,7 +57,7 @@ namespace PixelWonders
         {
             Menu2 menu = new Menu2();
             menu.Show(this);
-            this.Hide();
+            this.Close();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
