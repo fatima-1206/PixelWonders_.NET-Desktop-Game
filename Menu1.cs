@@ -49,7 +49,7 @@ namespace PixelWonders
             PaletteForm paletteForm = new PaletteForm();
             paletteForm.Show();
 
-            this.Close();
+            this.Hide();
 
 
         }
