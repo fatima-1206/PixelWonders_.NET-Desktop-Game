@@ -41,9 +41,11 @@
             label2 = new Label();
             button4 = new Button();
             label3 = new Label();
+            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // imageList1
@@ -83,6 +85,7 @@
             // 
             // button2
             // 
+
             button2.BackColor = Color.FromArgb(168, 136, 181);
             button2.Font = new Font("Pixelify Sans", 12F);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
@@ -151,7 +154,7 @@
             button4.Name = "button4";
             button4.Size = new Size(77, 37);
             button4.TabIndex = 3;
-            button4.Text = ">Back";
+            button4.Text = "       Back";
             button4.UseVisualStyleBackColor = false;
             button4.Click += Button4_Click;
             // 
@@ -167,12 +170,24 @@
             label3.Text = "X";
             label3.Click += Label3_Click;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Thistle;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(20, 19);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(22, 24);
+            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox4.TabIndex = 6;
+            pictureBox4.TabStop = false;
+            // 
             // Menu2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(799, 450);
+            Controls.Add(pictureBox4);
             Controls.Add(label3);
             Controls.Add(button4);
             Controls.Add(panel1);
@@ -188,6 +203,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +221,6 @@
         private Label label2;
         private Button button4;
         private Label label3;
+        private PictureBox pictureBox4;
     }
 }

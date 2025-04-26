@@ -240,6 +240,11 @@ namespace PixelWonders
         {
 
         }
+
+        private void promptLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
