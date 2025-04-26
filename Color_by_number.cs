@@ -31,7 +31,7 @@ namespace PixelWonders
         private int selectedNumber;
         private List<string> paletteColors;
 
- 
+
         public Color_by_number()
         {
             InitializeComponent();
@@ -41,8 +41,8 @@ namespace PixelWonders
         }
         public void InitializeGrid()
         {
-            gridContainer.Width = 430;   
-            gridContainer.Height = 430; 
+            gridContainer.Width = 420;
+            gridContainer.Height = 420;
             gridContainer.Location = new Point(59, 50);
             gridContainer.Padding = new Padding(0);
 
@@ -85,14 +85,14 @@ namespace PixelWonders
             gridWidth = orginalGrid.GetLength(1);
             // columns
 
-            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (gridWidth)) / gridWidth);
-             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (gridHeight)) / gridHeight);
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width ) / gridWidth);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height ) / gridHeight);
             //int pixelWidth = 20;
             //int pixelHeight = 20;
-           // int pixelWidth = (gridContainer.Width - (gridWidth + 1)) / gridWidth;
+            // int pixelWidth = (gridContainer.Width - (gridWidth + 1)) / gridWidth;
             //int pixelHeight = (gridContainer.Height - (gridHeight + 1)) / gridHeight;
 
-           
+
 
             // Allow scrolling if needed
             //gridContainer.AutoScroll = true;
@@ -114,7 +114,7 @@ namespace PixelWonders
                     btn.Margin = new Padding(0);
 
                     btn.Location = new Point(col * btn.Width, row * btn.Height);
-                  //  btn.Location = new Point(col * pixelWidth, row * pixelHeight);
+                    //  btn.Location = new Point(col * pixelWidth, row * pixelHeight);
                     btn.Font = pixelFont;
 
                     int gridValue = orginalGrid[minRow + row, minCol + col];
@@ -245,7 +245,10 @@ namespace PixelWonders
                 }
             }
         }
-        
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
