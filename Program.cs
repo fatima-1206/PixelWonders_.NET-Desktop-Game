@@ -15,6 +15,7 @@ namespace PixelWonders
             dbManager.InitializeDatabase();
             dbManager.AddPredefinedPalettesToDatabase();
 
+
             Application.Run(new Menu1());
         }
     }

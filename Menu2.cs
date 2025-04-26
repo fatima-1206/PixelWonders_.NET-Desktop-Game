@@ -21,8 +21,8 @@ namespace PixelWonders
         {
             Nonogram nonogram = new Nonogram();
             nonogram.Show();
-            this.Hide();
-            
+            this.Close();
+
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -52,7 +52,22 @@ namespace PixelWonders
         {
             jigsaw puzzle = new jigsaw();
             puzzle.Show();
-            this.Hide();
+            this.Close();
+
+
+        }
+
+        private void Menu2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Color_by_number color_By_Number = new Color_by_number();
+            color_By_Number.Show();
+            this.Close();
+
         }
     }
 }

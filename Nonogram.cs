@@ -354,6 +354,7 @@ namespace PixelWonders
             }
         }
 
+
         private void gridContainer_Paint(object sender, PaintEventArgs e) { }
         private void close_Paint(object sender, PaintEventArgs e) { }
 
