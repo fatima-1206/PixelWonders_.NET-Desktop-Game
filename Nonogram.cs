@@ -34,6 +34,10 @@ namespace PixelWonders
             InitializeGrid();
             DrawGrid();
             drawClues();
+            updateSolvedRowCols();
+            drawClues();
+            //DrawGrid();
+
         }
 
         public void InitializeGrid()
@@ -52,18 +56,26 @@ namespace PixelWonders
                 }
             }
             croppedGrid = CropMatrix(binaryMatrix);
+            solvedRows = new int[croppedGrid.GetLength(0)];
+            solvedCols = new int[croppedGrid.GetLength(1)];
             userPlays = new int[croppedGrid.GetLength(0), croppedGrid.GetLength(1)];
             // initialize userPlays with 0
             for (int i = 0; i < userPlays.GetLength(0); i++)
             {
+                solvedRows[i] = 0;
                 for (int j = 0; j < userPlays.GetLength(1); j++)
                 {
                     userPlays[i, j] = 0;
                 }
+
             }
+            for (int i = 0;i <croppedGrid.GetLength(1); i++)
+                solvedCols[i] = 0;
+            updateSolvedRowCols();
         }
         public void DrawGrid()
         {
+            gridContainer.Controls.Clear();
             gridHeight = croppedGrid.GetLength(0); // rows (Y)
             gridWidth = croppedGrid.GetLength(1);  // columns (X)
             int divisor = gridHeight > gridWidth ? gridHeight : gridWidth;
@@ -76,6 +88,8 @@ namespace PixelWonders
             {
                 for (int col = 0; col < gridWidth; col++)
                 {
+                    Color glowCross = Color.FromArgb(240, 230, 236);
+                    Color glowFill = Color.FromArgb(215, 157, 224);
                     PictureBox pb = new PictureBox();
                     pb.Width = pixelWidth;
                     pb.Height = pixelHeight;
@@ -85,16 +99,20 @@ namespace PixelWonders
                     int j = col;
 
                     pb.Click += (sender, e) => PixelClicked(sender, i, j);
+                    pb.Tag = new Point(i, j);  
+
                     //pb.MouseHover += (sender, e) => PixelHover(sender, row, col);
 
                     if (croppedGrid[row, col] == 1 && userPlays[row, col] == 1)
                     {
                         pb.BackColor = ColorTranslator.FromHtml("#b38fbd");
+
                     }
                     else
                     {
                         pb.BackColor = ColorTranslator.FromHtml("#F0f0f0");
                     }
+
 
                     gridContainer.Controls.Add(pb);
                 }
@@ -136,11 +154,7 @@ namespace PixelWonders
                 userPlays[row, col] = -1; // wrong
                 numberOfLives--;
                 populateLives();
-                if (numberOfLives <= 0)
-                {
-                    MessageBox.Show("Game Over! You have no lives left.");
-                    this.Close();
-                }
+
             }
             else if (!fillSelected && croppedGrid[row, col] == 1)
             {
@@ -148,19 +162,149 @@ namespace PixelWonders
                 userPlays[row, col] = -1; // wrong
                 numberOfLives--;
                 populateLives();
-                if (numberOfLives <= 0)
-                {
-                    MessageBox.Show("Game Over! You have no lives left.");
-                    this.Close();
-                }
-            }
 
+            }
+            checkGameStatus();
+            // update solved rows and columns
+            updateSolvedRowCols();
+            //DrawGrid();
+            drawClues();
+        }
+
+        private void updateSolvedRowCols() {
+            // first rows
+            for (int i = 0; i < gridHeight; i++)
+            {
+                // skip this row if it is in solvedRows
+                if (solvedRows[i] == 1) continue;
+                solvedRows[i] = 1;
+                for (int j = 0; j < gridWidth; j++)
+                {
+                    if (userPlays[i, j] == -1 || userPlays[i, j] == 2) continue;
+                    if (userPlays[i, j] != 1 && croppedGrid[i,j] == 1) 
+                        solvedRows[i] = 0;
+                }
+                // if the row just got solved, update the row panels 
+                if (solvedRows[i] == 1)
+                    solvedRow(i);
+            }
+            System.Diagnostics.Debug.WriteLine("solved rows:");
+
+            printMatrix(solvedRows);
+            // now columns
+            for(int i = 0; i < gridWidth; i++)
+            {
+                // skip this row if it is in solvedRows
+                if (solvedCols[i] == 1) continue;
+                solvedCols[i] = 1;
+                for (int j = 0; j < gridHeight; j++)
+                {
+                    if (userPlays[j, i] == -1 || userPlays[j, i] == 2) continue;
+                    if (userPlays[j, i] != 1 && croppedGrid[j, i] == 1)
+                        solvedCols[i] = 0;
+                }
+                // if the row just got solved, update the row panels 
+                if (solvedCols[i] == 1)
+                    solvedColumn(i);
+            }
+            System.Diagnostics.Debug.WriteLine("solved cols:");
+            printMatrix(solvedCols);
 
         }
 
+       
+        private void solvedColumn(int col)
+        {
+            List<PictureBox> pictureBoxes = GetAllPictureBoxes(gridContainer);
 
+            foreach (var pb in pictureBoxes)
+            {
+                if (pb.Tag is Point point)
+                {
+                    if (point.Y == col)
+                    {
+                        if (croppedGrid[point.X, point.Y] == 1)
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                        else
+                        {
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                            if (pb.BackgroundImage == null && croppedGrid[point.X, point.Y] == 0)
+                            {
+                                userPlays[point.X, point.Y] = 2; // crossed
+                                pb.BackgroundImage = crossOption.BackgroundImage;
+                                pb.BackgroundImageLayout = ImageLayout.Zoom;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        private void solvedRow(int row)
+        {
+            List<PictureBox> pictureBoxes = GetAllPictureBoxes(gridContainer);
+
+            foreach (var pb in pictureBoxes)
+            {
+                if (pb.Tag is Point point)
+                {
+                    if (point.X == row)
+                    {
+                        if (croppedGrid[point.X, point.Y] == 1)
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                        else
+                        {
+                            pb.BackColor = Color.FromArgb(242, 225, 234);
+                            if (pb.BackgroundImage == null && croppedGrid[point.X, point.Y] == 0)
+                            {
+                                userPlays[point.X, point.Y] = 2; // crossed
+                                pb.BackgroundImage = crossOption.BackgroundImage;
+                                pb.BackgroundImageLayout = ImageLayout.Zoom;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public List<PictureBox> GetAllPictureBoxes(Panel panel)
+        {
+            return panel.Controls.OfType<PictureBox>().ToList();
+        }
+
+        private bool GameWon()
+        {
+            for (int i = 0; i < gridWidth; i++)
+            {
+                for (int j = 0; j < gridHeight; j++)
+                {
+
+                    if (userPlays[i, j] == -1) continue;
+                    // some pixel is not filled
+                    if (userPlays[i, j] == 0 && croppedGrid[i, j] == 1) return false;
+                }
+
+            }
+            return true;
+        }
+        public void checkGameStatus()
+        {
+            if (GameWon())
+            {
+                MessageBox.Show("Congratulations! You solved the Nonogram!");
+                this.Close();
+            }
+            if (numberOfLives <= 0)
+            {
+                MessageBox.Show("Game Over! You have no lives left.");
+                this.Close();
+            }
+        }
         public void drawClues()
         {
+
+            Color glow = Color.FromArgb(242, 225, 234);
             gridContainer.Margin = new Padding(0, 0, 0, 0);
             gridContainer.Padding = new Padding(0, 0, 0, 0);
             // Clear any previous clues
@@ -182,7 +326,7 @@ namespace PixelWonders
             {
                 Panel dividor = new Panel();
                 dividor.BackColor = Color.FromArgb(83, 54, 89);
-                dividor.Height = 1;
+               dividor.Height = 1;
                 dividor.Width = rowCluesPanel.Width;
                 dividor.Margin = new Padding(0, 0, 0, 0);
                 rowCluesPanel.Controls.Add(dividor);
@@ -215,6 +359,9 @@ namespace PixelWonders
                 clueLabel.Text = (clues.Count > 0) ? string.Join(" ", clues) : "0";
                 clueLabel.Font = new Font("Arial", 10, FontStyle.Bold);
                 clueLabel.Location = new Point(0, row * pixelHeight);
+                if (solvedRows[row] == 1)
+                    clueLabel.BackColor = glow;
+
                 rowCluesPanel.Controls.Add(clueLabel);
             }
 
@@ -225,6 +372,7 @@ namespace PixelWonders
             {
                 Panel dividor = new Panel();
                 dividor.BackColor = Color.FromArgb(83, 54, 89);
+
                 dividor.Width = 1;
                 dividor.Height = colCluesPanel.Height;
                 dividor.Margin = new Padding(0, 0, 0, 0);
@@ -257,6 +405,8 @@ namespace PixelWonders
                 clueLabel.Text = (clues.Count > 0) ? string.Join("\n", clues) : "0"; // vertical text
                 clueLabel.Font = new Font(label1.Font.FontFamily, 10, FontStyle.Bold);
                 clueLabel.Location = new Point(col * pixelWidth + 1, 0);
+                if (solvedCols[col] == 1)
+                    clueLabel.BackColor = glow;
                 colCluesPanel.Controls.Add(clueLabel);
             }
         }
@@ -273,6 +423,17 @@ namespace PixelWonders
                 System.Diagnostics.Debug.WriteLine("");
             }
         }
+        public void printMatrix(int[] matrix)
+        {
+            
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    System.Diagnostics.Debug.Write(matrix[j] + " ");
+                }
+                System.Diagnostics.Debug.WriteLine("");
+            
+        }
+
         public int[,] CropMatrix(int[,] grid)
         {
             int rows = grid.GetLength(0);
@@ -413,7 +574,7 @@ namespace PixelWonders
 
                 if (animalPanel.Location.X >= end)
                 {
-                    if (direction == -1) return; 
+                    if (direction == -1) return;
                     Image img = animalPanel.Image;
                     img.RotateFlip(RotateFlipType.RotateNoneFlipX);
                     animalPanel.Image = img;
@@ -452,5 +613,9 @@ namespace PixelWonders
             fillOptionContainer.BackColor = Color.FromArgb(241, 217, 231);
         }
 
+        private void fillOptionContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
