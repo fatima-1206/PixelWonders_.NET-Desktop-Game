@@ -136,6 +136,9 @@
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="black_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,9 +156,6 @@
   </data>
   <data name="WhatsApp Image 2025-03-07 at 1.43.31 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2025-03-07 at 1.43.31 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gray_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +175,8 @@
   <data name="green_idle_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_idle_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_idle_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_idle_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_run_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_run_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="warrior_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warrior_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +196,9 @@
   <data name="gray_swipe_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_swipe_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="brown_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,11 +211,14 @@
   <data name="black_run_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_run_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="akita_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\akita_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close-up-puzzle-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close-up-puzzle-background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="socks_beige_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\socks_beige_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="magical_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magical_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,14 +265,11 @@
   <data name="paint_brown_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_brown_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="socks_black_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\socks_black_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="akita_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\akita_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gray_idle_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray_idle_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="warrior_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warrior_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socks_brown_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_brown_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,11 +283,11 @@
   <data name="white_with_ball_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_with_ball_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="green_idle_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_idle_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opneEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opneEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,11 +298,14 @@
   <data name="red_run_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_run_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="brown_swipe_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_swipe_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gray_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="purple_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\purple_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paint_brown_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paint_brown_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gray_with_ball_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_with_ball_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,8 +319,14 @@
   <data name="paint_brown_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_brown_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gray_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brown_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="magical_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magical_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,8 +334,8 @@
   <data name="socks_brown_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_brown_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paint_brown_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paint_brown_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="akita_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\akita_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,9 +349,6 @@
   <data name="paint_brown_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_brown_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close-up-puzzle-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close-up-puzzle-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="white_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -352,8 +361,8 @@
   <data name="unlocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_idle_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_idle_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellow_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,6 +379,9 @@
   <data name="white_run_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_run_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="black_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="white_walk_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_walk_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -378,9 +390,6 @@
   </data>
   <data name="gray_run_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_run_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brown_idle_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_idle_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,6 +415,9 @@
   <data name="close-up-puzzle-background (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-up-puzzle-background (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orange_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cross-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -430,6 +442,9 @@
   <data name="akita_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\akita_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="green_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="warrior_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warrior_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -448,8 +463,8 @@
   <data name="warrior_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warrior_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_swipe_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_swipe_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="socks_brown_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\socks_brown_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_beige_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_beige_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -472,6 +487,9 @@
   <data name="red_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="red_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="green_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -487,20 +505,11 @@
   <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gray_swipe_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_swipe_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_walk_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_walk_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="black_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="akita_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\akita_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gray_with_ball_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_with_ball_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -511,11 +520,20 @@
   <data name="white_run_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_run_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-back-button-image_2231359" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-back-button-image_2231359.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="black_lie_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_lie_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_walk_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_walk_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socks_black_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_black_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -526,8 +544,17 @@
   <data name="purple_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\purple_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gray_jump_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_jump_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="brown_swipe_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_swipe_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot 2025-03-08 180859" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2025-03-08 180859.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -538,9 +565,6 @@
   <data name="brown_walk_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_walk_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paint_beige_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paint_beige_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="eraser(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -550,8 +574,8 @@
   <data name="gray_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gray_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -562,26 +586,20 @@
   <data name="black_idle_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_idle_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_swipe_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_swipe_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="magical_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magical_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="magical_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magical_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="red_idle_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_idle_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="green_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_walk_fast_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_walk_fast_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="paint_brown_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paint_brown_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red_walk_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_walk_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -622,8 +640,8 @@
   <data name="black_swipe_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_swipe_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gray_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_idle_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_idle_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Annotation 2025-03-06 112456" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Annotation 2025-03-06 112456.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -646,12 +664,6 @@
   <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="socks_brown_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\socks_brown_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_with_ball_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_with_ball_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="green_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -664,11 +676,14 @@
   <data name="brown_idle_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_idle_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="purple_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purple_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="red_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_walk_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_walk_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="orange_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orange_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -679,8 +694,8 @@
   <data name="socks_brown_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_brown_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gray_idle_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gray_idle_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closeEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\closeEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -691,8 +706,8 @@
   <data name="paint_black_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_black_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="akita_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\akita_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_walk_8fps4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_walk_8fps4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cross1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -712,17 +727,14 @@
   <data name="gray_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yellow_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yellow_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="brown_walk_fast_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_walk_fast_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brown_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paint_beige_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paint_beige_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_with_ball_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_with_ball_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -730,8 +742,8 @@
   <data name="paint_black_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_black_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="warrior_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warrior_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_idle_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_idle_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gray_walk_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_walk_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -739,8 +751,8 @@
   <data name="paint_black_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_black_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_run_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_run_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brown_swipe_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brown_swipe_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brown_with_ball_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_with_ball_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -748,20 +760,20 @@
   <data name="paint_brown_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_brown_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green_walk_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_walk_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_swipe_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_swipe_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socks_beige_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_beige_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_swipe_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_swipe_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close-up-puzzle-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-up-puzzle-background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="warrior_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warrior_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -769,11 +781,8 @@
   <data name="black_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="socks_beige_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\socks_beige_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="red_idle_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_idle_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_idle_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_idle_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brown_swipe_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_swipe_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -787,14 +796,14 @@
   <data name="gray_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_swipe_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_swipe_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="purple_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purple_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crossed_wrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossed_wrong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red_swipe_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_swipe_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -814,26 +823,26 @@
   <data name="white_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diskette1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diskette1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="red_lie_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_lie_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="orange_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\orange_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="opneEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opneEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="socks_brown_walk_fast_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\socks_brown_walk_fast_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="black_with_ball_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_with_ball_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="socks_brown_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\socks_brown_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="red_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="diskette1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diskette1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close-up-puzzle-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-up-puzzle-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socks_black_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_black_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -850,8 +859,8 @@
   <data name="green_run_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_run_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="red_idle_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_idle_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_with_ball_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_with_ball_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -877,8 +886,8 @@
   <data name="green_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="purple_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\purple_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="red_swipe_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_swipe_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_brown_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_brown_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -889,11 +898,11 @@
   <data name="orange_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orange_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paint_brown_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paint_brown_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gray_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="socks_black_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\socks_black_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="black_walk_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_walk_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -910,8 +919,8 @@
   <data name="brown_walk_8fps3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown_walk_8fps3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brown_walk_fast_8fps2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brown_walk_fast_8fps2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_beige_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_beige_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -919,8 +928,8 @@
   <data name="socks_black_idle_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_black_idle_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gray_jump_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray_jump_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_with_ball_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_with_ball_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_black_stand_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_black_stand_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -928,19 +937,19 @@
   <data name="gray_walk_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_walk_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="orange_with_ball_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\orange_with_ball_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellow_run_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow_run_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red_walk_fast_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_walk_fast_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_idle_8fps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_idle_8fps1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="play (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="socks_beige_swipe_8fps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\socks_beige_swipe_8fps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-back-button-image_2231359" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-back-button-image_2231359.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crossed_wrong1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossed_wrong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -743,6 +743,16 @@ namespace PixelWonders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_1_ {
+            get {
+                object obj = ResourceManager.GetObject("close(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_up_puzzle_background {
             get {
                 object obj = ResourceManager.GetObject("close-up-puzzle-background", resourceCulture);
@@ -806,6 +816,26 @@ namespace PixelWonders.Properties {
         internal static System.Drawing.Bitmap cross1 {
             get {
                 object obj = ResourceManager.GetObject("cross1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crossed_wrong {
+            get {
+                object obj = ResourceManager.GetObject("crossed_wrong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crossed_wrong1 {
+            get {
+                object obj = ResourceManager.GetObject("crossed_wrong1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

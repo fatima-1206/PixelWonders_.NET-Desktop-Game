@@ -49,7 +49,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(422, 1086);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // button3
             // 
@@ -90,6 +89,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.ErrorImage = Properties.Resources.crossed_wrong1;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(427, 29);
             pictureBox2.Name = "pictureBox2";
@@ -100,8 +100,7 @@
             // 
             // Home
             // 
-
-            AutoScaleDimensions = new SizeF(21F, 43F);
+            AutoScaleDimensions = new SizeF(18F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
             ClientSize = new Size(1143, 749);
