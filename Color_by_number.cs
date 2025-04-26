@@ -190,6 +190,11 @@ namespace PixelWonders
              
                 MessageBox.Show("Wrong color! Please select the correct palette color.");
             }
+            if (CheckIfGameWon())
+            {
+                MessageBox.Show("Congratulations! You completed the Color by number game!", "You Win!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();  // Close the application
+            }
         }
 
         private void PaletteButton_Click(object sender, EventArgs e)
@@ -199,6 +204,18 @@ namespace PixelWonders
             selectedColor = ColorTranslator.FromHtml(paletteColors[selectedNumber - 1]);
         }
 
+        private bool CheckIfGameWon()
+        {
+            foreach (Button btn in gridContainer.Controls)
+            {
+                // Only check the buttons that are enabled and should be colored
+                if (btn.Enabled && btn.BackColor != selectedColor)
+                {
+                    return false;  // Not all cells are correctly filled
+                }
+            }
+            return true;  // All cells are correctly filled
+        }
 
 
         private void Color_by_number_Load(object sender, EventArgs e)
