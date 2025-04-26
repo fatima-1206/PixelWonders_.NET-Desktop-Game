@@ -41,19 +41,16 @@ namespace PixelWonders
         }
         public void InitializeGrid()
         {
-            gridContainer.Width = 420;
-            gridContainer.Height = 420;
-            gridContainer.Location = new Point(59, 50);
-            gridContainer.Padding = new Padding(0);
+            
 
-            // first get a list of all ids of the grid
+            // first getting ids of the grid
             List<int> gridIds = Program.dbManager.GetAllGridIds();
 
-            // pick a random design
+            //random design
             int randomIndex = _random.Next(gridIds.Count);
             int selectedGridId = gridIds[randomIndex];
 
-            // load the grid matrix
+            // loading matrix
             orginalGrid = Program.dbManager.LoadGridAsIntMatrix(selectedGridId, 20, 20);
 
             // fetch the palette for the selected design
@@ -77,28 +74,39 @@ namespace PixelWonders
                 }
             }
 
-            // crop the grid (optional, if you want)
-            // croppedGrid = CropMatrix(binaryMatrix);
 
-            // Now draw the grid with numbers
-            gridHeight = orginalGrid.GetLength(0);
-            gridWidth = orginalGrid.GetLength(1);
-            // columns
 
-            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width ) / gridWidth);
-            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height ) / gridHeight);
-            //int pixelWidth = 20;
+           // int pixelWidth = 20;
             //int pixelHeight = 20;
             // int pixelWidth = (gridContainer.Width - (gridWidth + 1)) / gridWidth;
             //int pixelHeight = (gridContainer.Height - (gridHeight + 1)) / gridHeight;
 
+            gridHeight = orginalGrid.GetLength(0);
+            gridWidth = orginalGrid.GetLength(1);
+    
+
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
+            pixelWidth += 1;    // Make button a little wider
+            pixelHeight += 1;
+            //gridContainer.Width = 420;
+            //gridContainer.Height = 420;
+            //gridContainer.Location = new Point(59, 50);
+            gridContainer.Padding = new Padding(0);
+
+            /* int margin = 30; // space around the grid
+             gridContainer.Width = panel2.Width - margin * 2;
+             gridContainer.Height = panel2.Height - margin * 2;
+             gridContainer.Location = new Point(margin, margin);*/
+            int margin = 30;
+            gridContainer.Width = gridWidth * pixelWidth + 1;   
+            gridContainer.Height = gridHeight * pixelHeight + 1;
+            gridContainer.Location = new Point(margin, margin);
 
 
-            // Allow scrolling if needed
-            //gridContainer.AutoScroll = true;
 
             gridContainer.Controls.Clear(); // clear old controls if any
-            Font pixelFont = new Font("Pixelify Sans", 8, FontStyle.Regular);
+            Font pixelFont = new Font("Pixelify Sans", 6, FontStyle.Bold);
             for (int row = 0; row < gridHeight; row++)
             {
                 for (int col = 0; col < gridWidth; col++)
@@ -112,7 +120,7 @@ namespace PixelWonders
                     btn.Width = pixelWidth;
                     btn.Height = pixelHeight;
                     btn.Margin = new Padding(0);
-
+                    btn.ForeColor = Color.FromArgb(83, 54, 89);
                     btn.Location = new Point(col * btn.Width, row * btn.Height);
                     //  btn.Location = new Point(col * pixelWidth, row * pixelHeight);
                     btn.Font = pixelFont;
@@ -141,13 +149,13 @@ namespace PixelWonders
             //int startY = 10 + 20 * 30 + 20; // below the grid
             int gridBottom = panel2.Bottom; // Get the bottom position of the grid
 
-            // Define a space between the grid and the palette (adjust as needed)
+          
             int spaceBelowGrid = 40; // Space between grid and palette buttons
 
-            // Position for the palette buttons (just below the grid)
+            // Position(just below the grid)
             int startY = gridBottom + spaceBelowGrid;
 
-            // Starting X position for palette buttons (centered or customized)
+            // Starting X position for palette buttons
             int startX = 145;
             Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
@@ -157,7 +165,7 @@ namespace PixelWonders
                 paletteButton.Location = new Point(startX + i * 40, startY);
                 paletteButton.BackColor = ColorTranslator.FromHtml(paletteColors[i]);
 
-                paletteButton.Text = (i + 1).ToString(); //  Place the number on the button
+                paletteButton.Text = (i + 1).ToString(); 
 
                 paletteButton.Tag = i + 1; // saving the number for matching
                 paletteButton.Font = pixelFont2;
@@ -175,11 +183,11 @@ namespace PixelWonders
             if (requiredNumber == selectedNumber)
             {
                 clickedButton.BackColor = selectedColor;
-                clickedButton.Text = ""; // clear number after coloring
+                clickedButton.Text = ""; 
             }
             else
             {
-                // Optionally show a message: wrong color selected
+             
                 MessageBox.Show("Wrong color! Please select the correct palette color.");
             }
         }

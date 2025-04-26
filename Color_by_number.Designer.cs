@@ -128,7 +128,9 @@
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
             panel2.Location = new Point(70, 232);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Margin = new Padding(20);
+            panel2.Controls.Add(gridContainer);
+
             panel2.Name = "panel2";
             panel2.Size = new Size(616, 495);
             panel2.TabIndex = 16;
