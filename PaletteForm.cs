@@ -208,7 +208,7 @@ namespace PixelWonders
                 designForm = new CreateDesign(selectedPaletteName);
             //CreateDesign designForm = new CreateDesign();
             designForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void done_Paint(object sender, PaintEventArgs e)

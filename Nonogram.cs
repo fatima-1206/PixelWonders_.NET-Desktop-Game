@@ -413,17 +413,19 @@ namespace PixelWonders
 
                 if (animalPanel.Location.X >= end)
                 {
-                    direction = -1;
+                    if (direction == -1) return; 
                     Image img = animalPanel.Image;
                     img.RotateFlip(RotateFlipType.RotateNoneFlipX);
                     animalPanel.Image = img;
+                    direction = -1;
                 }
                 else if (animalPanel.Location.X <= begin)
                 {
-                    direction = 1;
+                    if (direction == 1) return;
                     Image img = animalPanel.Image;
                     img.RotateFlip(RotateFlipType.RotateNoneFlipX);
                     animalPanel.Image = img;
+                    direction = 1;
                 }
                 else { }
 
@@ -436,20 +438,7 @@ namespace PixelWonders
         private void gridContainer_Paint(object sender, PaintEventArgs e) { }
         private void close_Paint(object sender, PaintEventArgs e) { }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Nonogram_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void livesPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void fillOption_Click(object sender, EventArgs e)
         {
             fillSelected = true;

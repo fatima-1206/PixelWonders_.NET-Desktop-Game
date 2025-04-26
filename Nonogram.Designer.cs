@@ -93,7 +93,7 @@
             label1.Size = new Size(310, 69);
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
-            label1.Click += label1_Click;
+            //label1.Click += label1_Click;
             // 
             // pictureBoxLogo
             // 
@@ -117,7 +117,7 @@
             livesPanel.Padding = new Padding(5, 2, 5, 2);
             livesPanel.Size = new Size(274, 46);
             livesPanel.TabIndex = 9;
-            livesPanel.Paint += livesPanel_Paint;
+            //livesPanel.Paint += livesPanel_Paint;
             // 
             // crossOptionContainer
             // 
@@ -260,7 +260,7 @@
             Margin = new Padding(2);
             Name = "Nonogram";
             Text = "Nonogram";
-            Load += Nonogram_Load;
+            //Load += Nonogram_Load;
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

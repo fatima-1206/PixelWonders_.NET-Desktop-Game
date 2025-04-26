@@ -40,6 +40,7 @@
             LockButton = new PictureBox();
             designN = new TextBox();
             label2 = new Label();
+            colorSelected = new Panel();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)eraserButton).BeginInit();
@@ -65,7 +66,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(168, 136, 181);
-            label1.Location = new Point(340, 10);
+            label1.Location = new Point(422, 6);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(479, 69);
@@ -92,7 +93,7 @@
             close.BackgroundImage = Properties.Resources.cross1;
             close.BackgroundImageLayout = ImageLayout.None;
             close.Cursor = Cursors.Hand;
-            close.Location = new Point(1410, 0);
+            close.Location = new Point(1373, 0);
             close.Margin = new Padding(1);
             close.Name = "close";
             close.Size = new Size(58, 31);
@@ -103,19 +104,19 @@
             // gridContainer
             // 
             gridContainer.BackColor = Color.FromArgb(83, 54, 89);
-            gridContainer.Location = new Point(350, 151);
+            gridContainer.Location = new Point(408, 173);
             gridContainer.Margin = new Padding(0);
             gridContainer.Name = "gridContainer";
-            gridContainer.Size = new Size(548, 469);
+            gridContainer.Size = new Size(550, 550);
             gridContainer.TabIndex = 5;
             gridContainer.Paint += gridContainer_Paint;
             // 
             // palettePanel
             // 
-            palettePanel.Location = new Point(255, 164);
+            palettePanel.Location = new Point(311, 182);
             palettePanel.Margin = new Padding(4, 2, 4, 2);
             palettePanel.Name = "palettePanel";
-            palettePanel.Size = new Size(54, 440);
+            palettePanel.Size = new Size(54, 531);
             palettePanel.TabIndex = 6;
             palettePanel.Paint += palettePanel_Paint;
             // 
@@ -126,10 +127,10 @@
             eraserButton.Cursor = Cursors.Hand;
             eraserButton.ErrorImage = Properties.Resources.crossed_wrong;
             eraserButton.Image = Properties.Resources.eraser_1_;
-            eraserButton.Location = new Point(968, 209);
+            eraserButton.Location = new Point(1080, 270);
             eraserButton.Margin = new Padding(4, 2, 4, 2);
             eraserButton.Name = "eraserButton";
-            eraserButton.Padding = new Padding(5, 5, 5, 5);
+            eraserButton.Padding = new Padding(5);
             eraserButton.Size = new Size(137, 58);
             eraserButton.SizeMode = PictureBoxSizeMode.Zoom;
             eraserButton.TabIndex = 8;
@@ -143,7 +144,7 @@
             saveButton.Cursor = Cursors.Hand;
             saveButton.ErrorImage = Properties.Resources.error;
             saveButton.Image = Properties.Resources.diskette1;
-            saveButton.Location = new Point(968, 439);
+            saveButton.Location = new Point(1080, 500);
             saveButton.Margin = new Padding(4, 2, 4, 2);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(137, 58);
@@ -159,7 +160,7 @@
             LockButton.Cursor = Cursors.Hand;
             LockButton.ErrorImage = Properties.Resources.error;
             LockButton.Image = Properties.Resources.unlocked;
-            LockButton.Location = new Point(968, 322);
+            LockButton.Location = new Point(1080, 383);
             LockButton.Margin = new Padding(4, 2, 4, 2);
             LockButton.Name = "LockButton";
             LockButton.Size = new Size(137, 58);
@@ -170,7 +171,7 @@
             // 
             // designN
             // 
-            designN.Location = new Point(500, 639);
+            designN.Location = new Point(558, 738);
             designN.Margin = new Padding(1);
             designN.Name = "designN";
             designN.Size = new Size(265, 27);
@@ -182,18 +183,27 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(168, 136, 181);
-            label2.Location = new Point(350, 644);
+            label2.Location = new Point(408, 743);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(136, 24);
             label2.TabIndex = 1;
             label2.Text = "Design Name";
             // 
+            // colorSelected
+            // 
+            colorSelected.Location = new Point(979, 325);
+            colorSelected.Margin = new Padding(4, 2, 4, 2);
+            colorSelected.Name = "colorSelected";
+            colorSelected.Size = new Size(26, 206);
+            colorSelected.TabIndex = 12;
+            // 
             // CreateDesign
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1429, 936);
+            Controls.Add(colorSelected);
             Controls.Add(label2);
             Controls.Add(designN);
             Controls.Add(LockButton);
@@ -239,6 +249,7 @@
         private PictureBox LockButton;
         private TextBox designN;
         private Label label2;
+        private Panel colorSelected;
         //private PictureBox eraserPic;
         //private PictureBox lockPic;
         //private PictureBox savePicBox;
