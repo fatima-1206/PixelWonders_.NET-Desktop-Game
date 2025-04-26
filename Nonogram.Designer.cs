@@ -93,7 +93,6 @@
             label1.Size = new Size(310, 69);
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
-            //label1.Click += label1_Click;
             // 
             // pictureBoxLogo
             // 
@@ -117,7 +116,6 @@
             livesPanel.Padding = new Padding(5, 2, 5, 2);
             livesPanel.Size = new Size(274, 46);
             livesPanel.TabIndex = 9;
-            //livesPanel.Paint += livesPanel_Paint;
             // 
             // crossOptionContainer
             // 
@@ -130,7 +128,6 @@
             crossOptionContainer.Size = new Size(110, 81);
             crossOptionContainer.TabIndex = 11;
             crossOptionContainer.Click += crossOption_Click;
-
             // 
             // crossOption
             // 
@@ -142,7 +139,6 @@
             crossOption.Size = new Size(58, 52);
             crossOption.TabIndex = 0;
             crossOption.Click += crossOption_Click;
-
             // 
             // fillOptionContainer
             // 
@@ -155,12 +151,13 @@
             fillOptionContainer.Size = new Size(110, 81);
             fillOptionContainer.TabIndex = 12;
             fillOptionContainer.Click += fillOption_Click;
-
+            fillOptionContainer.Paint += fillOptionContainer_Paint;
             // 
             // fillOption
             // 
             fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
+
             fillOption.Location = new Point(28, 18);
             fillOption.Margin = new Padding(2, 4, 2, 4);
             fillOption.Name = "fillOption";
@@ -244,6 +241,7 @@
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(241, 217, 231);
+
             ClientSize = new Size(1429, 936);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(gridContainer);
@@ -260,7 +258,7 @@
             Margin = new Padding(2);
             Name = "Nonogram";
             Text = "Nonogram";
-            //Load += Nonogram_Load;
+            Load += Nonogram_Load;
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
