@@ -57,6 +57,7 @@
             headerContainer.Margin = new Padding(3, 2, 3, 2);
             headerContainer.Name = "headerContainer";
             headerContainer.Size = new Size(1159, 61);
+
             headerContainer.TabIndex = 3;
             headerContainer.Paint += headerContainer_Paint;
             // 
@@ -68,6 +69,7 @@
             label1.Location = new Point(272, 8);
             label1.Name = "label1";
             label1.Size = new Size(395, 55);
+
             label1.TabIndex = 0;
             label1.Text = "Create a Design";
             label1.Click += label1_Click;
@@ -80,6 +82,7 @@
             pictureBoxLogo.Margin = new Padding(1);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(111, 54);
+
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -95,6 +98,7 @@
             close.Margin = new Padding(1);
             close.Name = "close";
             close.Size = new Size(46, 25);
+
             close.TabIndex = 4;
             close.Click += close_Click;
             close.Paint += close_Paint;
@@ -106,6 +110,7 @@
             gridContainer.Margin = new Padding(0);
             gridContainer.Name = "gridContainer";
             gridContainer.Size = new Size(438, 375);
+
             gridContainer.TabIndex = 5;
             gridContainer.Paint += gridContainer_Paint;
             // 
@@ -115,6 +120,7 @@
             palettePanel.Margin = new Padding(3, 2, 3, 2);
             palettePanel.Name = "palettePanel";
             palettePanel.Size = new Size(43, 352);
+
             palettePanel.TabIndex = 6;
             palettePanel.Paint += palettePanel_Paint;
             // 
@@ -130,6 +136,7 @@
             eraserButton.Name = "eraserButton";
             eraserButton.Padding = new Padding(4);
             eraserButton.Size = new Size(110, 47);
+
             eraserButton.SizeMode = PictureBoxSizeMode.Zoom;
             eraserButton.TabIndex = 8;
             eraserButton.TabStop = false;
@@ -146,6 +153,7 @@
             saveButton.Margin = new Padding(3, 2, 3, 2);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(110, 47);
+
             saveButton.SizeMode = PictureBoxSizeMode.Zoom;
             saveButton.TabIndex = 9;
             saveButton.TabStop = false;
@@ -162,6 +170,7 @@
             LockButton.Margin = new Padding(3, 2, 3, 2);
             LockButton.Name = "LockButton";
             LockButton.Size = new Size(110, 47);
+
             LockButton.SizeMode = PictureBoxSizeMode.Zoom;
             LockButton.TabIndex = 10;
             LockButton.TabStop = false;
@@ -173,6 +182,7 @@
             designN.Margin = new Padding(1);
             designN.Name = "designN";
             designN.Size = new Size(213, 23);
+
             designN.TabIndex = 11;
             designN.TextChanged += textBox1_TextChanged;
             // 
@@ -184,6 +194,7 @@
             label2.Location = new Point(280, 515);
             label2.Name = "label2";
             label2.Size = new Size(109, 18);
+
             label2.TabIndex = 1;
             label2.Text = "Design Name";
             // 
@@ -192,6 +203,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1143, 749);
+
             Controls.Add(label2);
             Controls.Add(designN);
             Controls.Add(LockButton);
@@ -204,6 +216,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
+
             Name = "CreateDesign";
             Text = "CreateDesign";
             Load += CreateDesign_Load;

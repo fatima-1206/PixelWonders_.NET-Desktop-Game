@@ -22,6 +22,7 @@ namespace PixelWonders
             Nonogram nonogram = new Nonogram();
             nonogram.Show();
             this.Close();
+
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace PixelWonders
             Color_by_number color_By_Number = new Color_by_number();
             color_By_Number.Show();
             this.Close();
+
         }
     }
 }
