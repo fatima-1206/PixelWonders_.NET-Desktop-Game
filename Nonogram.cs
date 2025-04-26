@@ -44,11 +44,11 @@ namespace PixelWonders
         {
             // first get a list of all ids of the grid
             List<int> gridIds = Program.dbManager.GetAllGridIds();
-
+            //if ()
             // pick a random one
             int randomIndex = _random.Next(gridIds.Count);
             // make a binary matrix copy by getting rid of all the 0s and converting the rest to 1s
-            orginalGrid = Program.dbManager.LoadGridAsIntMatrix(gridIds[0], 20, 20);
+            orginalGrid = Program.dbManager.LoadGridAsIntMatrix(gridIds[randomIndex], 20, 20);
             // for debugging
 
             // printMatrix(orginalGrid);

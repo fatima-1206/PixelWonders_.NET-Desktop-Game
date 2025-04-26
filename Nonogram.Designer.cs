@@ -81,7 +81,7 @@
             headerContainer.Name = "headerContainer";
             headerContainer.Size = new Size(1003, 60);
             headerContainer.TabIndex = 5;
-            headerContainer.Paint += headerContainer_Paint;
+            //headerContainer.Paint += headerContainer_Paint;
             // 
             // label1
             // 
