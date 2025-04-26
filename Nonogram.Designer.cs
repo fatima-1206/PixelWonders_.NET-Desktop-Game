@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             components = new System.ComponentModel.Container();
             close = new Panel();
             headerContainer = new Panel();

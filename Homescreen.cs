@@ -33,6 +33,7 @@ namespace PixelWonders
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             Login loginPage = new Login();
 
             // Show the Login form
@@ -52,6 +53,11 @@ namespace PixelWonders
             //Program.dbManager?.Dispose();
             Application.Exit();
             Environment.Exit(0);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
