@@ -163,7 +163,7 @@ namespace PixelWonders
                 //clueLabel.AutoSize = true;
                 clueLabel.Width = rowCluesPanel.Width;
                 clueLabel.Height = pixelHeight;
-                clueLabel.Padding = new Padding(0, pixelWidth/4, 0, 0);
+                clueLabel.Padding = new Padding(0, pixelWidth / 4, 0, 0);
                 clueLabel.Margin = new Padding(0, 0, 0, 0);
                 clueLabel.Text = (clues.Count > 0) ? string.Join(" ", clues) : "0";
                 clueLabel.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -172,7 +172,7 @@ namespace PixelWonders
             }
 
 
-            
+
             // Draw Column Clues (above the grid)
             for (int col = 0; col < gridWidth; col++)
             {
@@ -209,7 +209,7 @@ namespace PixelWonders
                 clueLabel.Margin = new Padding(0, 0, 0, 0);
                 clueLabel.Text = (clues.Count > 0) ? string.Join("\n", clues) : "0"; // vertical text
                 clueLabel.Font = new Font(label1.Font.FontFamily, 10, FontStyle.Bold);
-                clueLabel.Location = new Point(col * pixelWidth+1, 0);
+                clueLabel.Location = new Point(col * pixelWidth + 1, 0);
                 colCluesPanel.Controls.Add(clueLabel);
             }
         }
@@ -359,6 +359,11 @@ namespace PixelWonders
         private void close_Paint(object sender, PaintEventArgs e) { }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nonogram_Load(object sender, EventArgs e)
         {
 
         }

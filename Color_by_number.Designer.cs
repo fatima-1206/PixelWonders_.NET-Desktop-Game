@@ -32,14 +32,17 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBoxLogo = new PictureBox();
-            panel2 = new Panel();
+            gridContainer = new Panel();
             animalPanel = new PictureBox();
             platform = new Panel();
             imageChangeTimer = new System.Windows.Forms.Timer(components);
             walkTimer = new System.Windows.Forms.Timer(components);
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)animalPanel).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -79,17 +82,18 @@
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
             // 
-            // panel2
+            // gridContainer
             // 
-            panel2.Location = new Point(151, 115);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(403, 303);
-            panel2.TabIndex = 1;
+            gridContainer.BackColor = Color.Thistle;
+           gridContainer.Location = new Point(35, 29);
+            gridContainer.Name = "gridContainer";
+           gridContainer.Size = new Size(470, 318);
+            gridContainer.TabIndex = 1;
             // 
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.black_walk_8fps;
-            animalPanel.Location = new Point(626, 314);
+            animalPanel.Location = new Point(674, 314);
             animalPanel.Margin = new Padding(3, 2, 3, 2);
             animalPanel.Name = "animalPanel";
             animalPanel.Size = new Size(52, 45);
@@ -102,7 +106,7 @@
             // platform
             // 
             platform.BorderStyle = BorderStyle.FixedSingle;
-            platform.Location = new Point(626, 361);
+            platform.Location = new Point(672, 361);
             platform.Margin = new Padding(0);
             platform.Name = "platform";
             platform.Size = new Size(240, 1);
@@ -120,17 +124,25 @@
             walkTimer.Interval = 150;
             walkTimer.Tick += timer1_Tick;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(168, 136, 181);
+            panel2.Controls.Add(gridContainer);
+            panel2.Location = new Point(61, 174);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(539, 371);
+            panel2.TabIndex = 16;
+            // 
             // Color_by_number
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(231, 207, 221);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1127, 711);
+            Controls.Add(panel2);
             Controls.Add(platform);
             Controls.Add(animalPanel);
-            Controls.Add(panel2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "Color_by_number";
             Text = "Color_by_number";
             Load += Color_by_number_Load;
@@ -138,6 +150,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)animalPanel).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -150,10 +163,12 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBoxLogo;
-        private Panel panel2;
+        private Panel gridContainer;
         private PictureBox animalPanel;
         private Panel platform;
         private System.Windows.Forms.Timer imageChangeTimer;
         private System.Windows.Forms.Timer walkTimer;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Panel panel2;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
             components = new System.ComponentModel.Container();
             close = new Panel();
             headerContainer = new Panel();
@@ -81,7 +80,6 @@
             headerContainer.Name = "headerContainer";
             headerContainer.Size = new Size(1003, 60);
             headerContainer.TabIndex = 5;
-            //headerContainer.Paint += headerContainer_Paint;
             // 
             // label1
             // 
@@ -109,7 +107,6 @@
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
             // 
-
             // livesPanel
             // 
             livesPanel.BorderStyle = BorderStyle.FixedSingle;
@@ -154,7 +151,6 @@
             // 
             fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
-
             fillOption.Location = new Point(24, 15);
             fillOption.Name = "fillOption";
             fillOption.Size = new Size(50, 39);
@@ -236,7 +232,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
-
             ClientSize = new Size(1143, 750);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(gridContainer);
@@ -253,6 +248,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Nonogram";
             Text = "Nonogram";
+            Load += Nonogram_Load;
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

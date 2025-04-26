@@ -247,6 +247,11 @@ namespace PixelWonders
             {
                 MessageBox.Show("Failed to save design.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Menu1 menu1Page = new Menu1();
+            menu1Page.Show();           
+
+            this.Close();
         }
 
 

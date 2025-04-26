@@ -85,12 +85,10 @@
             // 
             // button2
             // 
-
             button2.BackColor = Color.FromArgb(168, 136, 181);
             button2.Font = new Font("Pixelify Sans", 12F);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
-
-            button2.Location = new Point(175, 143);
+            button2.Location = new Point(150, 108);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(120, 64);
@@ -104,11 +102,10 @@
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 12F);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
-
-            button3.Location = new Point(95, 272);
+            button3.Location = new Point(81, 185);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(127, 64);
+            button3.Size = new Size(127, 58);
             button3.TabIndex = 2;
             button3.Text = "Color by \r\nnumber";
             button3.UseVisualStyleBackColor = false;
@@ -119,9 +116,8 @@
             button1.BackColor = Color.FromArgb(168, 136, 181);
             button1.Font = new Font("Pixelify Sans", 12F);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
-            button1.Location = new Point(20, 107);
+            button1.Location = new Point(8, 108);
             button1.Name = "button1";
-
             button1.Size = new Size(124, 64);
             button1.TabIndex = 0;
             button1.Text = "Nonogram";
