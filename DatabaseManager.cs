@@ -233,6 +233,29 @@ class DatabaseManager
         return paletteId;
     }
 
+    public string GetGridNameFromId(int G_ID)
+    {
+        string G_name = "";
+
+        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT G_name FROM PixelGrid WHERE G_id = @G_ID";
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@G_ID", G_ID);
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    G_name = Convert.ToString(result);
+                }
+            }
+
+        }
+
+        return G_name;
+    }
+
 
     // Method to add pixels to a design
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)

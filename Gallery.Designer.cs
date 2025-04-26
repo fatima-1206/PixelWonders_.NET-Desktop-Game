@@ -88,12 +88,12 @@
             close.BackgroundImage = Properties.Resources.cross_removebg_preview;
             close.BackgroundImageLayout = ImageLayout.Zoom;
             close.Cursor = Cursors.Hand;
-            close.Location = new Point(1377, 1);
+            close.Location = new Point(1377, -3);
             close.Margin = new Padding(2);
             close.Name = "close";
             close.Size = new Size(52, 32);
             close.TabIndex = 8;
-            close.Paint += close_Paint;
+            close.Click += close_Click;
             // 
             // panel1
             // 
@@ -117,9 +117,10 @@
             label2.Location = new Point(551, 9);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(310, 69);
+            label2.Size = new Size(227, 69);
             label2.TabIndex = 0;
-            label2.Text = "Nonogram";
+            label2.Text = "Gallery";
+            label2.Click += label2_Click;
             // 
             // pictureBox1
             // 
@@ -137,9 +138,9 @@
             // designsContainer
             // 
             designsContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            designsContainer.Location = new Point(28, 220);
+            designsContainer.Location = new Point(60, 220);
             designsContainer.Name = "designsContainer";
-            designsContainer.Size = new Size(1371, 684);
+            designsContainer.Size = new Size(1309, 684);
             designsContainer.TabIndex = 9;
             designsContainer.Paint += panel2_Paint;
             // 
