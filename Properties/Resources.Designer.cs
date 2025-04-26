@@ -743,6 +743,46 @@ namespace PixelWonders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_1_ {
+            get {
+                object obj = ResourceManager.GetObject("close(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_up_puzzle_background {
+            get {
+                object obj = ResourceManager.GetObject("close-up-puzzle-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_up_puzzle_background__2_ {
+            get {
+                object obj = ResourceManager.GetObject("close-up-puzzle-background (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_up_puzzle_background1 {
+            get {
+                object obj = ResourceManager.GetObject("close-up-puzzle-background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closeEye {
             get {
                 object obj = ResourceManager.GetObject("closeEye", resourceCulture);
@@ -776,6 +816,26 @@ namespace PixelWonders.Properties {
         internal static System.Drawing.Bitmap cross1 {
             get {
                 object obj = ResourceManager.GetObject("cross1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crossed_wrong {
+            get {
+                object obj = ResourceManager.GetObject("crossed_wrong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crossed_wrong1 {
+            get {
+                object obj = ResourceManager.GetObject("crossed_wrong1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1776,6 +1836,16 @@ namespace PixelWonders.Properties {
         internal static System.Drawing.Bitmap play__2_ {
             get {
                 object obj = ResourceManager.GetObject("play (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_back_button_image_2231359 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-back-button-image_2231359", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

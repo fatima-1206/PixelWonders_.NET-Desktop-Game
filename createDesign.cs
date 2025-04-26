@@ -104,6 +104,7 @@ namespace PixelWonders
         private void ColorClicked(object sender, int index)
         {
             selectedColor = index;
+            colorSelected.BackColor = ColorTranslator.FromHtml(grid.selectedPalette[selectedColor]);
             loadPalette();
 
         }
