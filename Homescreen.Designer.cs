@@ -49,6 +49,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(422, 1086);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // button3
             // 
@@ -85,6 +86,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
@@ -98,10 +100,11 @@
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(18F, 37F);
+
+            AutoScaleDimensions = new SizeF(21F, 43F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(1143, 749);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);

@@ -9,22 +9,12 @@ namespace PixelWonders
             InitializeComponent();
             this.FormClosing += Home_FormClosing;
         }
-        private void RoundButton(Button btn)
-        {
-            int radius = 60; // Adjust for roundness
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, radius, radius, 180, 90);
-            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
-            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
-            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            RoundButton(button2);
-            RoundButton(button3);
+            DesignLoader d = new DesignLoader();
+           d.RoundButton(button2);
+            d.RoundButton(button3);
             button2.FlatStyle = FlatStyle.Flat;
             button2.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -33,6 +23,7 @@ namespace PixelWonders
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             Login loginPage = new Login();
 
             // Show the Login form
@@ -52,6 +43,11 @@ namespace PixelWonders
             //Program.dbManager?.Dispose();
             Application.Exit();
             Environment.Exit(0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

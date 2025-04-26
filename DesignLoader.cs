@@ -6,11 +6,24 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Text.Json;
 using System.Data.SQLite;
+using System.Drawing.Drawing2D;
 
 namespace PixelWonders
 {
     internal class DesignLoader
     {
+        public void RoundButton(Button btn)
+        {
+            int radius = 60; 
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            btn.Region = new Region(path);
+        }
         public static void LoadAndRenderDesign(int designId, int width, int height, PictureBox targetPictureBox, DatabaseManager db)
         {
             try
@@ -91,11 +104,7 @@ namespace PixelWonders
                 // Step 3: Convert to hex grid
                 string[,] hexGrid = db.MapGridToHexColors(intGrid, palette);
 
-                // Step 4: Clear previous controls and set up panel
-                //containerPanel.Controls.Clear();
-                //containerPanel.AutoScroll = true;
-                //containerPanel.Width = width * pixelSize;
-                //containerPanel.Height = height * pixelSize;
+               
 
                 // Step 5: Create pixel grid as PictureBoxes
                 for (int i = 0; i < height; i++)
@@ -129,6 +138,130 @@ namespace PixelWonders
                 MessageBox.Show("💥 Error rendering pixel grid:\n" + ex.Message);
             }
         }
+
+        public static List<Bitmap> SplitImage(Bitmap original, int rows, int cols)
+        {
+            List<Bitmap> pieces = new List<Bitmap>();
+
+            int pieceWidth = original.Width / cols;
+            int pieceHeight = original.Height / rows;
+
+            for (int y = 0; y < rows; y++)
+            {
+                for (int x = 0; x < cols; x++)
+                {
+                    Rectangle srcRect = new Rectangle(x * pieceWidth, y * pieceHeight, pieceWidth, pieceHeight);
+                    Bitmap piece = original.Clone(srcRect, original.PixelFormat);
+                    pieces.Add(piece);
+                }
+            }
+
+            return pieces;
+        }
+
+        public static void SplitAndDisplay(Bitmap original, int rows, int cols, Panel targetPanel)
+        {
+            targetPanel.Controls.Clear(); // Clear previous pieces
+
+            int panelWidth = targetPanel.Width;
+            int panelHeight = targetPanel.Height;
+
+            int pieceWidth = panelWidth / cols;
+            int pieceHeight = panelHeight / rows;
+
+            // Scale the original image to fit the panel perfectly
+            Bitmap scaledOriginal = new Bitmap(panelWidth, panelHeight);
+            using (Graphics g = Graphics.FromImage(scaledOriginal))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(original, 0, 0, panelWidth, panelHeight);
+            }
+
+            // ➡️ Now place manually (no auto layout)
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    Rectangle srcRect = new Rectangle(col * pieceWidth, row * pieceHeight, pieceWidth, pieceHeight);
+                    Bitmap piece = scaledOriginal.Clone(srcRect, scaledOriginal.PixelFormat);
+
+                    PictureBox pb = new PictureBox
+                    {
+                        Width = pieceWidth,
+                        Height = pieceHeight,
+                        Left = col * pieceWidth,    
+                        Top = row * pieceHeight,    
+                        Image = piece,
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Tag = new Point(col, row)    // Store position for later
+                    };
+
+                    targetPanel.Controls.Add(pb);
+                }
+            }
+        }
+        public static List<PictureBox> SplitAndReturnPieces(Bitmap original, int rows, int cols, Panel targetPanel)
+        {
+            targetPanel.Controls.Clear();
+
+            List<PictureBox> pieces = new List<PictureBox>();
+
+            int panelWidth = targetPanel.Width;
+            int panelHeight = targetPanel.Height;
+            int pieceWidth = panelWidth / cols;
+            int pieceHeight = panelHeight / rows;
+
+            Bitmap scaledOriginal = new Bitmap(panelWidth, panelHeight);
+            using (Graphics g = Graphics.FromImage(scaledOriginal))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(original, 0, 0, panelWidth, panelHeight);
+            }
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    Rectangle srcRect = new Rectangle(col * pieceWidth, row * pieceHeight, pieceWidth, pieceHeight);
+                    Bitmap piece = scaledOriginal.Clone(srcRect, scaledOriginal.PixelFormat);
+
+                    PictureBox pb = new PictureBox
+                    {
+                        Width = pieceWidth,
+                        Height = pieceHeight,
+                        Left = col * pieceWidth,
+                        Top = row * pieceHeight,
+                        Image = piece,
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Tag = new Point(col, row)
+                    };
+
+                    pieces.Add(pb);
+                }
+            }
+
+            return pieces;
+        }
+        public static void ShufflePieces(Panel puzzlePanel)
+        {
+            var rnd = new Random();
+            var pieces = puzzlePanel.Controls.OfType<PictureBox>().ToList();
+
+            // Shuffle the PictureBox positions
+            var positions = pieces.Select(pb => new Point(pb.Left, pb.Top)).ToList();
+            var shuffledPositions = positions.OrderBy(_ => rnd.Next()).ToList();
+
+            for (int i = 0; i < pieces.Count; i++)
+            {
+                pieces[i].Left = shuffledPositions[i].X;
+                pieces[i].Top = shuffledPositions[i].Y;
+            }
+        }
+
+
+
 
     }
 
