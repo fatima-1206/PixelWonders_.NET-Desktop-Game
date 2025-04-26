@@ -83,11 +83,12 @@ namespace PixelWonders
         {
             gridHeight = croppedGrid.GetLength(0); // rows (Y)
             gridWidth = croppedGrid.GetLength(1);  // columns (X)
+            int divisor = gridHeight > gridWidth ? gridHeight : gridWidth;
 
-            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (gridWidth)) / gridWidth);
-            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (gridHeight)) / gridHeight);
-
-
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (divisor)) / divisor);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (divisor)) / divisor);
+            //gridContainer.BackColor = Color.FromArgb(241, 217, 231); 
+            
             for (int row = 0; row < gridHeight; row++)
             {
                 for (int col = 0; col < gridWidth; col++)
@@ -113,6 +114,8 @@ namespace PixelWonders
 
         }
 
+
+
         public void drawClues()
         {
             gridContainer.Margin = new Padding(0, 0, 0, 0);
@@ -123,9 +126,10 @@ namespace PixelWonders
 
             gridHeight = croppedGrid.GetLength(0); // number of rows
             gridWidth = croppedGrid.GetLength(1);  // number of columns
+            int divisor = gridHeight > gridWidth ? gridHeight : gridWidth;
 
-            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (gridWidth)) / gridWidth);
-            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (gridHeight)) / gridHeight);
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (divisor)) / divisor);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (divisor)) / divisor);
 
             rowCluesPanel.Margin = new Padding(0, 0, 0, 0);
             rowCluesPanel.Padding = new Padding(0, 0, 0, 0);
@@ -163,7 +167,7 @@ namespace PixelWonders
                 //clueLabel.AutoSize = true;
                 clueLabel.Width = rowCluesPanel.Width;
                 clueLabel.Height = pixelHeight;
-                clueLabel.Padding = new Padding(0, pixelWidth/4, 0, 0);
+                clueLabel.Padding = new Padding(0, pixelWidth / 4, 0, 0);
                 clueLabel.Margin = new Padding(0, 0, 0, 0);
                 clueLabel.Text = (clues.Count > 0) ? string.Join(" ", clues) : "0";
                 clueLabel.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -172,7 +176,7 @@ namespace PixelWonders
             }
 
 
-            
+
             // Draw Column Clues (above the grid)
             for (int col = 0; col < gridWidth; col++)
             {
@@ -209,7 +213,7 @@ namespace PixelWonders
                 clueLabel.Margin = new Padding(0, 0, 0, 0);
                 clueLabel.Text = (clues.Count > 0) ? string.Join("\n", clues) : "0"; // vertical text
                 clueLabel.Font = new Font(label1.Font.FontFamily, 10, FontStyle.Bold);
-                clueLabel.Location = new Point(col * pixelWidth+1, 0);
+                clueLabel.Location = new Point(col * pixelWidth + 1, 0);
                 colCluesPanel.Controls.Add(clueLabel);
             }
         }
@@ -226,17 +230,15 @@ namespace PixelWonders
                 System.Diagnostics.Debug.WriteLine("");
             }
         }
-
         public int[,] CropMatrix(int[,] grid)
         {
-
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
 
-            minRow = rows;
-            maxRow = -1;
-            minCol = cols;
-            maxCol = -1;
+            int minRow = rows;
+            int maxRow = -1;
+            int minCol = cols;
+            int maxCol = -1;
 
             // Step 1: Find bounds
             for (int i = 0; i < rows; i++)
@@ -252,18 +254,38 @@ namespace PixelWonders
                     }
                 }
             }
-            // Edge case: all zero
+
+            // Edge case: all zeros
             if (maxRow == -1) return new int[0, 0];
 
-            int newRows = maxRow - minRow + 1;
-            int newCols = maxCol - minCol + 1;
+            int height = maxRow - minRow + 1;
+            int width = maxCol - minCol + 1;
+            int side = Math.Max(height, width);
 
-            int[,] cropped = new int[newRows, newCols];
+            // Step 2: Expand to square
+            int extraRows = side - height;
+            int extraCols = side - width;
 
-            // Step 2: Copy cropped region
-            for (int i = 0; i < newRows; i++)
+            // Try to expand equally on both sides
+            minRow = Math.Max(0, minRow - extraRows / 2);
+            maxRow = Math.Min(rows - 1, minRow + side - 1);
+
+            minCol = Math.Max(0, minCol - extraCols / 2);
+            maxCol = Math.Min(cols - 1, minCol + side - 1);
+
+            // In case adjusting minRow/minCol caused side to shrink, readjust
+            // (e.g., when minRow was already 0 and we couldn't expand upward)
+            if (maxRow - minRow + 1 < side && maxRow < rows - 1)
+                maxRow = Math.Min(rows - 1, minRow + side - 1);
+            if (maxCol - minCol + 1 < side && maxCol < cols - 1)
+                maxCol = Math.Min(cols - 1, minCol + side - 1);
+
+            int[,] cropped = new int[side, side];
+
+            // Step 3: Copy cropped square
+            for (int i = 0; i < side; i++)
             {
-                for (int j = 0; j < newCols; j++)
+                for (int j = 0; j < side; j++)
                 {
                     cropped[i, j] = grid[minRow + i, minCol + j];
                 }
@@ -359,6 +381,11 @@ namespace PixelWonders
         private void close_Paint(object sender, PaintEventArgs e) { }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nonogram_Load(object sender, EventArgs e)
         {
 
         }
