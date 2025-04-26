@@ -60,10 +60,10 @@
             close.BackgroundImage = Properties.Resources.cross_removebg_preview;
             close.BackgroundImageLayout = ImageLayout.Zoom;
             close.Cursor = Cursors.Hand;
-            close.Location = new Point(1100, 0);
+            close.Location = new Point(1375, 0);
             close.Margin = new Padding(2);
             close.Name = "close";
-            close.Size = new Size(42, 26);
+            close.Size = new Size(52, 32);
             close.TabIndex = 6;
             close.Click += close_Click;
             close.Paint += close_Paint;
@@ -75,10 +75,10 @@
             headerContainer.BorderStyle = BorderStyle.FixedSingle;
             headerContainer.Controls.Add(label1);
             headerContainer.Controls.Add(pictureBoxLogo);
-            headerContainer.Location = new Point(-2, 26);
+            headerContainer.Location = new Point(-2, 32);
             headerContainer.Margin = new Padding(2);
             headerContainer.Name = "headerContainer";
-            headerContainer.Size = new Size(1145, 64);
+            headerContainer.Size = new Size(1431, 80);
             headerContainer.TabIndex = 5;
             // 
             // label1
@@ -87,10 +87,10 @@
             label1.BackColor = Color.FromArgb(168, 136, 181);
             label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(83, 54, 89);
-            label1.Location = new Point(441, 7);
+            label1.Location = new Point(551, 9);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(256, 55);
+            label1.Size = new Size(310, 69);
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
             label1.Click += label1_Click;
@@ -103,7 +103,7 @@
             pictureBoxLogo.Location = new Point(2, -1);
             pictureBoxLogo.Margin = new Padding(2);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(101, 65);
+            pictureBoxLogo.Size = new Size(126, 81);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -111,61 +111,70 @@
             // livesPanel
             // 
             livesPanel.BorderStyle = BorderStyle.FixedSingle;
-            livesPanel.Location = new Point(755, 230);
+            livesPanel.Location = new Point(944, 288);
             livesPanel.Margin = new Padding(2);
             livesPanel.Name = "livesPanel";
-            livesPanel.Padding = new Padding(4, 2, 4, 2);
-            livesPanel.Size = new Size(220, 37);
+            livesPanel.Padding = new Padding(5, 2, 5, 2);
+            livesPanel.Size = new Size(274, 46);
             livesPanel.TabIndex = 9;
             livesPanel.Paint += livesPanel_Paint;
             // 
             // crossOptionContainer
             // 
+            crossOptionContainer.BackColor = Color.FromArgb(241, 217, 231);
             crossOptionContainer.BorderStyle = BorderStyle.FixedSingle;
             crossOptionContainer.Controls.Add(crossOption);
-            crossOptionContainer.Location = new Point(887, 318);
+            crossOptionContainer.Location = new Point(1109, 398);
             crossOptionContainer.Margin = new Padding(2);
             crossOptionContainer.Name = "crossOptionContainer";
-            crossOptionContainer.Size = new Size(88, 65);
+            crossOptionContainer.Size = new Size(110, 81);
             crossOptionContainer.TabIndex = 11;
+            crossOptionContainer.Click += crossOption_Click;
+
             // 
             // crossOption
             // 
-            crossOption.BackgroundImage = Properties.Resources.close;
+            crossOption.BackgroundImage = Properties.Resources.close_1_;
             crossOption.BackgroundImageLayout = ImageLayout.Zoom;
-            crossOption.Location = new Point(21, 12);
+            crossOption.Location = new Point(26, 15);
             crossOption.Margin = new Padding(2);
             crossOption.Name = "crossOption";
-            crossOption.Size = new Size(46, 42);
+            crossOption.Size = new Size(58, 52);
             crossOption.TabIndex = 0;
+            crossOption.Click += crossOption_Click;
+
             // 
             // fillOptionContainer
             // 
+            fillOptionContainer.BackColor = Color.FromArgb(240, 230, 236);
             fillOptionContainer.BorderStyle = BorderStyle.FixedSingle;
             fillOptionContainer.Controls.Add(fillOption);
-            fillOptionContainer.Location = new Point(762, 318);
+            fillOptionContainer.Location = new Point(952, 398);
             fillOptionContainer.Margin = new Padding(2);
             fillOptionContainer.Name = "fillOptionContainer";
-            fillOptionContainer.Size = new Size(88, 65);
+            fillOptionContainer.Size = new Size(110, 81);
             fillOptionContainer.TabIndex = 12;
+            fillOptionContainer.Click += fillOption_Click;
+
             // 
             // fillOption
             // 
             fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
-            fillOption.Location = new Point(22, 14);
-            fillOption.Margin = new Padding(2, 3, 2, 3);
+            fillOption.Location = new Point(28, 18);
+            fillOption.Margin = new Padding(2, 4, 2, 4);
             fillOption.Name = "fillOption";
-            fillOption.Size = new Size(40, 40);
+            fillOption.Size = new Size(50, 50);
             fillOption.TabIndex = 0;
+            fillOption.Click += fillOption_Click;
             // 
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.white_with_ball_8fps4;
-            animalPanel.Location = new Point(755, 602);
+            animalPanel.Location = new Point(944, 752);
             animalPanel.Margin = new Padding(2);
             animalPanel.Name = "animalPanel";
-            animalPanel.Size = new Size(70, 61);
+            animalPanel.Size = new Size(88, 76);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
             animalPanel.TabIndex = 13;
             animalPanel.TabStop = false;
@@ -181,10 +190,10 @@
             // platform
             // 
             platform.BorderStyle = BorderStyle.FixedSingle;
-            platform.Location = new Point(755, 661);
+            platform.Location = new Point(944, 826);
             platform.Margin = new Padding(0);
             platform.Name = "platform";
-            platform.Size = new Size(220, 1);
+            platform.Size = new Size(274, 1);
             platform.TabIndex = 14;
             // 
             // walkTimer
@@ -196,46 +205,46 @@
             // rowCluesPanel
             // 
             rowCluesPanel.BackColor = Color.FromArgb(231, 207, 221);
-            rowCluesPanel.Location = new Point(115, 230);
+            rowCluesPanel.Location = new Point(144, 288);
             rowCluesPanel.Margin = new Padding(0);
             rowCluesPanel.Name = "rowCluesPanel";
-            rowCluesPanel.Size = new Size(60, 432);
+            rowCluesPanel.Size = new Size(75, 540);
             rowCluesPanel.TabIndex = 15;
             // 
             // colCluesPanel
             // 
             colCluesPanel.BackColor = Color.FromArgb(231, 207, 221);
-            colCluesPanel.Location = new Point(175, 170);
+            colCluesPanel.Location = new Point(219, 212);
             colCluesPanel.Margin = new Padding(0);
             colCluesPanel.Name = "colCluesPanel";
-            colCluesPanel.Size = new Size(432, 60);
+            colCluesPanel.Size = new Size(540, 75);
             colCluesPanel.TabIndex = 16;
             // 
             // gridContainer
             // 
             gridContainer.BackColor = Color.FromArgb(83, 54, 89);
-            gridContainer.Location = new Point(175, 230);
+            gridContainer.Location = new Point(219, 288);
             gridContainer.Margin = new Padding(0);
             gridContainer.Name = "gridContainer";
-            gridContainer.Size = new Size(432, 432);
+            gridContainer.Size = new Size(540, 540);
             gridContainer.TabIndex = 7;
             gridContainer.Paint += gridContainer_Paint;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.FromArgb(231, 207, 221);
-            flowLayoutPanel1.Location = new Point(115, 170);
+            flowLayoutPanel1.Location = new Point(144, 212);
             flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(60, 59);
+            flowLayoutPanel1.Size = new Size(75, 74);
             flowLayoutPanel1.TabIndex = 17;
             // 
             // Nonogram
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(241, 217, 231);
-            ClientSize = new Size(1143, 749);
+            ClientSize = new Size(1429, 936);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(gridContainer);
             Controls.Add(colCluesPanel);

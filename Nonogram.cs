@@ -18,18 +18,14 @@ namespace PixelWonders
         private static readonly Random _random = new Random();
         private static string animal = GetRandomAnimalKey();
         private List<Image> animalPics = GetImages(animal);
-        int[,] orginalGrid;
-        int[,] croppedGrid;
-        int minRow = 0;
-        int maxRow = 0;
-        int minCol = 0;
-        int maxCol = 0;
-        int gridWidth = 0;
-        int gridHeight = 0;
+        int[,] orginalGrid, croppedGrid;
+        int[,] userPlays; // 0 = empty, 1 = filled, 2 = crossed, -1 = wrong
+        int minRow = 0, maxRow = 0, minCol = 0, maxCol = 0;
+        int gridWidth = 0, gridHeight = 0;
 
-        int direction = 1;
-        int numberOfLives = 5;
-
+        int direction = 1, numberOfLives = 5;
+        bool fillSelected = true;
+        int[] solvedRows, solvedCols; // holds index of solved rows and columns
         public Nonogram()
         {
             InitializeComponent();
@@ -44,40 +40,27 @@ namespace PixelWonders
         {
             // first get a list of all ids of the grid
             List<int> gridIds = Program.dbManager.GetAllGridIds();
-            //if ()
-            // pick a random one
             int randomIndex = _random.Next(gridIds.Count);
-            // make a binary matrix copy by getting rid of all the 0s and converting the rest to 1s
             orginalGrid = Program.dbManager.LoadGridAsIntMatrix(gridIds[randomIndex], 20, 20);
-            // for debugging
-
-            // printMatrix(orginalGrid);
-            //System.Diagnostics.Debug.WriteLine("Original Grid: ");
             int[,] binaryMatrix = new int[orginalGrid.GetLength(0), orginalGrid.GetLength(1)];
             for (int i = 0; i < orginalGrid.GetLength(0); i++)
             {
                 for (int j = 0; j < orginalGrid.GetLength(1); j++)
                 {
-                    if (orginalGrid[i, j] == -1)
-                    {
-                        binaryMatrix[i, j] = 0;
-                    }
-                    else
-                    {
-                        binaryMatrix[i, j] = 1;
-                    }
+                    binaryMatrix[i, j] = orginalGrid[i, j] == -1 ? 0 : 1;
+
                 }
             }
-            // crop the matrix by getting rid of all empty cells at the boundaries  
-            // for debugging
-            //System.Diagnostics.Debug.WriteLine("Binary Grid: ");
-
-            // printMatrix(binaryMatrix);
             croppedGrid = CropMatrix(binaryMatrix);
-            // for debugging
-            //System.Diagnostics.Debug.WriteLine("Cropped Grid: ");
-            // printMatrix(croppedGrid);
-            //croppedGrid = binaryMatrix;
+            userPlays = new int[croppedGrid.GetLength(0), croppedGrid.GetLength(1)];
+            // initialize userPlays with 0
+            for (int i = 0; i < userPlays.GetLength(0); i++)
+            {
+                for (int j = 0; j < userPlays.GetLength(1); j++)
+                {
+                    userPlays[i, j] = 0;
+                }
+            }
         }
         public void DrawGrid()
         {
@@ -98,8 +81,13 @@ namespace PixelWonders
                     pb.Height = pixelHeight;
                     pb.Margin = new Padding(1, 1, 0, 0);
                     pb.Location = new Point(col * pb.Width, row * pb.Height);
+                    int i = row;
+                    int j = col;
 
-                    if (croppedGrid[row, col] == 1)
+                    pb.Click += (sender, e) => PixelClicked(sender, i, j);
+                    //pb.MouseHover += (sender, e) => PixelHover(sender, row, col);
+
+                    if (croppedGrid[row, col] == 1 && userPlays[row, col] == 1)
                     {
                         pb.BackColor = ColorTranslator.FromHtml("#b38fbd");
                     }
@@ -114,6 +102,61 @@ namespace PixelWonders
 
         }
 
+        private void PixelClicked(object sender, int row, int col)
+        {
+            // it was filled but the user tried to cross it
+            Color wrongedFilled = Color.FromArgb(153, 57, 113); // wrong color
+
+            Image wrongdCrossed = Resources.crossed_wrong1;
+
+            Color filledColor = fillOption.BackColor;
+            // for crossed, use the picture for crossed
+            Image crossedImage = crossOption.BackgroundImage;
+
+
+            // the user clicked on a filled pixel
+            if (userPlays[row, col] != 0) return;
+            PictureBox pb = sender as PictureBox;
+            pb.BackgroundImageLayout = ImageLayout.Zoom;
+            // the two valid cases
+            if (fillSelected && croppedGrid[row, col] == 1)
+            {
+                pb.BackColor = filledColor; // filled color
+                userPlays[row, col] = 1; // filled
+            }
+            else if (!fillSelected && croppedGrid[row, col] == 0)
+            {
+                pb.BackgroundImage = crossedImage; // crossed image
+                userPlays[row, col] = 2; // crossed
+            }
+
+            else if (fillSelected && croppedGrid[row, col] == 0)
+            {
+                pb.BackgroundImage = wrongdCrossed; // wrong image
+                userPlays[row, col] = -1; // wrong
+                numberOfLives--;
+                populateLives();
+                if (numberOfLives <= 0)
+                {
+                    MessageBox.Show("Game Over! You have no lives left.");
+                    this.Close();
+                }
+            }
+            else if (!fillSelected && croppedGrid[row, col] == 1)
+            {
+                pb.BackColor = wrongedFilled; // wrong color
+                userPlays[row, col] = -1; // wrong
+                numberOfLives--;
+                populateLives();
+                if (numberOfLives <= 0)
+                {
+                    MessageBox.Show("Game Over! You have no lives left.");
+                    this.Close();
+                }
+            }
+
+
+        }
 
 
         public void drawClues()
@@ -235,10 +278,10 @@ namespace PixelWonders
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
 
-            int minRow = rows;
-            int maxRow = -1;
-            int minCol = cols;
-            int maxCol = -1;
+            minRow = rows;
+            maxRow = -1;
+            minCol = cols;
+            maxCol = -1;
 
             // Step 1: Find bounds
             for (int i = 0; i < rows; i++)
@@ -299,7 +342,9 @@ namespace PixelWonders
             int spacing = 10;
             int heartWidth = livesPanel.Height - 3; // size used in pictureBox.Size 
 
+            livesPanel.Controls.Clear(); // Clear previous lives
             livesPanel.Padding = new Padding(spacing, 3, 3, 3);
+
 
             for (int i = 0; i < numberOfLives; i++)
             {
@@ -381,7 +426,7 @@ namespace PixelWonders
                     animalPanel.Image = img;
                 }
                 else { }
-               
+
                 animalPanel.Location = new Point(animalPanel.Location.X + (step * direction), animalPanel.Location.Y);
 
             }
@@ -405,5 +450,18 @@ namespace PixelWonders
         {
 
         }
+        private void fillOption_Click(object sender, EventArgs e)
+        {
+            fillSelected = true;
+            fillOptionContainer.BackColor = Color.FromArgb(240, 230, 236);
+            crossOptionContainer.BackColor = Color.FromArgb(241, 217, 231);
+        }
+        private void crossOption_Click(object sender, EventArgs e)
+        {
+            fillSelected = false;
+            crossOptionContainer.BackColor = Color.FromArgb(240, 230, 236);
+            fillOptionContainer.BackColor = Color.FromArgb(241, 217, 231);
+        }
+
     }
 }
