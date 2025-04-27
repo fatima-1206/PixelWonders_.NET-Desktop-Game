@@ -54,7 +54,7 @@ namespace PixelWonders
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Gallery galleryPage = new Gallery();
+            jigsaw galleryPage = new jigsaw();
             galleryPage.Show();
             this.Close();
             
