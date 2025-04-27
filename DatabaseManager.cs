@@ -94,6 +94,27 @@ class DatabaseManager
             conn.Close();
         }
     }
+    public List<int> GetDesignIdsByUsername(string username)
+    {
+        List<int> ids = new List<int>();
+        using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+        {
+            conn.Open();
+            string query = "SELECT G_ID FROM PixelGrid WHERE username = @username";
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ids.Add(reader.GetInt32(0));
+                    }
+                }
+            }
+        }
+        return ids;
+    }
 
     public void InitializeGridDesign(SQLiteConnection conn) {
 

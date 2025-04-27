@@ -60,7 +60,7 @@ namespace PixelWonders
             Login loginPage = new Login();
             loginPage.Show();
             this.Close();
-            
+
         }
 
 
@@ -96,6 +96,13 @@ namespace PixelWonders
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Gallery loginPage = new Gallery();
+            loginPage.Show();
+            this.Close();
         }
     }
 

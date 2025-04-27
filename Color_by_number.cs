@@ -66,17 +66,18 @@ namespace PixelWonders
 
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
-            pixelWidth += 1;    // Make button a little wider
-            pixelHeight += 1;
-           
-            gridContainer.Padding = new Padding(0);
 
-           
-            int margin = 30;
+            gridContainer.Padding = new Padding(0);
+            panel2.Padding = new Padding(0); // Remove internal padding
+            panel2.Margin = new Padding(0); // Remove external margin
+
             gridContainer.Width = gridWidth * pixelWidth + 1;
             gridContainer.Height = gridHeight * pixelHeight + 1;
-            gridContainer.Location = new Point(margin, margin);
 
+            //Point gridContainerLocation = gridContainer.Location;
+            panel2.Height = gridContainer.Height + 6;
+            panel2.Width = gridContainer.Width + 6;
+            //panel2.Location = new Point(gridContainerLocation.X-3, gridContainerLocation.Y+3);
 
 
             gridContainer.Controls.Clear(); // clear old controls if any
@@ -109,10 +110,10 @@ namespace PixelWonders
                     }
                     else
                     {
-                        int val = gridValue+1;
+                        int val = gridValue + 1;
                         btn.Text = val.ToString();  // real number
-                        btn.Tag = gridValue;           
-                        btn.BackColor = Color.White;  
+                        btn.Tag = gridValue;
+                        btn.BackColor = Color.White;
                         btn.Click += Button_Click;         // allow click to color
                     }
 
@@ -131,7 +132,7 @@ namespace PixelWonders
             int startY = gridBottom + spaceBelowGrid;
 
             // Starting X position for palette buttons
-            int startX = gridContainer.Location.X + gridContainer.Width / 2 + paletteColors.Count / 4* 40;
+            int startX = gridContainer.Location.X + gridContainer.Width / 2 + paletteColors.Count / 2 * 40 + 90;
 
             Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
@@ -156,7 +157,7 @@ namespace PixelWonders
             Button clickedButton = sender as Button;
             int requiredNumber = (int)clickedButton.Tag;
 
-            if (requiredNumber == selectedNumber-1)
+            if (requiredNumber == selectedNumber - 1)
             {
                 clickedButton.BackColor = selectedColor;
                 clickedButton.Text = "";
@@ -267,6 +268,14 @@ namespace PixelWonders
 
         private void gridContainer_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void closeButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            Menu2 menu = new Menu2();
+            menu.Show();
+            this.Close();
 
         }
     }

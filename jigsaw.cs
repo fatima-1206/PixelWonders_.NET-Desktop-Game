@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Text.Json;
 using static PixelWonders.DesignLoader;
+using static PixelWonders.Gallery;
 
 namespace PixelWonders
 {
@@ -47,7 +48,7 @@ namespace PixelWonders
             jigsaw_panel.DragDrop += Panel_DragDrop;
 
             // Get the selected design ID and path from the global SelectedDesign
-            int designId = 1;
+            int designId = SelectedDesignHolder.SelectedDesignId;
 
             Bitmap original;
 

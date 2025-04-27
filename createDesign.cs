@@ -248,7 +248,7 @@ namespace PixelWonders
             }
 
             Menu1 menu1Page = new Menu1();
-            menu1Page.Show();           
+            menu1Page.Show();
 
             this.Close();
         }
@@ -273,7 +273,14 @@ namespace PixelWonders
         {
 
         }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+           PaletteForm paletteForm = Application.OpenForms["paletteForm"] as PaletteForm;
+            if (paletteForm != null)
+                paletteForm.Show();
 
+            this.Close();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -293,5 +300,7 @@ namespace PixelWonders
         {
 
         }
+
+    
     }
 }

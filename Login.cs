@@ -35,7 +35,7 @@ namespace PixelWonders
         private void Button3_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
-
+            Program.username = username;
             string password = passwordTextBox.Text.Trim();
             string hashedPassword = SecurityHelper.HashPassword(password);
 
