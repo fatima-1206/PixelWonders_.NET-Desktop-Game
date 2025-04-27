@@ -169,7 +169,10 @@ namespace PixelWonders
             if (CheckIfGameWon())
             {
                 MessageBox.Show("Congratulations! You completed the Color by number game!", "You Win!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Application.Exit();  // Close the application
+                Menu2 menu2 = new Menu2();
+                menu2.Show();
+
+                this.Close();
             }
         }
 
@@ -238,10 +241,10 @@ namespace PixelWonders
         {
             if (WalkAnimations.Contains(animalPanel.Image))
             {
-                int begin = platform.Location.X;
-                int end = begin + platform.Width - animalPanel.Width;
+                int begin = panel2.Location.X;
+                int end = begin + panel2.Width - animalPanel.Width;
                 int step = 3;
-                int yLine = platform.Location.Y - animalPanel.Height;
+                int yLine = panel2.Location.Y - animalPanel.Height;
 
                 if (animalPanel.Location.X >= end)
                 {

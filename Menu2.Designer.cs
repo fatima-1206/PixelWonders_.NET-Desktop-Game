@@ -40,12 +40,11 @@
             panel3 = new Panel();
             label2 = new Label();
             button4 = new Button();
-            label3 = new Label();
-            pictureBox4 = new PictureBox();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // imageList1
@@ -57,9 +56,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(425, 160);
+            label1.Location = new Point(372, 120);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 0;
             label1.Click += Label1_Click;
             // 
@@ -67,10 +66,9 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(531, 92);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(465, 69);
             panel1.Name = "panel1";
-            panel1.Size = new Size(351, 428);
+            panel1.Size = new Size(307, 321);
             panel1.TabIndex = 1;
             // 
             // panel2
@@ -79,10 +77,9 @@
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(19, 19);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(17, 14);
             panel2.Name = "panel2";
-            panel2.Size = new Size(313, 392);
+            panel2.Size = new Size(274, 294);
             panel2.TabIndex = 0;
             // 
             // button2
@@ -90,11 +87,10 @@
             button2.BackColor = Color.FromArgb(168, 136, 181);
             button2.Font = new Font("Pixelify Sans", 12F);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
-
-            button2.Location = new Point(151, 166);
-            button2.Margin = new Padding(3, 5, 3, 5);
+            button2.Location = new Point(132, 124);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(148, 66);
+            button2.Size = new Size(130, 50);
             button2.TabIndex = 3;
             button2.Text = "Puzzle";
             button2.UseVisualStyleBackColor = false;
@@ -105,11 +101,10 @@
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 12F);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
-
-            button3.Location = new Point(26, 275);
-            button3.Margin = new Padding(3, 5, 3, 5);
+            button3.Location = new Point(23, 206);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(145, 71);
+            button3.Size = new Size(127, 53);
             button3.TabIndex = 2;
             button3.Text = "Color by \r\nnumber";
             button3.UseVisualStyleBackColor = false;
@@ -120,11 +115,9 @@
             button1.BackColor = Color.FromArgb(168, 136, 181);
             button1.Font = new Font("Pixelify Sans", 12F);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
-
-            button1.Location = new Point(12, 80);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(10, 60);
             button1.Name = "button1";
-            button1.Size = new Size(148, 66);
+            button1.Size = new Size(130, 50);
             button1.TabIndex = 0;
             button1.Text = "Nonogram";
             button1.UseVisualStyleBackColor = false;
@@ -135,10 +128,9 @@
             panel3.BackColor = Color.Thistle;
             panel3.Controls.Add(label2);
             panel3.Font = new Font("Pixelify Sans", 12F);
-            panel3.Location = new Point(0, 215);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 161);
             panel3.Name = "panel3";
-            panel3.Size = new Size(920, 133);
+            panel3.Size = new Size(805, 100);
             panel3.TabIndex = 2;
             panel3.Text = "Choose your mystery solving level";
             panel3.Paint += Panel3_Paint;
@@ -148,9 +140,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Pixelify Sans", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(64, 0, 64);
-            label2.Location = new Point(91, 53);
+            label2.Location = new Point(80, 40);
             label2.Name = "label2";
-            label2.Size = new Size(439, 29);
+            label2.Size = new Size(353, 23);
             label2.TabIndex = 0;
             label2.Text = "Choose your mystery solving level";
             // 
@@ -158,47 +150,32 @@
             // 
             button4.BackColor = Color.Thistle;
             button4.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(15, 16);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Location = new Point(13, 12);
             button4.Name = "button4";
-            button4.Size = new Size(88, 49);
+            button4.Size = new Size(77, 37);
             button4.TabIndex = 3;
             button4.Text = "       Back";
             button4.UseVisualStyleBackColor = false;
             button4.Click += Button4_Click;
             // 
-            // label3
+            // pictureBox2
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(888, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(28, 29);
-            label3.TabIndex = 4;
-            label3.Text = "X";
-            label3.Click += Label3_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Thistle;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(23, 25);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(25, 32);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
+            pictureBox2.BackColor = Color.Thistle;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(19, 19);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(22, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
             // 
             // Menu2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
-            ClientSize = new Size(913, 600);
-            Controls.Add(pictureBox4);
-            Controls.Add(label3);
+            ClientSize = new Size(799, 450);
+            Controls.Add(pictureBox2);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(panel3);
@@ -206,7 +183,6 @@
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Menu2";
             Text = "Form1";
             Load += Menu2_Load;
@@ -214,7 +190,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -231,7 +207,6 @@
         private Panel panel3;
         private Label label2;
         private Button button4;
-        private Label label3;
-        private PictureBox pictureBox4;
+        private PictureBox pictureBox2;
     }
 }

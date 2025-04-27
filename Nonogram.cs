@@ -338,11 +338,17 @@ namespace PixelWonders
             {
                 revealOriginalGrid();
                 MessageBox.Show("Congratulations! You solved the Nonogram!");
+                Menu2 menu2 = new Menu2();
+                menu2.Show();
+
                 this.Close();
             }
             if (numberOfLives <= 0)
             {
                 MessageBox.Show("Game Over! You have no lives left.");
+                Menu2 menu2 = new Menu2();
+                menu2.Show();
+
                 this.Close();
             }
         }

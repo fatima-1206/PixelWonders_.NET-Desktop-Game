@@ -16,7 +16,7 @@ namespace PixelWonders
             dbManager.AddPredefinedPalettesToDatabase();
 
 
-            Application.Run(new Color_by_number());
+            Application.Run(new Home());
 
         }
     }

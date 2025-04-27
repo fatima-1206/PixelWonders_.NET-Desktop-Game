@@ -39,7 +39,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button3 = new Button();
-            label2 = new Label();
             pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -80,7 +79,6 @@
             pictureBox3.Location = new Point(119, 26);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(25, 22);
-
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -160,18 +158,6 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(778, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(22, 24);
-            label2.TabIndex = 3;
-            label2.Text = "X";
-            label2.Click += Label2_Click;
-            // 
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Thistle;
@@ -190,7 +176,6 @@
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox4);
-            Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -209,7 +194,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -225,7 +209,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button button3;
-        private Label label2;
         private PictureBox pictureBox4;
     }
 }
