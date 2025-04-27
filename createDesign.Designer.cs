@@ -40,6 +40,7 @@
             designN = new TextBox();
             label2 = new Label();
             colorSelected = new Panel();
+            closeButton = new Panel();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)eraserButton).BeginInit();
@@ -114,7 +115,7 @@
             eraserButton.Location = new Point(1080, 270);
             eraserButton.Margin = new Padding(3, 2, 3, 2);
             eraserButton.Name = "eraserButton";
-            eraserButton.Padding = new Padding(5, 5, 5, 5);
+            eraserButton.Padding = new Padding(5);
             eraserButton.Size = new Size(137, 59);
             eraserButton.SizeMode = PictureBoxSizeMode.Zoom;
             eraserButton.TabIndex = 8;
@@ -181,11 +182,23 @@
             colorSelected.Size = new Size(27, 207);
             colorSelected.TabIndex = 12;
             // 
+            // closeButton
+            // 
+            closeButton.BackgroundImage = Properties.Resources.close;
+            closeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            closeButton.Location = new Point(1331, 1);
+            closeButton.Margin = new Padding(4, 2, 4, 2);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(58, 28);
+            closeButton.TabIndex = 21;
+            closeButton.Click += closeButton_Click;
+            // 
             // CreateDesign
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1387, 788);
+            Controls.Add(closeButton);
             Controls.Add(label2);
             Controls.Add(colorSelected);
             Controls.Add(designN);
@@ -231,6 +244,7 @@
         private TextBox designN;
         private Label label2;
         private Panel colorSelected;
+        private Panel closeButton;
         //private PictureBox eraserPic;
         //private PictureBox lockPic;
         //private PictureBox savePicBox;
