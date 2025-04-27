@@ -66,7 +66,7 @@ namespace PixelWonders
 
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
-           
+
             gridContainer.Padding = new Padding(0);
             panel2.Padding = new Padding(0); // Remove internal padding
             panel2.Margin = new Padding(0); // Remove external margin
@@ -74,6 +74,10 @@ namespace PixelWonders
             gridContainer.Width = gridWidth * pixelWidth + 1;
             gridContainer.Height = gridHeight * pixelHeight + 1;
 
+            //Point gridContainerLocation = gridContainer.Location;
+            panel2.Height = gridContainer.Height + 6;
+            panel2.Width = gridContainer.Width + 6;
+            //panel2.Location = new Point(gridContainerLocation.X-3, gridContainerLocation.Y+3);
 
 
             gridContainer.Controls.Clear(); // clear old controls if any
@@ -128,7 +132,7 @@ namespace PixelWonders
             int startY = gridBottom + spaceBelowGrid;
 
             // Starting X position for palette buttons
-            int startX = gridContainer.Location.X + gridContainer.Width/2  + paletteColors.Count / 2 * 40;
+            int startX = gridContainer.Location.X + gridContainer.Width / 2 + paletteColors.Count / 2 * 40 + 90;
 
             Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
@@ -267,11 +271,12 @@ namespace PixelWonders
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void closeButton_MouseClick(object sender, MouseEventArgs e)
         {
             Menu2 menu = new Menu2();
             menu.Show();
             this.Close();
+
         }
     }
 }

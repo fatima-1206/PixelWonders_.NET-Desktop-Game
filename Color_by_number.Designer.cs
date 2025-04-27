@@ -38,7 +38,7 @@
             walkTimer = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel2 = new Panel();
-            button4 = new Button();
+            closeButton = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)animalPanel).BeginInit();
@@ -51,9 +51,10 @@
             panel1.BackColor = Color.FromArgb(168, 136, 181);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBoxLogo);
-            panel1.Location = new Point(-3, 32);
+            panel1.Location = new Point(-3, 24);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1406, 87);
+            panel1.Size = new Size(1230, 65);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -63,9 +64,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(83, 54, 89);
-            label1.Location = new Point(416, 12);
+            label1.Location = new Point(364, 9);
             label1.Name = "label1";
-            label1.Size = new Size(495, 72);
+            label1.Size = new Size(398, 58);
             label1.TabIndex = 2;
             label1.Text = "Color By Number";
             // 
@@ -74,10 +75,10 @@
             pictureBoxLogo.BackColor = Color.White;
             pictureBoxLogo.Cursor = Cursors.Hand;
             pictureBoxLogo.Image = Properties.Resources.logo3;
-            pictureBoxLogo.Location = new Point(2, 3);
-            pictureBoxLogo.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxLogo.Location = new Point(2, 2);
+            pictureBoxLogo.Margin = new Padding(2);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(126, 81);
+            pictureBoxLogo.Size = new Size(110, 61);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
@@ -85,19 +86,19 @@
             // gridContainer
             // 
             gridContainer.BackColor = Color.Thistle;
-            gridContainer.Location = new Point(3, 4);
-            gridContainer.Margin = new Padding(3, 4, 3, 4);
+            gridContainer.Location = new Point(3, 3);
             gridContainer.Name = "gridContainer";
-            gridContainer.Size = new Size(500, 500);
+            gridContainer.Size = new Size(335, 335);
             gridContainer.TabIndex = 1;
             gridContainer.Paint += gridContainer_Paint;
             // 
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.black_walk_8fps;
-            animalPanel.Location = new Point(395, 186);
+            animalPanel.Location = new Point(387, 105);
+            animalPanel.Margin = new Padding(3, 2, 3, 2);
             animalPanel.Name = "animalPanel";
-            animalPanel.Size = new Size(59, 60);
+            animalPanel.Size = new Size(52, 45);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
             animalPanel.TabIndex = 13;
             animalPanel.TabStop = false;
@@ -120,38 +121,34 @@
             // 
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
-            panel2.Location = new Point(395, 246);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(387, 149);
             panel2.Name = "panel2";
-            panel2.Size = new Size(506, 506);
+            panel2.Size = new Size(341, 341);
             panel2.TabIndex = 16;
             panel2.Paint += panel2_Paint;
             // 
-            // button4
+            // closeButton
             // 
-            button4.BackColor = Color.Thistle;
-            button4.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(1296, 1);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(76, 34);
-            button4.TabIndex = 19;
-            button4.Text = "X";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            closeButton.BackgroundImage = Properties.Resources.close;
+            closeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            closeButton.Location = new Point(1155, 1);
+            closeButton.Margin = new Padding(3, 2, 3, 2);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(46, 22);
+            closeButton.TabIndex = 17;
+            closeButton.MouseClick += closeButton_MouseClick;
             // 
             // Color_by_number
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(231, 207, 221);
-            ClientSize = new Size(1372, 882);
-            Controls.Add(button4);
+            ClientSize = new Size(1200, 591);
+            Controls.Add(closeButton);
             Controls.Add(panel2);
             Controls.Add(animalPanel);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Color_by_number";
             Text = "Color_by_number";
             Load += Color_by_number_Load;
@@ -178,6 +175,6 @@
         private System.Windows.Forms.Timer walkTimer;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel2;
-        private Button button4;
+        private Panel closeButton;
     }
 }
