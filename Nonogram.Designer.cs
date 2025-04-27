@@ -53,20 +53,6 @@
             SuspendLayout();
             // 
 
-            // close
-            // 
-            close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            close.BackColor = Color.FromArgb(222, 183, 219);
-            close.BackgroundImage = Properties.Resources.cross_removebg_preview;
-            close.BackgroundImageLayout = ImageLayout.Zoom;
-            close.Cursor = Cursors.Hand;
-            close.Location = new Point(1650, 0);
-            close.Margin = new Padding(2);
-            close.Name = "close";
-            close.Size = new Size(62, 38);
-            close.TabIndex = 6;
-            close.Click += close_Click;
-            close.Paint += close_Paint;
             // 
             // headerContainer
             // 

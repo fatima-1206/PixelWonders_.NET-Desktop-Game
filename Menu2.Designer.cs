@@ -173,31 +173,7 @@
             button4.Text = "       Back";
             button4.UseVisualStyleBackColor = false;
             button4.Click += Button4_Click;
-            // 
-
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1683, -1);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(33, 35);
-            label3.TabIndex = 4;
-            label3.Text = "X";
-            label3.Click += Label3_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Thistle;
-            pictureBox4.Location = new Point(29, 31);
-            pictureBox4.Margin = new Padding(4, 5, 4, 5);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
+         
             // 
             // Menu2
             // 
@@ -205,8 +181,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(168, 136, 181);
             ClientSize = new Size(1715, 1106);
-            Controls.Add(pictureBox4);
-            Controls.Add(label3);
+         
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(panel3);

@@ -47,25 +47,17 @@ namespace PixelWonders
             jigsaw_panel.DragDrop += Panel_DragDrop;
 
             // Get the selected design ID and path from the global SelectedDesign
-            int designId = SelectedDesign.Current.IsPreMade ? 0 : SelectedDesign.Current.DesignId;  // If it's a pre-made design, use PreMadePath
-            string preMadeImagePath = SelectedDesign.Current.PreMadePath;
+            int designId = 1;
 
             Bitmap original;
 
             // Load image for user-created design
-            if (!SelectedDesign.Current.IsPreMade)
-            {
+            
                 // Load from database or your image source based on designId
                 DesignLoader.LoadAndRenderDesign(designId, 20, 20, pictureBox1, Program.dbManager);
                 original = (Bitmap)pictureBox1.Image;
-            }
-            else
-            {
-                // For pre-made designs, load the image directly from the file path
-                original = new Bitmap(preMadeImagePath);
-                pictureBox1.Image = original;
-            }
-
+            
+             
             // Split and add pieces to panelPieces
             var pieces = DesignLoader.SplitAndReturnPieces(original, 3, 3, panel1);
 

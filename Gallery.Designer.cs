@@ -90,20 +90,7 @@
             pictureBoxLogo.TabStop = false;
             // 
 
-            // close
-            // 
-            close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            close.BackColor = Color.FromArgb(222, 183, 219);
-            close.BackgroundImage = Properties.Resources.cross_removebg_preview;
-            close.BackgroundImageLayout = ImageLayout.Zoom;
-            close.Cursor = Cursors.Hand;
-            close.Location = new Point(1377, -3);
-            close.Margin = new Padding(2);
-            close.Name = "close";
-            close.Size = new Size(52, 32);
-            close.TabIndex = 8;
-            close.Click += close_Click;
-            // 
+            
 
             // panel1
             // 
@@ -118,7 +105,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1715, 100);
             panel1.TabIndex = 7;
-            panel1.Paint += panel1_Paint;
+           
             // 
             // pictureBox2
             // 
@@ -129,7 +116,7 @@
             pictureBox2.Size = new Size(65, 63);
             pictureBox2.TabIndex = 24;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+           
             // 
             // label3
             // 

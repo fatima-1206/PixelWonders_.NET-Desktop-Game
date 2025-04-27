@@ -261,24 +261,14 @@
 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.White;
-            label6.Font = new Font("Sitka Small", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(1110, 0);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(33, 35);
-            label6.TabIndex = 6;
-            label6.Text = "X";
-            label6.Click += Label6_Click;
-            // 
+            
             // Signup
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 182, 200);
             ClientSize = new Size(1142, 750);
-            Controls.Add(label6);
+           
             Controls.Add(button3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
