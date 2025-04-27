@@ -226,10 +226,8 @@ namespace PixelWonders
                 }
             }
 
-            // 2. Convert to JSON string
             string jsonMatrix = JsonSerializer.Serialize(serializedGrid);
 
-            // 3. Get palette ID from palette name
             int paletteId = Program.dbManager.GetPaletteIdFromName(paletteName);
             if (paletteId == -1)
             {
