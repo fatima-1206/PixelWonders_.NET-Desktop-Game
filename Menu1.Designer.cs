@@ -40,6 +40,7 @@
             label1 = new Label();
             button3 = new Button();
             pictureBox4 = new PictureBox();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
@@ -66,6 +67,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Thistle;
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
@@ -181,6 +183,20 @@
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
             // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(239, 182, 200);
+            button4.Font = new Font("Pixelify Sans", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.FromArgb(64, 0, 64);
+            button4.Location = new Point(508, 85);
+            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Name = "button4";
+            button4.Size = new Size(230, 76);
+            button4.TabIndex = 5;
+            button4.Text = "Gallery";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click_1;
+            // 
             // Menu1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -223,5 +239,6 @@
         private PictureBox pictureBox3;
         private Button button3;
         private PictureBox pictureBox4;
+        private Button button4;
     }
 }

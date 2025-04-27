@@ -4,7 +4,7 @@ namespace PixelWonders
     {
         // Make dbManager a static variable so it can be accessed globally
         public static DatabaseManager dbManager = null!;
-        public static int username;
+        public static string username;
         [STAThread]
         static void Main()
         {
