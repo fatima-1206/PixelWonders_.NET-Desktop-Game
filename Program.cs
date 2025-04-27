@@ -17,6 +17,7 @@ namespace PixelWonders
 
 
             Application.Run(new Home());
+
         }
     }
 }
