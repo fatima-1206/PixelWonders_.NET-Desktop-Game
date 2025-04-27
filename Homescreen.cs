@@ -9,11 +9,11 @@ namespace PixelWonders
             InitializeComponent();
             this.FormClosing += Home_FormClosing;
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             DesignLoader d = new DesignLoader();
-           d.RoundButton(button2);
+            d.RoundButton(button2);
             d.RoundButton(button3);
             button2.FlatStyle = FlatStyle.Flat;
             button2.FlatAppearance.BorderSize = 0;
@@ -23,7 +23,7 @@ namespace PixelWonders
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+
             Login loginPage = new Login();
 
             // Show the Login form
@@ -46,6 +46,16 @@ namespace PixelWonders
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
