@@ -104,14 +104,14 @@ namespace PixelWonders
                     {
                         btn.Text = "0";          // show 0
                         btn.BackColor = Color.White; // white color
-                        btn.Enabled = false;      // cannot click (optional)
+                        btn.Enabled = false;      // cannot click 
                     }
                     else
                     {
                         int val = gridValue+1;
                         btn.Text = val.ToString();  // real number
-                        btn.Tag = gridValue;              // save number inside tag
-                        btn.BackColor = Color.White;       // still white initially
+                        btn.Tag = gridValue;           
+                        btn.BackColor = Color.White;  
                         btn.Click += Button_Click;         // allow click to color
                     }
 
@@ -158,6 +158,7 @@ namespace PixelWonders
             {
                 clickedButton.BackColor = selectedColor;
                 clickedButton.Text = "";
+                clickedButton.Enabled = false;
             }
             else
             {
