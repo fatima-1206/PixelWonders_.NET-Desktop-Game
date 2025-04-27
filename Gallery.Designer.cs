@@ -37,13 +37,11 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-
             designsContainer = new Panel();
             headerContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +53,6 @@
             headerContainer.Controls.Add(label1);
             headerContainer.Controls.Add(pictureBoxLogo);
             headerContainer.Location = new Point(-349, 54);
-
             headerContainer.Margin = new Padding(2);
             headerContainer.Name = "headerContainer";
             headerContainer.Size = new Size(0, 0);
@@ -71,7 +68,6 @@
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(366, 83);
-
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
             // 
@@ -84,14 +80,10 @@
             pictureBoxLogo.Margin = new Padding(2);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(158, 101);
-
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
             // 
-
-            
-
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -105,7 +97,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1715, 100);
             panel1.TabIndex = 7;
-           
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox2
             // 
@@ -116,7 +108,7 @@
             pictureBox2.Size = new Size(65, 63);
             pictureBox2.TabIndex = 24;
             pictureBox2.TabStop = false;
-           
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label3
             // 
@@ -130,18 +122,17 @@
             label3.Size = new Size(315, 83);
             label3.TabIndex = 11;
             label3.Text = "GALLERY";
+            label3.Click += label3_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(239, 182, 200);
-
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.logo3;
             pictureBox1.Location = new Point(2, -1);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(158, 101);
-
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -167,7 +158,6 @@
             designsContainer.Margin = new Padding(4);
             designsContainer.Name = "designsContainer";
             designsContainer.Size = new Size(1270, 818);
-
             designsContainer.TabIndex = 9;
             designsContainer.Paint += panel2_Paint;
             // 
@@ -183,7 +173,6 @@
             Controls.Add(headerContainer);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-
             Name = "Gallery";
             Text = "Gallery";
             headerContainer.ResumeLayout(false);
@@ -195,7 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
         }
 
         #endregion

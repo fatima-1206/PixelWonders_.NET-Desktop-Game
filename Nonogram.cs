@@ -70,7 +70,7 @@ namespace PixelWonders
                 }
 
             }
-            for (int i = 0;i <croppedGrid.GetLength(1); i++)
+            for (int i = 0; i < croppedGrid.GetLength(1); i++)
                 solvedCols[i] = 0;
             updateSolvedRowCols();
         }
@@ -100,7 +100,7 @@ namespace PixelWonders
                     int j = col;
 
                     pb.Click += (sender, e) => PixelClicked(sender, i, j);
-                    pb.Tag = new Point(i, j);  
+                    pb.Tag = new Point(i, j);
 
                     //pb.MouseHover += (sender, e) => PixelHover(sender, row, col);
 
@@ -172,7 +172,8 @@ namespace PixelWonders
             drawClues();
         }
 
-        private void updateSolvedRowCols() {
+        private void updateSolvedRowCols()
+        {
             // first rows
             for (int i = 0; i < gridHeight; i++)
             {
@@ -182,7 +183,7 @@ namespace PixelWonders
                 for (int j = 0; j < gridWidth; j++)
                 {
                     if (userPlays[i, j] == -1 || userPlays[i, j] == 2) continue;
-                    if (userPlays[i, j] != 1 && croppedGrid[i,j] == 1) 
+                    if (userPlays[i, j] != 1 && croppedGrid[i, j] == 1)
                         solvedRows[i] = 0;
                 }
                 // if the row just got solved, update the row panels 
@@ -193,7 +194,7 @@ namespace PixelWonders
 
             printMatrix(solvedRows);
             // now columns
-            for(int i = 0; i < gridWidth; i++)
+            for (int i = 0; i < gridWidth; i++)
             {
                 // skip this row if it is in solvedRows
                 if (solvedCols[i] == 1) continue;
@@ -213,7 +214,7 @@ namespace PixelWonders
 
         }
 
-       
+
         private void solvedColumn(int col)
         {
             List<PictureBox> pictureBoxes = GetAllPictureBoxes(gridContainer);
@@ -289,7 +290,8 @@ namespace PixelWonders
             }
             return true;
         }
-        private void revealOriginalGrid() {
+        private void revealOriginalGrid()
+        {
             gridContainer.Controls.Clear();
             gridHeight = croppedGrid.GetLength(0); // rows (Y)
             gridWidth = croppedGrid.GetLength(1);  // columns (X)
@@ -318,7 +320,7 @@ namespace PixelWonders
                     pb.Location = new Point(col * pb.Width, row * pb.Height);
 
                     // set the background color based on the original grid
-                    int indexColor = orginalGrid[minRow+row, minCol+col];
+                    int indexColor = orginalGrid[minRow + row, minCol + col];
                     if (indexColor == -1)
                     {
                         pb.BackColor = ColorTranslator.FromHtml("#F0f0f0");
@@ -377,7 +379,7 @@ namespace PixelWonders
             {
                 Panel dividor = new Panel();
                 dividor.BackColor = Color.FromArgb(83, 54, 89);
-               dividor.Height = 1;
+                dividor.Height = 1;
                 dividor.Width = rowCluesPanel.Width;
                 dividor.Margin = new Padding(0, 0, 0, 0);
                 rowCluesPanel.Controls.Add(dividor);
@@ -477,13 +479,13 @@ namespace PixelWonders
         }
         public void printMatrix(int[] matrix)
         {
-            
-                for (int j = 0; j < matrix.GetLength(0); j++)
-                {
-                    System.Diagnostics.Debug.Write(matrix[j] + " ");
-                }
-                System.Diagnostics.Debug.WriteLine("");
-            
+
+            for (int j = 0; j < matrix.GetLength(0); j++)
+            {
+                System.Diagnostics.Debug.Write(matrix[j] + " ");
+            }
+            System.Diagnostics.Debug.WriteLine("");
+
         }
 
         public int[,] CropMatrix(int[,] grid)
@@ -673,6 +675,13 @@ namespace PixelWonders
         private void Nonogram_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu2 menu = new Menu2();
+            menu.Show();
+            this.Close();
         }
     }
 }

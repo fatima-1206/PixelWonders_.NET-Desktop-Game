@@ -19,7 +19,7 @@ namespace PixelWonders
         public CreateDesign designForm;
 
         public string selectedPaletteName;
-        int colorWidth =100;
+        int colorWidth = 100;
         int colorHeight = 15;
 
 
@@ -50,7 +50,8 @@ namespace PixelWonders
             }
         }
 
-        private void reloadFromDB() {
+        private void reloadFromDB()
+        {
             // clear ColorPalettes.Palettes and reload from the database
             ColorPalettes.Palettes.Clear();
             List<int> ids = Program.dbManager.GetAllPaletteIds();
@@ -69,7 +70,7 @@ namespace PixelWonders
             reloadFromDB();
             //label1align
             flowLayoutPanel1.Controls.Clear(); // Clear old palettes
-           
+
             foreach (var palette in ColorPalettes.Palettes)
             {
                 Panel palettePanel = new Panel
@@ -88,7 +89,7 @@ namespace PixelWonders
                 palettePanel.Click += PalettePanel_Click;
 
                 // Create color preview boxes inside the panel
-                
+
                 for (int i = 0; i < palette.Value.Count; i++)
                 {
                     Panel colorBox = new Panel
@@ -236,7 +237,8 @@ namespace PixelWonders
             return ColorPalettes.Palettes.ContainsKey(name);
         }
 
-        private string askPaletteName() {
+        private string askPaletteName()
+        {
             //string name = "";
             // Repeat until a unique, non-empty name is entered
             while (true)
@@ -321,7 +323,7 @@ namespace PixelWonders
                 {
                     MessageBox.Show("No colors selected. Palette not created.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     customColorForm.Close(); // Close the form
-    
+
                     return;
                 }
 
@@ -364,6 +366,13 @@ namespace PixelWonders
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu1 menu = new Menu1();
+            menu.Show();
+            this.Close();
         }
     }
 }

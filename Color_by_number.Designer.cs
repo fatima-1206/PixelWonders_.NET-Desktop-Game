@@ -34,11 +34,11 @@
             pictureBoxLogo = new PictureBox();
             gridContainer = new Panel();
             animalPanel = new PictureBox();
-            platform = new Panel();
             imageChangeTimer = new System.Windows.Forms.Timer(components);
             walkTimer = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel2 = new Panel();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)animalPanel).BeginInit();
@@ -55,7 +55,6 @@
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1758, 109);
-
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -67,7 +66,6 @@
             label1.ForeColor = Color.FromArgb(83, 54, 89);
             label1.Location = new Point(366, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
-
             label1.Name = "label1";
             label1.Size = new Size(595, 87);
             label1.TabIndex = 2;
@@ -99,9 +97,8 @@
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.black_walk_8fps;
-            animalPanel.Location = new Point(962, 524);
+            animalPanel.Location = new Point(1010, 468);
             animalPanel.Margin = new Padding(4);
-
             animalPanel.Name = "animalPanel";
             animalPanel.Size = new Size(74, 75);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -109,16 +106,6 @@
             animalPanel.TabStop = false;
             animalPanel.Click += animalPanel_Click;
             animalPanel.MouseHover += animalPanel_MouseHover;
-            // 
-            // platform
-            // 
-            platform.BorderStyle = BorderStyle.FixedSingle;
-            platform.Location = new Point(960, 601);
-
-            platform.Margin = new Padding(0);
-            platform.Name = "platform";
-            platform.Size = new Size(342, 1);
-            platform.TabIndex = 15;
             // 
             // imageChangeTimer
             // 
@@ -136,13 +123,25 @@
             // 
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
-            panel2.Location = new Point(88, 290);
+            panel2.Location = new Point(221, 277);
             panel2.Margin = new Padding(4, 5, 4, 5);
-
             panel2.Name = "panel2";
             panel2.Size = new Size(582, 499);
             panel2.TabIndex = 16;
             panel2.Paint += panel2_Paint;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Thistle;
+            button4.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Location = new Point(1620, 1);
+            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Name = "button4";
+            button4.Size = new Size(95, 42);
+            button4.TabIndex = 19;
+            button4.Text = "X";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // Color_by_number
             // 
@@ -150,9 +149,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(231, 207, 221);
             ClientSize = new Size(1715, 1106);
-
+            Controls.Add(button4);
             Controls.Add(panel2);
-            Controls.Add(platform);
             Controls.Add(animalPanel);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -179,10 +177,10 @@
         private PictureBox pictureBoxLogo;
         private Panel gridContainer;
         private PictureBox animalPanel;
-        private Panel platform;
         private System.Windows.Forms.Timer imageChangeTimer;
         private System.Windows.Forms.Timer walkTimer;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel2;
+        private Button button4;
     }
 }

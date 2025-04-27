@@ -46,13 +46,13 @@ namespace PixelWonders
         }
 
 
-    string Titleize(string input)
-    {
-        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-        return textInfo.ToTitleCase(input.ToLower());
-    }
+        string Titleize(string input)
+        {
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            return textInfo.ToTitleCase(input.ToLower());
+        }
 
-    private void populateGallery()
+        private void populateGallery()
         {
             designsContainer.Controls.Clear(); // Clear any existing controls if needed
 
@@ -69,7 +69,7 @@ namespace PixelWonders
                 PictureBox pb = new PictureBox();
                 pb.Width = 250;
                 pb.Height = 250;
-                pb.Margin = new Padding(15,10,15,0);
+                pb.Margin = new Padding(15, 10, 15, 0);
                 pb.Cursor = Cursors.Hand;
 
                 // Load and render the design into this picturebox
@@ -88,7 +88,7 @@ namespace PixelWonders
                 Container.Controls.Add(designName);
                 // Set the background color of the container
                 //Container.BackColor = Color.FromArgb(239, 182, 200);
-                
+
 
 
                 Container.Location = new Point((i % 3) * (Container.Width + 10), (i / 3) * (Container.Height + 10)); // Adjust the position based on index
@@ -97,6 +97,7 @@ namespace PixelWonders
                 i++;
             }
         }
+
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -123,5 +124,21 @@ namespace PixelWonders
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Menu1 menu = new Menu1();
+            menu.Show();
+            this.Close();
+        }
     }
 }
