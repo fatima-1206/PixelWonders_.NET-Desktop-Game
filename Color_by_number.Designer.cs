@@ -63,7 +63,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(83, 54, 89);
-            label1.Location = new Point(293, 7);
+            label1.Location = new Point(366, 3);
             label1.Name = "label1";
             label1.Size = new Size(495, 72);
             label1.TabIndex = 2;
@@ -95,7 +95,7 @@
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.black_walk_8fps;
-            animalPanel.Location = new Point(770, 419);
+            animalPanel.Location = new Point(295, 164);
             animalPanel.Name = "animalPanel";
             animalPanel.Size = new Size(59, 60);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@
             // platform
             // 
             platform.BorderStyle = BorderStyle.FixedSingle;
-            platform.Location = new Point(768, 481);
+            platform.Location = new Point(293, 226);
             platform.Margin = new Padding(0);
             platform.Name = "platform";
             platform.Size = new Size(274, 1);
@@ -129,7 +129,7 @@
             // 
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
-            panel2.Location = new Point(70, 232);
+            panel2.Location = new Point(281, 226);
             panel2.Margin = new Padding(21, 20, 21, 20);
             panel2.Name = "panel2";
             panel2.Size = new Size(616, 495);

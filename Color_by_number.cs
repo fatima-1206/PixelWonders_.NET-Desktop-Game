@@ -130,7 +130,8 @@ namespace PixelWonders
             int startY = gridBottom + spaceBelowGrid;
 
             // Starting X position for palette buttons
-            int startX = 145;
+            int startX = gridContainer.Location.X + gridContainer.Width / 2 + paletteColors.Count / 4* 40;
+
             Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
             {
@@ -187,6 +188,15 @@ namespace PixelWonders
                 if (btn.Enabled && btn.BackColor != selectedColor)
                 {
                     return false;  // Not all cells are correctly filled
+                }
+            }
+
+            foreach (Button btn in gridContainer.Controls)
+            {
+                //get rid of the numbers
+                if (btn.Text != "")
+                {
+                    btn.Text = "";  // Clear the text
                 }
             }
             return true;  // All cells are correctly filled
