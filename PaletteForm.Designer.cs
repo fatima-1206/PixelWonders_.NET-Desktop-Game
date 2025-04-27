@@ -34,9 +34,9 @@ namespace PixelWonders
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
+            addButton = new Panel();
             header = new Panel();
             label1 = new Label();
-            addButton = new Panel();
             panel3 = new Panel();
             panel1 = new Panel();
             done = new Panel();
@@ -44,7 +44,7 @@ namespace PixelWonders
             promptLabel = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             colorDialog = new ColorDialog();
-            button4 = new Button();
+            closeButton = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             header.SuspendLayout();
@@ -55,10 +55,11 @@ namespace PixelWonders
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.Location = new Point(0, 195);
+            flowLayoutPanel1.Location = new Point(0, 162);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10, 14, 10, 4);
-            flowLayoutPanel1.Size = new Size(1716, 1428);
+            flowLayoutPanel1.Padding = new Padding(9, 11, 9, 4);
+            flowLayoutPanel1.Size = new Size(1381, 1321);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -68,30 +69,49 @@ namespace PixelWonders
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(addButton);
             panel2.Controls.Add(header);
-            panel2.Location = new Point(14, 36);
-            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Location = new Point(11, 30);
+            panel2.Margin = new Padding(4, 2, 4, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1701, 90);
+            panel2.Size = new Size(1649, 75);
             panel2.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(239, 182, 200);
+            pictureBox2.BackColor = SystemColors.Control;
             pictureBox2.Image = Properties.Resources.logo3;
-            pictureBox2.Location = new Point(40, 3);
+            pictureBox2.Location = new Point(-11, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(165, 81);
+            pictureBox2.Size = new Size(151, 68);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // addButton
+            // 
+            addButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            addButton.BackgroundImage = Properties.Resources.add1;
+            addButton.BackgroundImageLayout = ImageLayout.Zoom;
+            addButton.Cursor = Cursors.Hand;
+            addButton.Location = new Point(1256, 0);
+            addButton.Margin = new Padding(2);
+            addButton.Name = "addButton";
+            addButton.Padding = new Padding(16, 14, 16, 14);
+            addButton.Size = new Size(119, 68);
+            addButton.TabIndex = 2;
+            addButton.Tag = "";
+            addButton.Click += addButton_Click;
             // 
             // header
             // 
             header.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             header.Controls.Add(label1);
-            header.Location = new Point(174, 6);
+            header.Location = new Point(145, 5);
+            header.Margin = new Padding(2);
             header.Name = "header";
-            header.Size = new Size(1376, 78);
+            header.Size = new Size(1230, 65);
             header.TabIndex = 1;
             // 
             // label1
@@ -101,37 +121,23 @@ namespace PixelWonders
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 34F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(168, 136, 181);
-            label1.Location = new Point(267, -6);
+            label1.Location = new Point(222, -5);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(526, 83);
+            label1.Size = new Size(445, 69);
             label1.TabIndex = 0;
             label1.Text = "Color Palettes";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // addButton
-            // 
-            addButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addButton.BackgroundImage = Properties.Resources.add1;
-            addButton.BackgroundImageLayout = ImageLayout.Zoom;
-            addButton.Cursor = Cursors.Hand;
-            addButton.Location = new Point(1405, 0);
-            addButton.Name = "addButton";
-            addButton.Padding = new Padding(20, 16, 20, 16);
-            addButton.Size = new Size(142, 81);
-            addButton.TabIndex = 2;
-            addButton.Tag = "";
-            addButton.Click += addButton_Click;
             // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.AutoSize = true;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(300, 28);
-            panel3.Margin = new Padding(4, 3, 4, 3);
+            panel3.Location = new Point(250, 24);
+            panel3.Margin = new Padding(4, 2, 4, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1035, 56);
+            panel3.Size = new Size(862, 46);
             panel3.TabIndex = 0;
             // 
             // panel1
@@ -140,11 +146,11 @@ namespace PixelWonders
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 822);
-            panel1.Margin = new Padding(27, 4, 6, 9);
+            panel1.Location = new Point(0, 686);
+            panel1.Margin = new Padding(22, 4, 5, 8);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(6, 4, 6, 4);
-            panel1.Size = new Size(1664, 123);
+            panel1.Padding = new Padding(5, 4, 5, 4);
+            panel1.Size = new Size(1386, 102);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -154,10 +160,11 @@ namespace PixelWonders
             done.BackgroundImage = Properties.Resources.play__2_;
             done.BackgroundImageLayout = ImageLayout.Zoom;
             done.Cursor = Cursors.Hand;
-            done.Location = new Point(1472, 0);
+            done.Location = new Point(1226, 0);
+            done.Margin = new Padding(2);
             done.Name = "done";
-            done.Padding = new Padding(20, 16, 20, 16);
-            done.Size = new Size(154, 96);
+            done.Padding = new Padding(16, 14, 16, 14);
+            done.Size = new Size(129, 80);
             done.TabIndex = 3;
             done.Tag = "";
             done.Click += DonePanel_Click;
@@ -165,52 +172,51 @@ namespace PixelWonders
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Location = new Point(48, 48);
+            panel4.Location = new Point(40, 40);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(6, 4, 6, 4);
-            panel4.Size = new Size(171, 36);
+            panel4.Padding = new Padding(5, 4, 5, 4);
+            panel4.Size = new Size(142, 30);
             panel4.TabIndex = 1;
             // 
             // promptLabel
             // 
             promptLabel.AutoSize = true;
             promptLabel.Font = new Font("Pixelify Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            promptLabel.Location = new Point(8, 152);
-            promptLabel.Margin = new Padding(10, 4, 6, 4);
+            promptLabel.Location = new Point(6, 126);
+            promptLabel.Margin = new Padding(9, 4, 5, 4);
             promptLabel.Name = "promptLabel";
-            promptLabel.Padding = new Padding(6, 4, 6, 4);
-            promptLabel.Size = new Size(473, 37);
+            promptLabel.Padding = new Padding(5, 4, 5, 4);
+            promptLabel.Size = new Size(402, 32);
             promptLabel.TabIndex = 0;
             promptLabel.Text = "Select a color palette for your design!";
             promptLabel.UseWaitCursor = true;
             // 
-            // button4
+            // closeButton
             // 
-            button4.BackColor = Color.Thistle;
-            button4.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(1569, -8);
-            button4.Margin = new Padding(4, 5, 4, 5);
-            button4.Name = "button4";
-            button4.Size = new Size(95, 42);
-            button4.TabIndex = 19;
-            button4.Text = "X";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            closeButton.BackgroundImage = Properties.Resources.close;
+            closeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            closeButton.Location = new Point(1329, 2);
+            closeButton.Margin = new Padding(4, 2, 4, 2);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(58, 28);
+            closeButton.TabIndex = 20;
+            closeButton.Click += closeButton_Click;
             // 
             // PaletteForm
             // 
-            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1664, 945);
-            Controls.Add(button4);
+            ClientSize = new Size(1386, 788);
+            Controls.Add(closeButton);
             Controls.Add(promptLabel);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(1);
             Name = "PaletteForm";
             Text = "PaletteForm";
             panel2.ResumeLayout(false);
@@ -237,6 +243,6 @@ namespace PixelWonders
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel done;
         private ColorDialog colorDialog;
-        private Button button4;
+        private Panel closeButton;
     }
 }

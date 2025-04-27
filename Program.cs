@@ -16,7 +16,7 @@ namespace PixelWonders
             dbManager.AddPredefinedPalettesToDatabase();
 
 
-            Application.Run(new Nonogram());
+            Application.Run(new PaletteForm());
 
         }
     }

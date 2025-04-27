@@ -374,6 +374,18 @@ namespace PixelWonders
             menu.Show();
             this.Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Menu1 menu = new Menu1();
+            menu.Show();
+            this.Close();
+        }
     }
 }
 
