@@ -85,8 +85,8 @@ namespace PixelWonders
             gridWidth = orginalGrid.GetLength(1);
             // columns
 
-            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width ) / gridWidth);
-            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height ) / gridHeight);
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
             //int pixelWidth = 20;
             //int pixelHeight = 20;
             // int pixelWidth = (gridContainer.Width - (gridWidth + 1)) / gridWidth;
@@ -247,6 +247,11 @@ namespace PixelWonders
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }

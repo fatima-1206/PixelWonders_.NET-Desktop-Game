@@ -50,9 +50,10 @@
             panel1.BackColor = Color.FromArgb(168, 136, 181);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBoxLogo);
-            panel1.Location = new Point(-3, 32);
+            panel1.Location = new Point(-4, 40);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(919, 87);
+            panel1.Size = new Size(1758, 109);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -62,9 +63,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Pixelify Sans", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(83, 54, 89);
-            label1.Location = new Point(293, 7);
+            label1.Location = new Point(366, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(495, 72);
+            label1.Size = new Size(595, 87);
             label1.TabIndex = 2;
             label1.Text = "Color By Number";
             // 
@@ -73,10 +75,10 @@
             pictureBoxLogo.BackColor = Color.White;
             pictureBoxLogo.Cursor = Cursors.Hand;
             pictureBoxLogo.Image = Properties.Resources.logo3;
-            pictureBoxLogo.Location = new Point(2, 3);
-            pictureBoxLogo.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxLogo.Location = new Point(2, 4);
+            pictureBoxLogo.Margin = new Padding(2, 4, 2, 4);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(126, 81);
+            pictureBoxLogo.Size = new Size(158, 101);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
@@ -84,18 +86,20 @@
             // gridContainer
             // 
             gridContainer.BackColor = Color.Thistle;
-            gridContainer.Location = new Point(40, 39);
-            gridContainer.Margin = new Padding(3, 4, 3, 4);
+            gridContainer.Location = new Point(38, 32);
+            gridContainer.Margin = new Padding(4, 5, 4, 5);
             gridContainer.Name = "gridContainer";
-            gridContainer.Size = new Size(537, 424);
+            gridContainer.Size = new Size(513, 428);
             gridContainer.TabIndex = 1;
+            gridContainer.Paint += gridContainer_Paint;
             // 
             // animalPanel
             // 
             animalPanel.Image = Properties.Resources.black_walk_8fps;
-            animalPanel.Location = new Point(770, 419);
+            animalPanel.Location = new Point(962, 524);
+            animalPanel.Margin = new Padding(4);
             animalPanel.Name = "animalPanel";
-            animalPanel.Size = new Size(59, 60);
+            animalPanel.Size = new Size(74, 75);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
             animalPanel.TabIndex = 13;
             animalPanel.TabStop = false;
@@ -105,10 +109,10 @@
             // platform
             // 
             platform.BorderStyle = BorderStyle.FixedSingle;
-            platform.Location = new Point(768, 481);
+            platform.Location = new Point(960, 601);
             platform.Margin = new Padding(0);
             platform.Name = "platform";
-            platform.Size = new Size(274, 1);
+            platform.Size = new Size(342, 1);
             platform.TabIndex = 15;
             // 
             // imageChangeTimer
@@ -127,24 +131,25 @@
             // 
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
-            panel2.Location = new Point(70, 232);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(88, 290);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(616, 495);
+            panel2.Size = new Size(582, 499);
             panel2.TabIndex = 16;
             panel2.Paint += panel2_Paint;
             // 
             // Color_by_number
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(231, 207, 221);
-            ClientSize = new Size(1288, 948);
+            ClientSize = new Size(1715, 1106);
             Controls.Add(panel2);
             Controls.Add(platform);
             Controls.Add(animalPanel);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Color_by_number";
             Text = "Color_by_number";
             Load += Color_by_number_Load;

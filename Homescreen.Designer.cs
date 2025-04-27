@@ -55,9 +55,9 @@
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(108, 585);
+            button3.Location = new Point(87, 861);
             button3.Name = "button3";
-            button3.Size = new Size(211, 71);
+            button3.Size = new Size(245, 102);
             button3.TabIndex = 3;
             button3.Text = "Exit";
             button3.UseVisualStyleBackColor = false;
@@ -68,9 +68,9 @@
             button2.BackColor = Color.FromArgb(255, 224, 192);
             button2.Font = new Font("Pixelify Sans", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(108, 461);
+            button2.Location = new Point(87, 674);
             button2.Name = "button2";
-            button2.Size = new Size(211, 75);
+            button2.Size = new Size(245, 101);
             button2.TabIndex = 1;
             button2.Text = "Start";
             button2.UseVisualStyleBackColor = false;
@@ -91,9 +91,9 @@
             // 
             pictureBox2.ErrorImage = Properties.Resources.crossed_wrong1;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(427, 29);
+            pictureBox2.Location = new Point(757, 281);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(770, 681);
+            pictureBox2.Size = new Size(840, 743);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -103,7 +103,7 @@
             AutoScaleDimensions = new SizeF(21F, 43F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 217, 231);
-            ClientSize = new Size(1143, 749);
+            ClientSize = new Size(1715, 1106);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Font = new Font("Pixelify Sans", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);

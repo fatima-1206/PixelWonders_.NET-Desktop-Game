@@ -42,9 +42,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(-3, -3);
+            pictureBox1.Location = new Point(-6, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(514, 562);
+            pictureBox1.Size = new Size(669, 556);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
@@ -52,9 +52,9 @@
             // jigsaw_panel
             // 
             jigsaw_panel.BackColor = Color.FromArgb(168, 136, 181);
-            jigsaw_panel.Location = new Point(642, 195);
+            jigsaw_panel.Location = new Point(903, 247);
             jigsaw_panel.Name = "jigsaw_panel";
-            jigsaw_panel.Size = new Size(515, 565);
+            jigsaw_panel.Size = new Size(694, 562);
             jigsaw_panel.TabIndex = 18;
             jigsaw_panel.Paint += jigsaw_panel_Paint;
             // 
@@ -76,10 +76,10 @@
             // 
             button1.BackColor = Color.FromArgb(239, 182, 200);
             button1.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1211, 387);
+            button1.Location = new Point(682, 907);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(170, 71);
+            button1.Size = new Size(287, 71);
             button1.TabIndex = 20;
             button1.Text = "Shuffle";
             button1.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@
             // panel1
             // 
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(52, 198);
+            panel1.Location = new Point(123, 247);
             panel1.Name = "panel1";
-            panel1.Size = new Size(514, 562);
+            panel1.Size = new Size(666, 562);
             panel1.TabIndex = 22;
             // 
             // pictureBox2
@@ -111,7 +111,7 @@
             BackColor = Color.FromArgb(255, 224, 192);
             BackgroundImage = Properties.Resources.close_up_puzzle_background1;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1407, 882);
+            ClientSize = new Size(1715, 1106);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(panel1);

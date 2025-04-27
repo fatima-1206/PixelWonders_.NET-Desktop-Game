@@ -61,7 +61,16 @@ namespace PixelWonders
 
         private void Menu2_Load(object sender, EventArgs e)
         {
-
+            DesignLoader d = new DesignLoader();
+            d.RoundButton(button1);
+            d.RoundButton(button2);
+            d.RoundButton(button3);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
         }
 
         private void button3_Click(object sender, EventArgs e)
