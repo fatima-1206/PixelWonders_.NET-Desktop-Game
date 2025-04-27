@@ -47,6 +47,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(168, 136, 181);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBoxLogo);
@@ -54,6 +55,7 @@
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1758, 109);
+
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -65,6 +67,7 @@
             label1.ForeColor = Color.FromArgb(83, 54, 89);
             label1.Location = new Point(366, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
+
             label1.Name = "label1";
             label1.Size = new Size(595, 87);
             label1.TabIndex = 2;
@@ -98,6 +101,7 @@
             animalPanel.Image = Properties.Resources.black_walk_8fps;
             animalPanel.Location = new Point(962, 524);
             animalPanel.Margin = new Padding(4);
+
             animalPanel.Name = "animalPanel";
             animalPanel.Size = new Size(74, 75);
             animalPanel.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -110,6 +114,7 @@
             // 
             platform.BorderStyle = BorderStyle.FixedSingle;
             platform.Location = new Point(960, 601);
+
             platform.Margin = new Padding(0);
             platform.Name = "platform";
             platform.Size = new Size(342, 1);
@@ -133,6 +138,7 @@
             panel2.Controls.Add(gridContainer);
             panel2.Location = new Point(88, 290);
             panel2.Margin = new Padding(4, 5, 4, 5);
+
             panel2.Name = "panel2";
             panel2.Size = new Size(582, 499);
             panel2.TabIndex = 16;
@@ -144,6 +150,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(231, 207, 221);
             ClientSize = new Size(1715, 1106);
+
             Controls.Add(panel2);
             Controls.Add(platform);
             Controls.Add(animalPanel);

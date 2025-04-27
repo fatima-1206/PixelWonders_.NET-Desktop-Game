@@ -39,11 +39,12 @@ namespace PixelWonders
             label1 = new Label();
             panel3 = new Panel();
             panel1 = new Panel();
-            panel4 = new Panel();
             done = new Panel();
+            panel4 = new Panel();
             promptLabel = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel5 = new Panel();
+            colorDialog = new ColorDialog();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             header.SuspendLayout();
@@ -99,7 +100,7 @@ namespace PixelWonders
             addButton.Size = new Size(119, 68);
             addButton.TabIndex = 2;
             addButton.Tag = "";
-            addButton.Paint += addButton_Paint;
+            addButton.Click += addButton_Click;
             // 
             // header
             // 
@@ -110,7 +111,6 @@ namespace PixelWonders
             header.Name = "header";
             header.Size = new Size(1146, 65);
             header.TabIndex = 1;
-            header.Paint += header_Paint;
             // 
             // label1
             // 
@@ -126,7 +126,6 @@ namespace PixelWonders
             label1.TabIndex = 0;
             label1.Text = "Color Palettes";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // panel3
             // 
@@ -153,16 +152,6 @@ namespace PixelWonders
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Location = new Point(40, 40);
-            panel4.Margin = new Padding(2);
-            panel4.Name = "panel4";
-            panel4.Padding = new Padding(5, 4, 5, 4);
-            panel4.Size = new Size(185, 30);
-            panel4.TabIndex = 1;
-            // 
             // done
             // 
             done.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -177,7 +166,16 @@ namespace PixelWonders
             done.TabIndex = 3;
             done.Tag = "";
             done.Click += DonePanel_Click;
-            done.Paint += done_Paint;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Location = new Point(40, 40);
+            panel4.Margin = new Padding(2);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(5, 4, 5, 4);
+            panel4.Size = new Size(185, 30);
+            panel4.TabIndex = 1;
             // 
             // promptLabel
             // 
@@ -191,7 +189,6 @@ namespace PixelWonders
             promptLabel.TabIndex = 0;
             promptLabel.Text = "Select a color palette for your design!";
             promptLabel.UseWaitCursor = true;
-            promptLabel.Click += promptLabel_Click;
             // 
             // panel5
             // 
@@ -205,7 +202,6 @@ namespace PixelWonders
             panel5.Size = new Size(58, 32);
             panel5.TabIndex = 3;
             panel5.Click += panel5_Click;
-            panel5.Paint += panel5_Paint;
             // 
             // PaletteForm
             // 
@@ -247,5 +243,6 @@ namespace PixelWonders
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel5;
         private Panel done;
+        private ColorDialog colorDialog;
     }
 }

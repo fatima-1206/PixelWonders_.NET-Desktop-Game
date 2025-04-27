@@ -32,9 +32,8 @@ namespace PixelWonders
             }
 
             populateGallery();
-            
+
         }
-   
         public void printMatrix(List<int> matrix)
         {
 
@@ -46,147 +45,56 @@ namespace PixelWonders
 
         }
 
-        string Titleize(string input)
-        {
-            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-            return textInfo.ToTitleCase(input.ToLower());
-        }
 
-       private void populateGallery()
-{
-    designsContainer.Controls.Clear(); // Clear any existing controls if needed
-
-    int width = 250;  // Set according to your design size
-    int height = 300; // Set according to your design size
-    int i = 0;
-    int lastX = 0;
-    int lastY = 0;
-
-    foreach (int designId in designIds)
+    string Titleize(string input)
     {
-        System.Diagnostics.Debug.WriteLine(designId);
-
-        Panel Container = new Panel();
-        Container.Width = width;
-        Container.Height = height;
-        PictureBox pb = new PictureBox();
-        pb.Width = width;
-        pb.Height = 250;
-        pb.Margin = new Padding(15, 10, 15, 0);
-        pb.Cursor = Cursors.Hand;
-
-        LoadAndRenderDesign(designId, 20, 20, pb, Program.dbManager);
-        pb.Tag = new DesignInfo { DesignId = designId, IsPreMade = false };
-        pb.Click += DesignPictureBox_Click;
-
-        Container.Controls.Add(pb);
-
-        Label designName = new Label();
-        designName.Text = Titleize(Program.dbManager.GetGridNameFromId(designId));
-        designName.Location = new Point(10, 260);
-
-        designName.Font = new Font("Pixelify Sans", 12F, FontStyle.Bold);
-        designName.TextAlign = ContentAlignment.MiddleCenter;
-        Container.Controls.Add(designName);
-
-        // Set the position of the current user design
-        Container.Location = new Point(lastX, lastY);
-
-        // Add the user design container to the parent panel
-        designsContainer.Controls.Add(Container);
-
-        // Update the position for the next user design
-        lastX += width + 10; // 10 is the gap between designs horizontally
-
-        // Check if the current row is full (i.e., we exceed the panel width)
-        if (lastX + width > designsContainer.Width)
-        {
-            lastX = 0;
-            lastY += height + 10; // Move to the next row
-        }
-
-        i++;
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        return textInfo.ToTitleCase(input.ToLower());
     }
 
-    // Now populate the pre-made designs
-    populatePreMadeDesigns(lastX, lastY, width, height);
-}
-
-private void populatePreMadeDesigns(int startX, int startY, int width, int height)
-{
-    string preMadePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "PreMadeDesigns");
-
-    if (!Directory.Exists(preMadePath))
-    {
-        MessageBox.Show("Pre-Made Designs folder not found!");
-        return;
-    }
-
-    string[] preMadeImages = Directory.GetFiles(preMadePath, "*.jpeg"); // or *.jpg
-
-    if (preMadeImages.Length == 0)
-    {
-        MessageBox.Show("No pre-made designs found!");
-        return;
-    }
-
-    int xPos = startX;
-    int yPos = startY;
-
-    foreach (var imgPath in preMadeImages)
-    {
-        Panel Container = new Panel();
-        Container.Width = width;
-        Container.Height = height;
-
-        PictureBox pb = new PictureBox();
-        pb.Width = width;
-        pb.Height = 250;
-        pb.Margin = new Padding(15, 10, 15, 0);
-        pb.Cursor = Cursors.Hand;
-        pb.Image = Image.FromFile(imgPath);
-        pb.SizeMode = PictureBoxSizeMode.StretchImage;
-        pb.Tag = new DesignInfo { PreMadePath = imgPath, IsPreMade = true };
-        pb.Click += DesignPictureBox_Click;
-        Container.Controls.Add(pb);
-
-        // Label for Pre-Made Design
-        Label designName = new Label();
-        string nameWithoutExtension = Path.GetFileNameWithoutExtension(imgPath);
-        designName.Text = Titleize(nameWithoutExtension);
-        designName.Location = new Point(10, 260);
-        designName.Font = new Font("Pixelify Sans", 12F, FontStyle.Bold);
-        designName.TextAlign = ContentAlignment.MiddleCenter;
-        Container.Controls.Add(designName);
-
-        // Set the position of the pre-made design container
-        Container.Location = new Point(xPos, yPos);
-
-        // Add the container to the parent panel
-        designsContainer.Controls.Add(Container);
-
-        // Update xPos and yPos for the next pre-made design
-        xPos += width + 10; // 10 is the gap between designs horizontally
-
-        // Check if the current row is full (i.e., we exceed the panel width)
-        if (xPos + width > designsContainer.Width)
+    private void populateGallery()
         {
-            xPos = startX;
-            yPos += height + 10; // Move to the next row
-        }
-    }
-}
-        private void DesignPictureBox_Click(object sender, EventArgs e)
-        {
-            PictureBox clickedPictureBox = sender as PictureBox;
+            designsContainer.Controls.Clear(); // Clear any existing controls if needed
 
-            if (clickedPictureBox != null && clickedPictureBox.Tag is DesignInfo info)
+            int width = 20;  // Set according to your design size
+            int height = 20; // Set according to your design size
+            int i = 0;
+            foreach (int designId in designIds)
             {
-                SelectedDesign.Current = info; // Save the clicked design globally
+                System.Diagnostics.Debug.WriteLine(designId);
 
-                jigsaw puzzle = new jigsaw();
-                puzzle.Show();
-                this.Close();
+                Panel Container = new Panel();
+                Container.Width = 250;
+                Container.Height = 300;
+                PictureBox pb = new PictureBox();
+                pb.Width = 250;
+                pb.Height = 250;
+                pb.Margin = new Padding(15,10,15,0);
+                pb.Cursor = Cursors.Hand;
+
+                // Load and render the design into this picturebox
+                LoadAndRenderDesign(designId, width, height, pb, Program.dbManager);
+                // add the picturebox to the container
+                Container.Controls.Add(pb);
+                //now add the name of the design as label to the container
+                Label designName = new Label();
+                designName.Text = Titleize(Program.dbManager.GetGridNameFromId(designId));
+                //designName.AutoSize = true;
+                designName.Location = new Point(10, 260); // Adjust the position as needed
+                //designName.BackColor = Color.FromArgb(168, 136, 181);
+                //designName.ForeColor = Color.FromArgb(239, 182, 200);
+                designName.Font = new Font("Pixelify Sans", 12F, FontStyle.Bold);
+                designName.TextAlign = ContentAlignment.MiddleCenter;
+                Container.Controls.Add(designName);
+                // Set the background color of the container
+                //Container.BackColor = Color.FromArgb(239, 182, 200);
+                
+
+
+                Container.Location = new Point((i % 3) * (Container.Width + 10), (i / 3) * (Container.Height + 10)); // Adjust the position based on index
+                designsContainer.Controls.Add(Container);
+
+                i++;
             }
         }
 
@@ -215,35 +123,5 @@ private void populatePreMadeDesigns(int startX, int startY, int width, int heigh
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void close_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Menu1 menu1 = Application.OpenForms["Menu1"] as Menu1;
-            if (menu1 != null)
-                menu1.Show();
-
-
-            this.Close();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-    }
-    public class DesignInfo
-    {
-        public int DesignId { get; set; }          // For user-created designs
-        public string PreMadePath { get; set; }     // For pre-made images
-        public bool IsPreMade { get; set; }         // true = pre-made, false = user design
     }
 }
