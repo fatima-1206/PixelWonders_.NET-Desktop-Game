@@ -346,6 +346,7 @@ class DatabaseManager
         }
         
     }
+
     public List<string> GetPaletteHexColors(int paletteId)
     {
         var colors = new List<string>();
