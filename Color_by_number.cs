@@ -63,6 +63,7 @@ namespace PixelWonders
             gridWidth = orginalGrid.GetLength(1);
 
 
+
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
             pixelWidth += 1;    // Make button a little wider

@@ -380,7 +380,6 @@ public string GetGridNameFromId(int G_ID)
 }
 
 
-
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)
     {
         using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))

@@ -32,6 +32,7 @@ namespace PixelWonders
             }
 
             populateGallery();
+
         }
         public void printMatrix(List<int> matrix)
         {
@@ -43,6 +44,7 @@ namespace PixelWonders
             System.Diagnostics.Debug.WriteLine("");
 
         }
+
 
     string Titleize(string input)
     {
@@ -120,5 +122,6 @@ namespace PixelWonders
         {
 
         }
+
     }
 }
