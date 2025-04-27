@@ -66,16 +66,13 @@ namespace PixelWonders
 
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
-            pixelWidth += 1;    // Make button a little wider
-            pixelHeight += 1;
-
+           
             gridContainer.Padding = new Padding(0);
+            panel2.Padding = new Padding(0); // Remove internal padding
+            panel2.Margin = new Padding(0); // Remove external margin
 
-
-            int margin = 30;
             gridContainer.Width = gridWidth * pixelWidth + 1;
             gridContainer.Height = gridHeight * pixelHeight + 1;
-            gridContainer.Location = new Point(margin, margin);
 
 
 
@@ -131,7 +128,7 @@ namespace PixelWonders
             int startY = gridBottom + spaceBelowGrid;
 
             // Starting X position for palette buttons
-            int startX = gridContainer.Location.X + gridContainer.Width / 2 + paletteColors.Count / 4 * 40;
+            int startX = gridContainer.Location.X + gridContainer.Width/2  + paletteColors.Count / 2 * 40;
 
             Font pixelFont2 = new Font("Pixelify Sans", 8, FontStyle.Bold);
             for (int i = 0; i < paletteColors.Count; i++)
