@@ -157,6 +157,7 @@
             // 
             fillOption.BackColor = Color.FromArgb(179, 143, 189);
             fillOption.BackgroundImageLayout = ImageLayout.Zoom;
+
             fillOption.Location = new Point(28, 18);
             fillOption.Margin = new Padding(2, 4, 2, 4);
             fillOption.Name = "fillOption";
@@ -240,6 +241,7 @@
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(241, 217, 231);
+
             ClientSize = new Size(1429, 936);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(gridContainer);
@@ -256,6 +258,7 @@
             Margin = new Padding(2);
             Name = "Nonogram";
             Text = "Nonogram";
+            Load += Nonogram_Load;
             headerContainer.ResumeLayout(false);
             headerContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

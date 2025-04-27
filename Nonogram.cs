@@ -22,7 +22,7 @@ namespace PixelWonders
         int[,] userPlays; // 0 = empty, 1 = filled, 2 = crossed, -1 = wrong
         int minRow = 0, maxRow = 0, minCol = 0, maxCol = 0;
         int gridWidth = 0, gridHeight = 0;
-
+        int designID;
         int direction = 1, numberOfLives = 5;
         bool fillSelected = true;
         int[] solvedRows, solvedCols; // holds index of solved rows and columns
@@ -46,6 +46,7 @@ namespace PixelWonders
             List<int> gridIds = Program.dbManager.GetAllGridIds();
             int randomIndex = _random.Next(gridIds.Count);
             orginalGrid = Program.dbManager.LoadGridAsIntMatrix(gridIds[randomIndex], 20, 20);
+            designID = gridIds[randomIndex];
             int[,] binaryMatrix = new int[orginalGrid.GetLength(0), orginalGrid.GetLength(1)];
             for (int i = 0; i < orginalGrid.GetLength(0); i++)
             {
@@ -288,10 +289,54 @@ namespace PixelWonders
             }
             return true;
         }
+        private void revealOriginalGrid() {
+            gridContainer.Controls.Clear();
+            gridHeight = croppedGrid.GetLength(0); // rows (Y)
+            gridWidth = croppedGrid.GetLength(1);  // columns (X)
+            int divisor = gridHeight > gridWidth ? gridHeight : gridWidth;
+
+            int pixelWidth = ((int)Math.Floor((double)gridContainer.Width - (divisor)) / divisor);
+            int pixelHeight = ((int)Math.Floor((double)gridContainer.Height - (divisor)) / divisor);
+            //gridContainer.BackColor = Color.FromArgb(241, 217, 231); 
+
+            // get the palette associate with the grid
+            int paletteID = Program.dbManager.GetPaletteIdForDesign(designID);
+
+            List<string> palette = Program.dbManager.GetPaletteHexColors(paletteID);
+
+
+            for (int row = 0; row < gridHeight; row++)
+            {
+                for (int col = 0; col < gridWidth; col++)
+                {
+                    Color glowCross = Color.FromArgb(240, 230, 236);
+                    Color glowFill = Color.FromArgb(215, 157, 224);
+                    PictureBox pb = new PictureBox();
+                    pb.Width = pixelWidth;
+                    pb.Height = pixelHeight;
+                    pb.Margin = new Padding(1, 1, 0, 0);
+                    pb.Location = new Point(col * pb.Width, row * pb.Height);
+
+                    // set the background color based on the original grid
+                    int indexColor = orginalGrid[minRow+row, minCol+col];
+                    if (indexColor == -1)
+                    {
+                        pb.BackColor = ColorTranslator.FromHtml("#F0f0f0");
+                    }
+                    else
+                    {
+                        pb.BackColor = ColorTranslator.FromHtml(palette[indexColor]);
+                    }
+
+                    gridContainer.Controls.Add(pb);
+                }
+            }
+        }
         public void checkGameStatus()
         {
             if (GameWon())
             {
+                revealOriginalGrid();
                 MessageBox.Show("Congratulations! You solved the Nonogram!");
                 this.Close();
             }
@@ -405,6 +450,7 @@ namespace PixelWonders
                 clueLabel.Text = (clues.Count > 0) ? string.Join("\n", clues) : "0"; // vertical text
                 clueLabel.Font = new Font(label1.Font.FontFamily, 10, FontStyle.Bold);
                 clueLabel.Location = new Point(col * pixelWidth + 1, 0);
+
                 if (solvedCols[col] == 1)
                     clueLabel.BackColor = glow;
                 colCluesPanel.Controls.Add(clueLabel);
@@ -614,6 +660,11 @@ namespace PixelWonders
         }
 
         private void fillOptionContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Nonogram_Load(object sender, EventArgs e)
         {
 
         }

@@ -335,28 +335,52 @@ class DatabaseManager
         return paletteId;
     }
 
-    public string GetGridNameFromId(int G_ID)
+public int GetPaletteIdFromName(string paletteName)
+{
+    int paletteId = -1;
+
+    using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
     {
-        string G_name = "";
-
-        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+        conn.Open();
+        string query = "SELECT PaletteId FROM Palette WHERE Name = @paletteName";
+        using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
         {
-            conn.Open();
-            string query = "SELECT G_name FROM PixelGrid WHERE G_id = @G_ID";
-            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            cmd.Parameters.AddWithValue("@paletteName", paletteName);
+            var result = cmd.ExecuteScalar();
+            if (result != null)
             {
-                cmd.Parameters.AddWithValue("@G_ID", G_ID);
-                var result = cmd.ExecuteScalar();
-                if (result != null)
-                {
-                    G_name = Convert.ToString(result);
-                }
+                paletteId = Convert.ToInt32(result);
             }
-
         }
-
-        return G_name;
     }
+
+    return paletteId;
+}
+
+// GetGridNameFromId: find Grid Name from G_ID
+public string GetGridNameFromId(int G_ID)
+{
+    string G_name = "";
+
+    using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+    {
+        conn.Open();
+        string query = "SELECT G_name FROM PixelGrid WHERE G_id = @G_ID";
+        using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@G_ID", G_ID);
+            var result = cmd.ExecuteScalar();
+            if (result != null)
+            {
+                G_name = Convert.ToString(result);
+            }
+        }
+    }
+
+    return G_name;
+}
+
+
 
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)
     {
@@ -446,6 +470,7 @@ class DatabaseManager
         }
         
     }
+
     public List<string> GetPaletteHexColors(int paletteId)
     {
         var colors = new List<string>();
@@ -510,6 +535,28 @@ class DatabaseManager
         return gridIds;
     }
 
+    public List<int> GetAllPaletteIds()
+    {
+        List<int> paletteIds = new List<int>();
+
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT PaletteId FROM Palette";
+
+            using (var cmd = new SQLiteCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    paletteIds.Add(id);
+                }
+            }
+        }
+
+        return paletteIds;
+    }
 
     public int[,] LoadGridAsIntMatrix(int designId, int width, int height)
     {

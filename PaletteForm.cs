@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using Microsoft.VisualBasic;
 using static PixelWonders.Palette;
-
 namespace PixelWonders
 {
 
@@ -18,6 +19,9 @@ namespace PixelWonders
         public CreateDesign designForm;
 
         public string selectedPaletteName;
+        int colorWidth =100;
+        int colorHeight = 15;
+
 
         public PaletteForm()
         {
@@ -46,17 +50,32 @@ namespace PixelWonders
             }
         }
 
+        private void reloadFromDB() {
+            // clear ColorPalettes.Palettes and reload from the database
+            ColorPalettes.Palettes.Clear();
+            List<int> ids = Program.dbManager.GetAllPaletteIds();
+            foreach (int id in ids)
+            {
+                string name = Program.dbManager.GetPaletteNameFromID(id);
+                List<string> colors = Program.dbManager.GetPaletteHexColors(id);
+                ColorPalettes.Palettes.Add(name, colors);
+            }
+
+        }
+
         private void LoadPalettes()
         {
+
+            reloadFromDB();
             //label1align
             flowLayoutPanel1.Controls.Clear(); // Clear old palettes
-
+           
             foreach (var palette in ColorPalettes.Palettes)
             {
                 Panel palettePanel = new Panel
                 {
-                    Width = 100,
-                    Height = 150,
+                    Width = colorWidth,
+                    Height = palette.Value.Count * colorHeight,
                     BorderStyle = BorderStyle.None,
                     Margin = new Padding(15, 5, 15, 5), //Padding wider side margins
                     //Padding a wider left margin
@@ -69,8 +88,7 @@ namespace PixelWonders
                 palettePanel.Click += PalettePanel_Click;
 
                 // Create color preview boxes inside the panel
-                int colorWidth = palettePanel.Width;
-                int colorHeight = palettePanel.Height / palette.Value.Count;
+                
                 for (int i = 0; i < palette.Value.Count; i++)
                 {
                     Panel colorBox = new Panel
@@ -101,8 +119,8 @@ namespace PixelWonders
                 };
                 Panel containerPanel = new Panel
                 {
-                    Width = 100,
-                    Height = 175, // Increased height to accommodate the label
+                    Width = colorWidth,
+                    Height = palettePanel.Height + nameLabel.Height, // Increased height to accommodate the label
                     Margin = new Padding(15, 5, 15, 5),
                 };
 
@@ -211,37 +229,139 @@ namespace PixelWonders
             this.Hide();
         }
 
-        private void done_Paint(object sender, PaintEventArgs e)
-        {
 
+        private bool PaletteExists(string name)
+        {
+            // Check if the palette name already exists in the ColorPalettes dictionary
+            return ColorPalettes.Palettes.ContainsKey(name);
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
+        private string askPaletteName() {
+            //string name = "";
+            // Repeat until a unique, non-empty name is entered
+            while (true)
+            {
+                selectedPaletteName = Interaction.InputBox("Enter a name for your palette:", "Palette Name", "");
 
+                if (string.IsNullOrWhiteSpace(selectedPaletteName))
+                {
+                    MessageBox.Show("Palette name cannot be empty. Please enter a valid name.", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                if (PaletteExists(selectedPaletteName)) // <-- You need a function that checks existing palettes
+                {
+                    MessageBox.Show("Palette name already exists. Please choose a different name.", "Duplicate Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                break; // Valid name entered, exit the loop
+            }
+            return selectedPaletteName;
+        }
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            string name = askPaletteName();
+
+            Form customColorForm = new Form();
+            customColorForm.Text = "Pick Your 10 Colors";
+            customColorForm.StartPosition = FormStartPosition.CenterScreen;
+            customColorForm.Size = new Size(colorWidth * 3, 20 * colorHeight + colorHeight * 4 + 50);
+            customColorForm.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+            customColorForm.BackColor = Color.FromArgb(239, 182, 200);
+            customColorForm.FormBorderStyle = FormBorderStyle.None;
+
+            List<Panel> colorPanels = new List<Panel>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Panel panel = new Panel();
+                panel.Size = new Size(colorWidth + 10, colorHeight + 10);
+                panel.Location = new Point(colorWidth + 15, 30 + i * colorHeight * 2);
+                panel.BackColor = Color.White;
+
+                Label label = new Label();
+                label.Text = $"Color {i + 1}";
+                label.Font = new Font("Pixelify Sans", 10, FontStyle.Regular);
+                label.Location = new Point(panel.Location.X - colorWidth, panel.Location.Y);
+                label.AutoSize = true;
+                label.BackColor = Color.Transparent;
+
+                customColorForm.Controls.Add(label);
+
+                panel.Click += (s, e) =>
+                {
+                    ColorDialog colorDialog = new ColorDialog();
+                    if (colorDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        panel.BackColor = colorDialog.Color;
+                    }
+                };
+
+                colorPanels.Add(panel);
+                customColorForm.Controls.Add(panel);
+            }
+
+            Button saveButton = new Button();
+            saveButton.Text = "Save Palette";
+            saveButton.Font = new Font("Pixelify Sans", 10, FontStyle.Bold);
+            saveButton.Size = new Size(120, 40);
+            saveButton.FlatStyle = FlatStyle.Flat;
+            saveButton.FlatAppearance.BorderSize = 0;
+            saveButton.BackColor = Color.FromArgb(239, 182, 200);
+            saveButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 162, 180); // Slight hover effect
+            saveButton.Location = new Point(colorWidth + 15, 30 + 10 * colorHeight * 2);
+
+            saveButton.Click += (s, e) =>
+            {
+                // Count how many panels are not white
+                int coloredPanels = colorPanels.Count(p => p.BackColor != Color.White);
+
+                if (coloredPanels == 0)
+                {
+                    MessageBox.Show("No colors selected. Palette not created.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    customColorForm.Close(); // Close the form
+    
+                    return;
+                }
+
+                List<string> colors = new List<string>();
+                foreach (Panel p in colorPanels)
+                {
+                    if (p.BackColor != Color.White)
+                        colors.Add(ColorTranslator.ToHtml(p.BackColor));
+                }
+
+                // Fill up to 10 colors with white
+                while (colors.Count < 10)
+                {
+                    colors.Add(ColorTranslator.ToHtml(Color.White));
+                }
+
+                addPalette(name, colors);
+                customColorForm.Close(); // Close the form after saving
+            };
+            customColorForm.Controls.Add(saveButton);
+
+            customColorForm.ShowDialog();
         }
 
-        private void addButton_Paint(object sender, PaintEventArgs e)
+
+
+
+
+        private void addPalette(string name, List<string> colors)
         {
 
+            // add the palette to the class and the db and reload the palettes
+            ColorPalettes.addPalette(name, colors);
+            // Save the palette to the database
+            Program.dbManager.AddPalette(name, colors);
+
+            LoadPalettes();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void promptLabel_Click(object sender, EventArgs e)
         {
 
         }
