@@ -233,6 +233,29 @@ class DatabaseManager
         return paletteId;
     }
 
+    public string GetPaletteNameFromID(int paletteID)
+    {
+        string paletteName = "";
+
+        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT Name FROM Palette WHERE PaletteId = @paletteID";
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@paletteID", paletteID);
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    paletteName = Convert.ToString(result);
+                }
+            }
+
+        }
+
+        return paletteName;
+    }
+
 
     // Method to add pixels to a design
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)
@@ -387,6 +410,28 @@ class DatabaseManager
         return gridIds;
     }
 
+    public List<int> GetAllPaletteIds()
+    {
+        List<int> paletteIds = new List<int>();
+
+        using (var conn = new SQLiteConnection(ConnectionString))
+        {
+            conn.Open();
+            string query = "SELECT PaletteId FROM Palette";
+
+            using (var cmd = new SQLiteCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    paletteIds.Add(id);
+                }
+            }
+        }
+
+        return paletteIds;
+    }
 
     public int[,] LoadGridAsIntMatrix(int designId, int width, int height)
     {
