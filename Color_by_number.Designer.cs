@@ -47,12 +47,13 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(168, 136, 181);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBoxLogo);
             panel1.Location = new Point(-3, 32);
             panel1.Name = "panel1";
-            panel1.Size = new Size(919, 87);
+            panel1.Size = new Size(1288, 87);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -89,6 +90,7 @@
             gridContainer.Name = "gridContainer";
             gridContainer.Size = new Size(537, 424);
             gridContainer.TabIndex = 1;
+            gridContainer.Paint += gridContainer_Paint;
             // 
             // animalPanel
             // 
@@ -128,9 +130,7 @@
             panel2.BackColor = Color.FromArgb(168, 136, 181);
             panel2.Controls.Add(gridContainer);
             panel2.Location = new Point(70, 232);
-            panel2.Margin = new Padding(20);
-            panel2.Controls.Add(gridContainer);
-
+            panel2.Margin = new Padding(21, 20, 21, 20);
             panel2.Name = "panel2";
             panel2.Size = new Size(616, 495);
             panel2.TabIndex = 16;
@@ -138,10 +138,10 @@
             // 
             // Color_by_number
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(231, 207, 221);
-            ClientSize = new Size(1288, 948);
+            ClientSize = new Size(1288, 840);
             Controls.Add(panel2);
             Controls.Add(platform);
             Controls.Add(animalPanel);

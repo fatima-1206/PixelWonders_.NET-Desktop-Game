@@ -41,7 +41,7 @@ namespace PixelWonders
         }
         public void InitializeGrid()
         {
-            
+
 
             // first getting ids of the grid
             List<int> gridIds = Program.dbManager.GetAllGridIds();
@@ -57,49 +57,22 @@ namespace PixelWonders
             int paletteId = Program.dbManager.GetPaletteIdForDesign(selectedGridId);
             paletteColors = Program.dbManager.GetPaletteHexColors(paletteId);
 
-            // make a binary matrix copy (optional, based on your use)
-            int[,] binaryMatrix = new int[orginalGrid.GetLength(0), orginalGrid.GetLength(1)];
-            for (int i = 0; i < orginalGrid.GetLength(0); i++)
-            {
-                for (int j = 0; j < orginalGrid.GetLength(1); j++)
-                {
-                    if (orginalGrid[i, j] == -1)
-                    {
-                        binaryMatrix[i, j] = 0;
-                    }
-                    else
-                    {
-                        binaryMatrix[i, j] = 1;
-                    }
-                }
-            }
 
-
-
-           // int pixelWidth = 20;
-            //int pixelHeight = 20;
-            // int pixelWidth = (gridContainer.Width - (gridWidth + 1)) / gridWidth;
-            //int pixelHeight = (gridContainer.Height - (gridHeight + 1)) / gridHeight;
 
             gridHeight = orginalGrid.GetLength(0);
             gridWidth = orginalGrid.GetLength(1);
-    
+
 
             int pixelWidth = ((int)Math.Floor((double)gridContainer.Width) / gridWidth);
             int pixelHeight = ((int)Math.Floor((double)gridContainer.Height) / gridHeight);
             pixelWidth += 1;    // Make button a little wider
             pixelHeight += 1;
-            //gridContainer.Width = 420;
-            //gridContainer.Height = 420;
-            //gridContainer.Location = new Point(59, 50);
+           
             gridContainer.Padding = new Padding(0);
 
-            /* int margin = 30; // space around the grid
-             gridContainer.Width = panel2.Width - margin * 2;
-             gridContainer.Height = panel2.Height - margin * 2;
-             gridContainer.Location = new Point(margin, margin);*/
+           
             int margin = 30;
-            gridContainer.Width = gridWidth * pixelWidth + 1;   
+            gridContainer.Width = gridWidth * pixelWidth + 1;
             gridContainer.Height = gridHeight * pixelHeight + 1;
             gridContainer.Location = new Point(margin, margin);
 
@@ -135,7 +108,8 @@ namespace PixelWonders
                     }
                     else
                     {
-                        btn.Text = gridValue.ToString();  // real number
+                        int val = gridValue+1;
+                        btn.Text = val.ToString();  // real number
                         btn.Tag = gridValue;              // save number inside tag
                         btn.BackColor = Color.White;       // still white initially
                         btn.Click += Button_Click;         // allow click to color
@@ -149,7 +123,7 @@ namespace PixelWonders
             //int startY = 10 + 20 * 30 + 20; // below the grid
             int gridBottom = panel2.Bottom; // Get the bottom position of the grid
 
-          
+
             int spaceBelowGrid = 40; // Space between grid and palette buttons
 
             // Position(just below the grid)
@@ -165,7 +139,7 @@ namespace PixelWonders
                 paletteButton.Location = new Point(startX + i * 40, startY);
                 paletteButton.BackColor = ColorTranslator.FromHtml(paletteColors[i]);
 
-                paletteButton.Text = (i + 1).ToString(); 
+                paletteButton.Text = (i + 1).ToString();
 
                 paletteButton.Tag = i + 1; // saving the number for matching
                 paletteButton.Font = pixelFont2;
@@ -180,14 +154,14 @@ namespace PixelWonders
             Button clickedButton = sender as Button;
             int requiredNumber = (int)clickedButton.Tag;
 
-            if (requiredNumber == selectedNumber)
+            if (requiredNumber == selectedNumber-1)
             {
                 clickedButton.BackColor = selectedColor;
-                clickedButton.Text = ""; 
+                clickedButton.Text = "";
             }
             else
             {
-             
+
                 MessageBox.Show("Wrong color! Please select the correct palette color.");
             }
             if (CheckIfGameWon())
@@ -253,10 +227,10 @@ namespace PixelWonders
         {
             if (WalkAnimations.Contains(animalPanel.Image))
             {
-                int begin = 626;
-                int end = begin + 240 - animalPanel.Width;
+                int begin = platform.Location.X;
+                int end = begin + platform.Width - animalPanel.Width;
                 int step = 3;
-                int yLine = 361 - animalPanel.Height;
+                int yLine = platform.Location.Y - animalPanel.Height;
 
                 if (animalPanel.Location.X >= end)
                 {
@@ -272,6 +246,11 @@ namespace PixelWonders
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }
