@@ -8,6 +8,7 @@ using System.IO;
 using static PixelWonders.Palette;
 using PixelWonders;
 using System.Text.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 class DatabaseManager
 {
@@ -48,6 +49,8 @@ class DatabaseManager
                               CHECK(length(l_name) <= 50 AND l_name GLOB '[A-Za-z]*'), 
                         password TEXT NOT NULL
                     );", "User table");
+                insertDummyUser(conn); // Insert a dummy user if the table is created for the first time
+
             }
 
             if (!TableExists(conn, "Palette"))
@@ -83,11 +86,110 @@ class DatabaseManager
                     FOREIGN KEY (palette_ID) REFERENCES Palette(PaletteId),
                     FOREIGN KEY (username) REFERENCES User(username)
                 );", "PixelGrid table");
+
+                InitializeGridDesign(conn); // Insert initial designs if the table is created for the first time
             }
 
 
             conn.Close();
         }
+    }
+
+    public void InitializeGridDesign(SQLiteConnection conn) {
+
+
+        string jsonMatrix, designName, paletteId, username, insertQuery;
+        insertQuery = @"INSERT INTO PixelGrid (G_name, G_matrix, palette_ID, username) 
+                VALUES (@designName, @matrix, @paletteId, @username)";
+
+        designName = "clown";
+        paletteId = "7";
+        username = "user";
+        jsonMatrix = flatMatrixToJson([-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,-1,-1,-1,-1,-1,-1,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,6,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,8,-1,-1,-1,-1,-1,-1,-1,8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,8,8,8,8,8,8,8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]);
+
+
+        using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
+        {
+            cmd.Parameters.AddWithValue("@designName", designName);
+            cmd.Parameters.AddWithValue("@matrix", jsonMatrix);  // serialized matrix
+            cmd.Parameters.AddWithValue("@paletteId", paletteId);
+            cmd.Parameters.AddWithValue("@username", username);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+
+
+
+
+
+       
+        designName = "human";
+        paletteId = "5";
+        username = "user";
+        jsonMatrix = flatMatrixToJson([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, 4, 4, 4, 4, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, -1, -1, -1, -1, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, -1, 4, 4, -1, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, -1, 4, -1, 4, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, 4, -1, -1, -1, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, 4, 4, 4, 4, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 4, 4, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, 0, 0, 0, 0, 0, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, -1, 0, 0, 0, 0, 5, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, -1, -1, 0, 0, 0, 5, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, 5, -1, 5, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, 5, -1, 5, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, 5, -1, 5, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 5, 5, -1, 5, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]);
+
+
+        using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
+        {
+            cmd.Parameters.AddWithValue("@designName", designName);
+            cmd.Parameters.AddWithValue("@matrix", jsonMatrix);  // serialized matrix
+            cmd.Parameters.AddWithValue("@paletteId", paletteId);
+            cmd.Parameters.AddWithValue("@username", username);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+
+
+        designName = "goldfish";
+        paletteId = "7";
+        username = "user";
+        jsonMatrix = flatMatrixToJson([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, -1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, -1, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, 8, 8, 8, 8, 8, 8, 8, -1, 8, -1, 8, -1, -1, -1, -1, 8, -1, -1, -1, 8, 8, 4, 2, 4, 2, 4, 8, 8, 2, 8, 8, -1, -1, -1, -1, 8, -1, -1, 8, 2, 2, 4, 2, 4, 2, 4, 2, 2, 2, 8, 8, -1, -1, -1, -1, 8, -1, 8, 2, 2, 2, 4, 2, 4, 2, 4, 2, 2, 2, 8, 8, -1, -1, -1, -1, 8, -1, 8, 2, 7, 2, 4, 2, 4, 2, 4, 2, 2, 2, 8, 8, -1, -1, -1, -1, 8, -1, 8, 2, 2, 2, 4, 2, 4, 2, 4, 8, 8, 2, 8, 8, -1, -1, -1, -1, 8, -1, -1, 8, 2, 2, 4, 2, 4, 2, 8, -1, -1, 8, -1, 8, -1, -1, -1, -1, 8, -1, -1, -1, 8, 8, 4, 2, 4, 8, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, 8, 8, 8, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, -1, -1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]);
+
+
+        using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
+        {
+            cmd.Parameters.AddWithValue("@designName", designName);
+            cmd.Parameters.AddWithValue("@matrix", jsonMatrix);  // serialized matrix
+            cmd.Parameters.AddWithValue("@paletteId", paletteId);
+            cmd.Parameters.AddWithValue("@username", username);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+
+    }
+
+
+    public string flatMatrixToJson(int[] matrix) {
+        string jsonMatrix = JsonSerializer.Serialize(matrix);
+        return jsonMatrix;
+    }
+
+
+    private void insertDummyUser(SQLiteConnection conn) {
+        string dummyUsername = "user";
+        string dummyPassword = SecurityHelper.HashPassword("user@123"); // assuming you want a hashed password
+        string dummyFirstName = "John";
+        string dummyLastName = "Doe";
+
+        string insertQuery = "INSERT INTO User (username, password, f_name, l_name) VALUES (@username, @password, @fname, @lname)";
+        using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
+        {
+            cmd.Parameters.AddWithValue("@username", dummyUsername);
+            cmd.Parameters.AddWithValue("@password", dummyPassword);
+            cmd.Parameters.AddWithValue("@fname", dummyFirstName);
+            cmd.Parameters.AddWithValue("@lname", dummyLastName);
+
+            int result = cmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                MessageBox.Show("Dummy user inserted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Failed to insert dummy user.");
+            }
+        }
+
     }
 
     private bool TableExists(SQLiteConnection conn, string tableName)
@@ -233,31 +335,51 @@ class DatabaseManager
         return paletteId;
     }
 
-    public string GetPaletteNameFromID(int paletteID)
+    public string GetPaletteNameFromID(int paletteId)
     {
         string paletteName = "";
-
         using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
         {
             conn.Open();
-            string query = "SELECT Name FROM Palette WHERE PaletteId = @paletteID";
+            string query = "SELECT Name FROM Palette WHERE PaletteId = @paletteId";
             using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@paletteID", paletteID);
+                cmd.Parameters.AddWithValue("@paletteId", paletteId);
                 var result = cmd.ExecuteScalar();
                 if (result != null)
                 {
                     paletteName = Convert.ToString(result);
                 }
             }
-
         }
 
         return paletteName;
     }
 
+// GetGridNameFromId: find Grid Name from G_ID
+public string GetGridNameFromId(int G_ID)
+{
+    string G_name = "";
 
-    // Method to add pixels to a design
+    using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+    {
+        conn.Open();
+        string query = "SELECT G_name FROM PixelGrid WHERE G_id = @G_ID";
+        using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@G_ID", G_ID);
+            var result = cmd.ExecuteScalar();
+            if (result != null)
+            {
+                G_name = Convert.ToString(result);
+            }
+        }
+    }
+
+    return G_name;
+}
+
+
     public void AddPixelsToDesign(int designId, List<(int x, int y, string hexCode)> pixels)
     {
         using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))

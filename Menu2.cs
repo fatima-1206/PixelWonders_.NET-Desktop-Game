@@ -53,16 +53,27 @@ namespace PixelWonders
 
         private void button2_Click(object sender, EventArgs e)
         {
-            jigsaw puzzle = new jigsaw();
-            puzzle.Show();
+
+            Gallery galleryPage = new Gallery();
+            galleryPage.Show();
             this.Close();
+            
 
 
         }
 
         private void Menu2_Load(object sender, EventArgs e)
         {
-
+            DesignLoader d = new DesignLoader();
+            d.RoundButton(button1);
+            d.RoundButton(button2);
+            d.RoundButton(button3);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
         }
 
         private void button3_Click(object sender, EventArgs e)

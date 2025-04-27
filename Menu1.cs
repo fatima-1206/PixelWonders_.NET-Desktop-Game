@@ -33,7 +33,8 @@ namespace PixelWonders
         }
 
         private void Form2_Load(object sender, EventArgs e)
-        {   RoundButton(button1);
+        {
+            RoundButton(button1);
             RoundButton(button2);
 
             button1.FlatStyle = FlatStyle.Flat;
@@ -83,9 +84,19 @@ namespace PixelWonders
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Login loginPage = new Login(); 
-            loginPage.Show();              
+            Login loginPage = new Login();
+            loginPage.Show();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

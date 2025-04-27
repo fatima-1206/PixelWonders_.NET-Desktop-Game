@@ -46,28 +46,38 @@ namespace PixelWonders
             panel1.DragDrop += Panel_DragDrop;
             jigsaw_panel.DragDrop += Panel_DragDrop;
 
-            // Load your design normally
-            int designId = 4;
-            int gridWidth = 20;
-            int gridHeight = 20;
+            // Get the selected design ID and path from the global SelectedDesign
+            int designId = SelectedDesign.Current.IsPreMade ? 0 : SelectedDesign.Current.DesignId;  // If it's a pre-made design, use PreMadePath
+            string preMadeImagePath = SelectedDesign.Current.PreMadePath;
 
-            DesignLoader.LoadAndRenderDesign(designId, gridWidth, gridHeight, pictureBox1, Program.dbManager);
-           
-            int splitRows = 3;
-            int splitCols = 3;
+            Bitmap original;
 
-            Bitmap original = (Bitmap)pictureBox1.Image;
+            // Load image for user-created design
+            if (!SelectedDesign.Current.IsPreMade)
+            {
+                // Load from database or your image source based on designId
+                DesignLoader.LoadAndRenderDesign(designId, 20, 20, pictureBox1, Program.dbManager);
+                original = (Bitmap)pictureBox1.Image;
+            }
+            else
+            {
+                // For pre-made designs, load the image directly from the file path
+                original = new Bitmap(preMadeImagePath);
+                pictureBox1.Image = original;
+            }
 
             // Split and add pieces to panelPieces
-            var pieces = DesignLoader.SplitAndReturnPieces(original, splitRows, splitCols, panel1);
-            
+            var pieces = DesignLoader.SplitAndReturnPieces(original, 3, 3, panel1);
+
             foreach (var pb in pieces)
             {
                 pb.MouseDown += PuzzlePiece_MouseDown;
                 panel1.Controls.Add(pb);
             }
+
             DesignLoader.ShufflePieces(panel1);
         }
+
         private void PuzzlePiece_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -231,10 +241,8 @@ namespace PixelWonders
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Menu2 back = Application.OpenForms["Menu2"] as Menu2;
-            if (back != null)
-                back.Show();
-
+            Menu2 menu = new Menu2();
+            menu.Show();
             this.Close();
         }
     }
