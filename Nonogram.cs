@@ -677,7 +677,7 @@ namespace PixelWonders
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             Menu2 menu = new Menu2();
             menu.Show();
