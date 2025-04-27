@@ -335,27 +335,26 @@ class DatabaseManager
         return paletteId;
     }
 
-public int GetPaletteIdFromName(string paletteName)
-{
-    int paletteId = -1;
-
-    using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+    public string GetPaletteNameFromID(int paletteId)
     {
-        conn.Open();
-        string query = "SELECT PaletteId FROM Palette WHERE Name = @paletteName";
-        using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+        string paletteName = "";
+        using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
         {
-            cmd.Parameters.AddWithValue("@paletteName", paletteName);
-            var result = cmd.ExecuteScalar();
-            if (result != null)
+            conn.Open();
+            string query = "SELECT Name FROM Palette WHERE PaletteId = @paletteId";
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
             {
-                paletteId = Convert.ToInt32(result);
+                cmd.Parameters.AddWithValue("@paletteId", paletteId);
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    paletteName = Convert.ToString(result);
+                }
             }
         }
-    }
 
-    return paletteId;
-}
+        return paletteName;
+    }
 
 // GetGridNameFromId: find Grid Name from G_ID
 public string GetGridNameFromId(int G_ID)
