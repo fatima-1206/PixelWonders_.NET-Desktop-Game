@@ -88,9 +88,7 @@ namespace PixelWonders
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Gallery galleryPage = new Gallery();
-            galleryPage.Show();
-            this.Close();
         }
     }
+   
 }
