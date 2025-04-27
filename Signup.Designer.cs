@@ -43,7 +43,6 @@
             textBox1 = new TextBox();
             label1 = new Label();
             button3 = new Button();
-            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)eyePicBox).BeginInit();
             SuspendLayout();
@@ -64,6 +63,7 @@
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label1);
+
             panel1.Location = new Point(316, 62);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
@@ -75,6 +75,7 @@
             // 
             eyePicBox.BackColor = Color.White;
             eyePicBox.Image = Properties.Resources.closeEye;
+
             eyePicBox.Location = new Point(338, 390);
             eyePicBox.Margin = new Padding(4, 4, 4, 4);
             eyePicBox.Name = "eyePicBox";
@@ -89,6 +90,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(64, 0, 64);
+
             label7.Location = new Point(149, 274);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
@@ -100,6 +102,7 @@
             // textBox4
             // 
             textBox4.BorderStyle = BorderStyle.None;
+
             textBox4.Location = new Point(149, 312);
             textBox4.Margin = new Padding(4, 5, 4, 5);
             textBox4.Name = "textBox4";
@@ -112,6 +115,7 @@
             button2.BackColor = Color.FromArgb(239, 182, 200);
             button2.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
+
             button2.Location = new Point(404, 551);
             button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
@@ -126,6 +130,7 @@
             button1.BackColor = Color.FromArgb(239, 182, 200);
             button1.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
+
             button1.Location = new Point(204, 472);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
@@ -140,6 +145,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(64, 0, 64);
+
             label5.Location = new Point(59, 562);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
@@ -152,6 +158,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(64, 0, 64);
+
             label4.Location = new Point(149, 352);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
@@ -164,6 +171,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(64, 0, 64);
+
             label3.Location = new Point(149, 188);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
@@ -177,6 +185,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(64, 0, 64);
+
             label2.Location = new Point(149, 108);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -189,6 +198,7 @@
             // 
             passwordTextBox.BackColor = SystemColors.Window;
             passwordTextBox.BorderStyle = BorderStyle.None;
+
             passwordTextBox.Location = new Point(149, 390);
             passwordTextBox.Margin = new Padding(4, 5, 4, 5);
             passwordTextBox.Name = "passwordTextBox";
@@ -201,6 +211,7 @@
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.None;
+
             textBox2.Location = new Point(149, 225);
             textBox2.Margin = new Padding(4, 5, 4, 5);
             textBox2.Name = "textBox2";
@@ -211,6 +222,7 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
+
             textBox1.Location = new Point(149, 145);
             textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
@@ -236,6 +248,7 @@
             button3.BackColor = Color.FromArgb(168, 136, 181);
             button3.Font = new Font("Pixelify Sans", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
+
             button3.Location = new Point(18, 20);
             button3.Margin = new Padding(4, 5, 4, 5);
             button3.Name = "button3";
@@ -245,6 +258,7 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += Button3_Click;
             // 
+
             // label6
             // 
             label6.AutoSize = true;
@@ -276,7 +290,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)eyePicBox).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -292,7 +305,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Label label6;
         private Label label7;
         private TextBox textBox4;
         private PictureBox eyePicBox;

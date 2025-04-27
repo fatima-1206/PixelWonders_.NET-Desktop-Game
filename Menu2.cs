@@ -38,13 +38,16 @@ namespace PixelWonders
             }
 
             // If Home is not open, create a new instance
-            Menu1 menu2 = new Menu1();
-            menu2.Show();
-            this.Hide();
+            Menu1 menu1 = new Menu1();
+            menu1.Show();
+            this.Close();
         }
 
         private void Label3_Click(object sender, EventArgs e)
         {
+            Menu1 menu1 = new Menu1();
+            menu1.Show();
+            
             this.Close();
         }
 

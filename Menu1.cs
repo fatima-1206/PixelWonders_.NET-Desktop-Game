@@ -57,7 +57,10 @@ namespace PixelWonders
 
         private void Label2_Click(object sender, EventArgs e)
         {
+            Login loginPage = new Login();
+            loginPage.Show();
             this.Close();
+            
         }
 
 

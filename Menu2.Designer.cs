@@ -40,12 +40,11 @@
             panel3 = new Panel();
             label2 = new Label();
             button4 = new Button();
-            label3 = new Label();
-            pictureBox4 = new PictureBox();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // imageList1
@@ -57,6 +56,7 @@
             // label1
             // 
             label1.AutoSize = true;
+
             label1.Location = new Point(531, 200);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -68,6 +68,7 @@
             // 
             panel1.BackColor = Color.FromArgb(239, 182, 200);
             panel1.Controls.Add(panel2);
+
             panel1.Location = new Point(1013, 229);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
@@ -80,6 +81,7 @@
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
+
             panel2.Location = new Point(24, 22);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
@@ -91,6 +93,7 @@
             button2.BackColor = Color.FromArgb(168, 136, 181);
             button2.Font = new Font("Pixelify Sans", 12F);
             button2.ForeColor = Color.FromArgb(64, 0, 64);
+
             button2.Location = new Point(134, 227);
             button2.Margin = new Padding(4, 6, 4, 6);
             button2.Name = "button2";
@@ -105,6 +108,7 @@
             button3.BackColor = Color.FromArgb(239, 182, 200);
             button3.Font = new Font("Pixelify Sans", 12F);
             button3.ForeColor = Color.FromArgb(64, 0, 64);
+
             button3.Location = new Point(134, 363);
             button3.Margin = new Padding(4, 6, 4, 6);
             button3.Name = "button3";
@@ -119,6 +123,7 @@
             button1.BackColor = Color.FromArgb(239, 182, 200);
             button1.Font = new Font("Pixelify Sans", 12F);
             button1.ForeColor = Color.FromArgb(64, 0, 64);
+
             button1.Location = new Point(134, 85);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
@@ -133,6 +138,7 @@
             panel3.BackColor = Color.Thistle;
             panel3.Controls.Add(label2);
             panel3.Font = new Font("Pixelify Sans", 12F);
+
             panel3.Location = new Point(0, 458);
             panel3.Margin = new Padding(4, 5, 4, 5);
             panel3.Name = "panel3";
@@ -146,6 +152,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Pixelify Sans", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(64, 0, 64);
+
             label2.Location = new Point(114, 66);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -157,6 +164,7 @@
             // 
             button4.BackColor = Color.Thistle;
             button4.Font = new Font("Pixelify Sans", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+
             button4.Location = new Point(19, 20);
             button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
@@ -166,6 +174,7 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += Button4_Click;
             // 
+
             // label3
             // 
             label3.AutoSize = true;
@@ -213,7 +222,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,7 +239,6 @@
         private Panel panel3;
         private Label label2;
         private Button button4;
-        private Label label3;
-        private PictureBox pictureBox4;
+        private PictureBox pictureBox2;
     }
 }

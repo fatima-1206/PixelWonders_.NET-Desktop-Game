@@ -40,7 +40,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button3 = new Button();
-            label2 = new Label();
             pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -100,7 +99,7 @@
             pictureBox3.Location = new Point(170, 44);
             pictureBox3.Margin = new Padding(4, 5, 4, 5);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(36, 36);
+            pictureBox3.Size = new Size(25, 22);
 
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
@@ -231,7 +230,6 @@
             ClientSize = new Size(1715, 1106);
 
             Controls.Add(pictureBox4);
-            Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -252,7 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -268,7 +265,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button button3;
-        private Label label2;
         private PictureBox pictureBox4;
         private Button button4;
     }

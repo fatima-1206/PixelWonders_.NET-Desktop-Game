@@ -232,6 +232,10 @@ namespace PixelWonders
             if (allCorrect && jigsaw_panel.Controls.Count == 9) // 3x3 = 9 pieces
             {
                 MessageBox.Show("🏆 Puzzle Solved! Congratulations!", "Victory");
+                Menu2 menu2 = new Menu2();
+                menu2.Show();
+
+                this.Close();
             }
         }
 

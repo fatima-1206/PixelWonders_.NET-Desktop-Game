@@ -42,7 +42,6 @@ namespace PixelWonders
             pictureBox1 = new PictureBox();
             button3 = new Button();
             label1 = new Label();
-            label3 = new Label();
             button2 = new Button();
             pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
@@ -185,19 +184,6 @@ namespace PixelWonders
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(778, 2);
-            label3.Name = "label3";
-            label3.Size = new Size(21, 24);
-            label3.TabIndex = 1;
-            label3.Text = "X";
-            label3.Click += Label3_Click;
-            // 
             // button2
             // 
             button2.BackColor = Color.Thistle;
@@ -230,7 +216,6 @@ namespace PixelWonders
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox2);
             Controls.Add(button2);
-            Controls.Add(label3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -243,7 +228,6 @@ namespace PixelWonders
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -258,7 +242,6 @@ namespace PixelWonders
         private TextBox txtUsername;
         private Label label5;
         private Button button1;
-        private Label label3;
         private Button button2;
         private PictureBox eyePicBox;
         private PictureBox pictureBox2;
