@@ -24,12 +24,14 @@ namespace PixelWonders
         private void Button2_Click(object sender, EventArgs e)
         {
 
-            Login loginPage = new Login();
+            //Login loginPage = new Login();
 
             // Show the Login form
-            loginPage.Show();
+            //loginPage.Show();
 
-            // Close 
+
+            Menu1 menuPage = new Menu1();
+            menuPage.Show();
             this.Hide();
         }
 
